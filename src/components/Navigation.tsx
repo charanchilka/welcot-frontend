@@ -11,10 +11,10 @@ const Navigation = () => {
   const links = [
     { name: "Home", path: "/" },
     { name: "Products", path: "/products" },
-    { name: "Sustainable Collection", path: "/sustainable" },
-    { name: "About Us", path: "/about" },
+    { name: "Sustainability", path: "/sustainable" },
+    { name: "About", path: "/about" },
     { name: "Workshops", path: "/workshops" },
-    { name: "Certificates & Test Reports", path: "/certificates" },
+    { name: "Certifications", path: "/certificates" },
     { name: "Testimonials", path: "/testimonials" },
     { name: "Contact", path: "/contact" },
   ];
@@ -25,37 +25,37 @@ const Navigation = () => {
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-soft">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Desktop Layout - Centered */}
-        <div className="hidden md:flex flex-col items-center py-4">
+        <div className="hidden lg:flex flex-col items-center py-3">
           {/* Logo */}
-          <Link to="/" className="flex items-center mb-4">
+          <Link to="/" className="flex items-center mb-3">
             <img 
               src={welcotLogo} 
               alt="WELCOT Towels" 
-              className="h-16 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6">
             {links.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-smooth hover:text-primary ${
+                className={`text-sm font-medium transition-smooth hover:text-primary whitespace-nowrap ${
                   isActive(link.path) ? "text-primary" : "text-foreground/70"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button variant="default" size="sm" asChild>
+            <Button variant="default" size="sm" asChild className="ml-2">
               <Link to="/contact">Get Catalog</Link>
             </Button>
           </div>
         </div>
 
         {/* Mobile Layout */}
-        <div className="md:hidden flex items-center justify-between h-20">
+        <div className="lg:hidden flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
             <img 
               src={welcotLogo} 
@@ -76,7 +76,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="lg:hidden py-4 border-t border-border">
             {links.map((link) => (
               <Link
                 key={link.path}
