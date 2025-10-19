@@ -14,6 +14,7 @@ const Navigation = () => {
     { name: "Sustainable Collection", path: "/sustainable" },
     { name: "About Us", path: "/about" },
     { name: "Workshops", path: "/workshops" },
+    { name: "Certificates & Test Reports", path: "/certificates" },
     { name: "Testimonials", path: "/testimonials" },
     { name: "Contact", path: "/contact" },
   ];
