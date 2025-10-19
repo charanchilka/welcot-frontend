@@ -19,6 +19,8 @@ import whyUsQuality from "@/assets/why-us-quality.jpg";
 import whyUsVariety from "@/assets/why-us-variety.jpg";
 import whyUsManufacturing from "@/assets/why-us-manufacturing.jpg";
 import whyUsPartnership from "@/assets/why-us-partnership.jpg";
+import whyUsInnovation from "@/assets/why-us-innovation.jpg";
+import whyUsCollection from "@/assets/why-us-collection.jpg";
 
 const Home = () => {
   const categories = [
@@ -53,36 +55,43 @@ const Home = () => {
       icon: <CheckCircle className="w-10 h-10" />,
       title: "Reliable Quality with Responsible Support",
       description: "Dependable service from sampling to delivery.",
+      backgroundImage: whyUsQuality,
     },
     {
       icon: <Package className="w-10 h-10" />,
       title: "Widest Product Collection",
       description: "From luxury to standard, we craft to every category.",
+      backgroundImage: whyUsCollection,
     },
     {
       icon: <Cog className="w-10 h-10" />,
       title: "Tailored for Every Need",
       description: "Custom materials and pattern solutions.",
+      backgroundImage: whyUsInnovation,
     },
     {
       icon: <Factory className="w-10 h-10" />,
       title: "Large-Scale, Modern Manufacturing",
       description: "Advanced automation with sustainable techniques.",
+      backgroundImage: whyUsManufacturing,
     },
     {
       icon: <Shield className="w-10 h-10" />,
       title: "Tested and Proven Quality",
       description: "Certified excellence with industry benchmarks.",
+      backgroundImage: whyUsQuality,
     },
     {
       icon: <Sparkles className="w-10 h-10" />,
       title: "Sampling Solutions for Custom Towels",
       description: "Flexibility and creative support for new designs.",
+      backgroundImage: whyUsVariety,
     },
     {
       icon: <Globe className="w-10 h-10" />,
       title: "Long-Term Business Vision",
       description: "Building partnerships that last beyond products.",
+      backgroundImage: whyUsPartnership,
     },
   ];
 
@@ -227,8 +236,13 @@ const Home = () => {
               <CarouselContent className="-ml-4">
                 {whyChooseHighlights.map((item, index) => (
                   <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <Card className="border-2 border-primary/10 shadow-medium hover:shadow-premium hover:border-primary/30 transition-smooth group cursor-pointer h-full">
-                      <CardContent className="p-8 text-center flex flex-col items-center h-full">
+                    <Card className="relative overflow-hidden border-2 border-primary/10 shadow-medium hover:shadow-premium hover:border-primary/30 transition-smooth group cursor-pointer h-full">
+                      <div 
+                        className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-smooth"
+                        style={{ backgroundImage: `url(${item.backgroundImage})` }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background/95" />
+                      <CardContent className="relative p-8 text-center flex flex-col items-center h-full">
                         <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 text-primary mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-smooth">
                           {item.icon}
                         </div>
