@@ -9,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import HeroCarousel from "@/components/HeroCarousel";
 import heroImage from "@/assets/hero-towels.jpg";
 import luxuryImage from "@/assets/luxury-towel.jpg";
 import premiumImage from "@/assets/premium-towel.jpg";
@@ -23,6 +24,35 @@ import whyUsInnovation from "@/assets/why-us-innovation.jpg";
 import whyUsCollection from "@/assets/why-us-collection.jpg";
 
 const Home = () => {
+  const heroSlides = [
+    {
+      image: heroImage,
+      title: "Experience Luxury.\nCrafted Through Excellence.",
+      subtitle: "Where premium quality meets everyday comfort",
+      cta1Text: "Explore Our Collections",
+      cta1Link: "#collection",
+      cta2Text: "Learn More",
+      cta2Link: "/about",
+    },
+    {
+      image: luxuryImage,
+      title: "Softness You Can Feel.\nQuality You Can Trust.",
+      subtitle: "Premium terry towels for the world's finest establishments",
+      cta1Text: "View Products",
+      cta1Link: "/products",
+      cta2Text: "Our Story",
+      cta2Link: "/about",
+    },
+    {
+      image: sustainableHero,
+      title: "Sustainable Luxury.\nResponsible Innovation.",
+      subtitle: "Eco-friendly towels without compromising on quality",
+      cta1Text: "Explore Sustainability",
+      cta1Link: "/sustainable",
+      cta2Text: "Contact Us",
+      cta2Link: "/contact",
+    },
+  ];
   const categories = [
     {
       name: "Welcot Luxury",
@@ -111,56 +141,18 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Banner - Enhanced with Motion */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center animate-fade-in"
-          style={{ 
-            backgroundImage: `url(${heroImage})`,
-            animation: "slowPan 30s ease-in-out infinite alternate"
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/50" />
-        </div>
-        
-        <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center lg:text-left">
-          <div className="max-w-4xl">
-            <h1 className="text-6xl lg:text-8xl font-bold mb-6 text-foreground leading-tight animate-fade-in">
-              Experience Luxury.<br />
-              <span className="text-primary">Crafted Through Excellence.</span>
-            </h1>
-            <p className="text-2xl lg:text-3xl mb-10 text-foreground/80 font-light animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              Where premium quality meets everyday comfort
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              <Button size="lg" asChild className="text-lg px-8 py-6 shadow-premium hover:scale-105 transition-smooth">
-                <a href="#collection">
-                  Explore Our Collections <ArrowRight className="ml-2" size={24} />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6 hover:scale-105 transition-smooth">
-                <Link to="/about">Read More About Us</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Carousel - Apple-inspired */}
+      <HeroCarousel slides={heroSlides} autoPlayInterval={6000} />
 
-      {/* About Us Highlight - Visually Layered */}
-      <section className="relative py-24 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-10"
-          style={{ backgroundImage: `url(${premiumImage})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
-        
+      {/* About Us Highlight - Luxurious */}
+      <section className="relative py-32 overflow-hidden bg-muted/30">
         <div className="relative container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-6 animate-fade-in">
-              <p className="text-2xl lg:text-3xl leading-relaxed text-foreground font-light">
+              <p className="text-3xl lg:text-5xl leading-relaxed text-foreground font-light">
                 Welcot redefines towel craftsmanship — blending quality, care, and innovation.
               </p>
-              <p className="text-xl lg:text-2xl leading-relaxed text-muted-foreground">
+              <p className="text-xl lg:text-2xl leading-relaxed text-muted-foreground font-light">
                 Serving the finest hotels, spas, and homes worldwide.
               </p>
             </div>
@@ -169,7 +161,7 @@ const Home = () => {
               size="lg" 
               variant="outline" 
               asChild 
-              className="group hover:scale-105 transition-smooth shadow-soft"
+              className="group hover:scale-105 transition-smooth shadow-soft border-2 hover:border-secondary hover:text-secondary"
             >
               <Link to="/about">
                 Read More About Us 
@@ -180,17 +172,17 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Company Video Section */}
-      <section className="py-20 bg-background">
+      {/* Company Video Section - Sleek */}
+      <section className="py-32 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl lg:text-6xl font-bold mb-4">Watch Our Company Video</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-5xl lg:text-7xl font-bold mb-6">Watch Our Company Video</h2>
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto font-light">
               Step inside our world of innovation
             </p>
           </div>
-          <div className="max-w-5xl mx-auto">
-            <div className="relative rounded-3xl overflow-hidden shadow-premium aspect-video bg-muted/20 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="max-w-6xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden shadow-premium aspect-video bg-muted/20 animate-fade-in hover:scale-[1.02] transition-slow" style={{ animationDelay: "0.2s" }}>
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1"
@@ -203,29 +195,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Welcot - Enhanced Carousel Version */}
-      <section 
-        className="relative py-24 overflow-hidden"
-        style={{
-          backgroundImage: `url(${luxuryImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
-        
+      {/* Why Choose Welcot - Premium Carousel */}
+      <section className="relative py-32 overflow-hidden bg-primary/5">
         <div className="relative container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-6xl font-bold mb-4">
-              Why Choose Welcot — <span className="text-primary">Because Quality Is a Promise</span>
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-5xl lg:text-7xl font-bold mb-6">
+              Why Choose Welcot — <span className="text-gradient-gold">Because Quality Is a Promise</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto font-light">
               Your trusted partner in excellence, innovation, and lasting relationships
             </p>
           </div>
 
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <Carousel 
               opts={{
                 align: "start",
@@ -236,35 +218,34 @@ const Home = () => {
               <CarouselContent className="-ml-4">
                 {whyChooseHighlights.map((item, index) => (
                   <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <Card className="relative overflow-hidden border-2 border-primary/10 shadow-medium hover:shadow-premium hover:border-primary/30 transition-smooth group cursor-pointer h-full">
+                    <Card className="relative overflow-hidden border border-primary/10 shadow-soft hover:shadow-premium hover:border-secondary/50 transition-slow group cursor-pointer h-full bg-card/80 backdrop-blur">
                       <div 
-                        className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-smooth"
+                        className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-slow group-hover:scale-110"
                         style={{ backgroundImage: `url(${item.backgroundImage})` }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background/95" />
-                      <CardContent className="relative p-8 text-center flex flex-col items-center h-full">
-                        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 text-primary mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-smooth">
+                      <CardContent className="relative p-10 text-center flex flex-col items-center h-full">
+                        <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-secondary/10 text-secondary mb-8 group-hover:scale-110 group-hover:bg-secondary/20 transition-smooth shadow-soft">
                           {item.icon}
                         </div>
-                        <h3 className="text-xl font-bold mb-3 text-foreground">{item.title}</h3>
-                        <p className="text-muted-foreground flex-grow">{item.description}</p>
+                        <h3 className="text-2xl font-bold mb-4 text-foreground">{item.title}</h3>
+                        <p className="text-muted-foreground flex-grow text-lg font-light">{item.description}</p>
                       </CardContent>
                     </Card>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="flex justify-center gap-4 mt-8">
-                <CarouselPrevious className="relative static translate-y-0" />
-                <CarouselNext className="relative static translate-y-0" />
+              <div className="flex justify-center gap-4 mt-12">
+                <CarouselPrevious className="relative static translate-y-0 bg-secondary text-secondary-foreground hover:bg-secondary/90" />
+                <CarouselNext className="relative static translate-y-0 bg-secondary text-secondary-foreground hover:bg-secondary/90" />
               </div>
             </Carousel>
           </div>
 
-          <div className="text-center mt-12 animate-fade-in">
+          <div className="text-center mt-16 animate-fade-in">
             <Button 
               size="lg" 
               asChild 
-              className="shadow-premium hover:scale-105 transition-smooth"
+              className="shadow-premium hover:scale-105 transition-smooth bg-secondary text-secondary-foreground hover:bg-secondary/90 hover-glow text-lg px-10 py-6"
             >
               <Link to="/about">
                 Discover More <ArrowRight className="ml-2" size={20} />
@@ -274,35 +255,35 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Collection Section */}
-      <section id="collection" className="py-20 gradient-hero">
+      {/* Our Collection Section - Elegant Grid */}
+      <section id="collection" className="py-32 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-6xl font-bold mb-4">Our Collection</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-7xl font-bold mb-6">Our Collection</h2>
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto font-light">
               Discover towel excellence across four distinctive segments
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {categories.map((category, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden border-none shadow-medium hover:shadow-premium transition-smooth cursor-pointer animate-fade-in"
+                className="group overflow-hidden border-none shadow-medium hover:shadow-premium transition-slow cursor-pointer animate-fade-in bg-card"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <Link to={category.link}>
-                  <div className="relative h-80 overflow-hidden">
+                  <div className="relative h-96 overflow-hidden">
                     <img
                       src={category.image}
                       alt={category.name}
-                      className="w-full h-full object-cover transition-smooth group-hover:scale-110"
+                      className="w-full h-full object-cover transition-slow group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                      <h3 className="text-3xl font-bold mb-3">{category.name}</h3>
-                      <p className="text-lg opacity-90 mb-6">{category.description}</p>
-                      <span className="inline-flex items-center text-base font-semibold bg-white/20 backdrop-blur px-6 py-3 rounded-full group-hover:bg-white/30 transition-smooth">
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-10 text-white">
+                      <h3 className="text-4xl font-bold mb-4">{category.name}</h3>
+                      <p className="text-lg opacity-90 mb-8 font-light">{category.description}</p>
+                      <span className="inline-flex items-center text-base font-semibold bg-secondary text-secondary-foreground px-8 py-4 rounded-full group-hover:scale-105 transition-smooth shadow-glow">
                         Explore Collection <ArrowRight className="ml-2" size={18} />
                       </span>
                     </div>

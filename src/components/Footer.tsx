@@ -1,53 +1,93 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from "lucide-react";
 import welcotLogo from "@/assets/welcot-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div>
+    <footer className="bg-primary text-white relative overflow-hidden">
+      {/* Decorative gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-teal-light/20 pointer-events-none" />
+      
+      <div className="relative container mx-auto px-4 lg:px-8 py-20">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+          {/* Brand Section - Larger */}
+          <div className="lg:col-span-2">
             <img 
               src={welcotLogo} 
               alt="WELCOT Towels" 
-              className="h-10 w-auto mb-4 brightness-0 invert"
+              className="h-14 w-auto mb-6 brightness-0 invert"
             />
-            <p className="text-sm opacity-90 mb-4">
-              Premium Towel Manufacturer & Exporter from India
+            <p className="text-base opacity-90 mb-6 leading-relaxed max-w-md">
+              Premium Towel Manufacturer & Exporter from India. 
+              Delivering excellence in quality, sustainability, and innovation to clients worldwide.
             </p>
-            <p className="text-xs opacity-75">
+            <p className="text-sm font-semibold text-secondary mb-6">
               Made in India. Loved Worldwide.
             </p>
+            
+            {/* Social Links */}
+            <div className="flex gap-4">
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary flex items-center justify-center transition-smooth hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={18} />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary flex items-center justify-center transition-smooth hover:scale-110"
+                aria-label="Facebook"
+              >
+                <Facebook size={18} />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary flex items-center justify-center transition-smooth hover:scale-110"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="font-semibold text-secondary mb-6 text-lg">Quick Links</h4>
+            <ul className="space-y-3">
               <li>
-                <Link to="/" className="opacity-90 hover:opacity-100 transition-smooth">
+                <Link to="/" className="opacity-80 hover:opacity-100 hover:text-secondary transition-smooth text-sm">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="opacity-90 hover:opacity-100 transition-smooth">
+                <Link to="/products" className="opacity-80 hover:opacity-100 hover:text-secondary transition-smooth text-sm">
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/sustainable" className="opacity-90 hover:opacity-100 transition-smooth">
+                <Link to="/sustainable" className="opacity-80 hover:opacity-100 hover:text-secondary transition-smooth text-sm">
                   Sustainable Collection
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="opacity-90 hover:opacity-100 transition-smooth">
+                <Link to="/about" className="opacity-80 hover:opacity-100 hover:text-secondary transition-smooth text-sm">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="opacity-90 hover:opacity-100 transition-smooth">
+                <Link to="/workshops" className="opacity-80 hover:opacity-100 hover:text-secondary transition-smooth text-sm">
+                  Workshops
+                </Link>
+              </li>
+              <li>
+                <Link to="/certificates" className="opacity-80 hover:opacity-100 hover:text-secondary transition-smooth text-sm">
+                  Certifications
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="opacity-80 hover:opacity-100 hover:text-secondary transition-smooth text-sm">
                   Contact
                 </Link>
               </li>
@@ -56,41 +96,54 @@ const Footer = () => {
 
           {/* Product Categories */}
           <div>
-            <h4 className="font-semibold mb-4">Categories</h4>
-            <ul className="space-y-2 text-sm">
-              <li className="opacity-90">Welcot Luxury</li>
-              <li className="opacity-90">Welcot Premium</li>
-              <li className="opacity-90">Welcot Standard</li>
-              <li className="opacity-90">Welcot Hygenie</li>
+            <h4 className="font-semibold text-secondary mb-6 text-lg">Our Collections</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="opacity-80 hover:opacity-100 transition-smooth cursor-pointer">Welcot Luxury</li>
+              <li className="opacity-80 hover:opacity-100 transition-smooth cursor-pointer">Welcot Premium</li>
+              <li className="opacity-80 hover:opacity-100 transition-smooth cursor-pointer">Welcot Standard</li>
+              <li className="opacity-80 hover:opacity-100 transition-smooth cursor-pointer">Welcot Hygiene</li>
+              <li className="opacity-80 hover:opacity-100 transition-smooth cursor-pointer">Sustainable Range</li>
+              <li className="opacity-80 hover:opacity-100 transition-smooth cursor-pointer">Custom Solutions</li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <Mail size={16} className="mt-1 flex-shrink-0" />
-                <a href="mailto:export@welcottowels.com" className="opacity-90 hover:opacity-100 transition-smooth">
+            <h4 className="font-semibold text-secondary mb-6 text-lg">Contact Us</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 group">
+                <Mail size={18} className="mt-1 flex-shrink-0 text-secondary" />
+                <a 
+                  href="mailto:export@welcottowels.com" 
+                  className="opacity-80 hover:opacity-100 hover:text-secondary transition-smooth text-sm"
+                >
                   export@welcottowels.com
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <Phone size={16} className="mt-1 flex-shrink-0" />
-                <span className="opacity-90">+91 XXX XXX XXXX</span>
+              <li className="flex items-start gap-3">
+                <Phone size={18} className="mt-1 flex-shrink-0 text-secondary" />
+                <span className="opacity-80 text-sm">+91 XXX XXX XXXX</span>
               </li>
-              <li className="flex items-start gap-2">
-                <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span className="opacity-90">
-                  Solapur, Maharashtra, India
+              <li className="flex items-start gap-3">
+                <MapPin size={18} className="mt-1 flex-shrink-0 text-secondary" />
+                <span className="opacity-80 text-sm leading-relaxed">
+                  Solapur, Maharashtra,<br />India
                 </span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center text-sm opacity-75">
+        {/* Divider with gold accent */}
+        <div className="h-px bg-gradient-to-r from-transparent via-secondary to-transparent mb-8" />
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-75">
           <p>&copy; {new Date().getFullYear()} WELCOT Towels. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link to="/contact" className="hover:text-secondary transition-smooth">Privacy Policy</Link>
+            <Link to="/contact" className="hover:text-secondary transition-smooth">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

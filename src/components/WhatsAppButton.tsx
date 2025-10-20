@@ -9,14 +9,19 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <Button
-      onClick={handleWhatsAppClick}
-      size="lg"
-      className="fixed bottom-6 right-6 z-50 rounded-full h-14 w-14 shadow-premium bg-[#25D366] hover:bg-[#20BA5A] text-white"
-      aria-label="Chat on WhatsApp"
-    >
-      <MessageCircle size={24} />
-    </Button>
+    <div className="group fixed bottom-6 right-6 z-50">
+      <Button
+        onClick={handleWhatsAppClick}
+        size="icon"
+        className="rounded-full h-12 w-12 shadow-premium bg-[#25D366] hover:bg-[#20BA5A] text-white transition-smooth hover:scale-110"
+        aria-label="Chat on WhatsApp"
+      >
+        <MessageCircle size={20} />
+      </Button>
+      <div className="absolute bottom-full right-0 mb-2 px-3 py-1.5 bg-primary text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-smooth whitespace-nowrap pointer-events-none">
+        Chat with us
+      </div>
+    </div>
   );
 };
 
