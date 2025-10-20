@@ -28,142 +28,142 @@ const Products = () => {
   const [filter, setFilter] = useState("all");
 
   const products = [
-    { 
-      name: "Bath Towels", 
-      categories: ["luxury", "premium", "standard", "hygenie"], 
+    {
+      name: "Bath Towels",
+      categories: ["luxury", "premium", "standard", "hygenie"],
       description: "Full-body coverage with exceptional absorbency and softness. From ultra-soft luxury options for 5-star resorts to durable standard variants.",
       sizes: "30x60\", 27x54\", 24x48\"",
       image: bathTowels
     },
-    { 
-      name: "Hand Towels", 
-      categories: ["luxury", "premium", "standard", "hygenie"], 
+    {
+      name: "Hand Towels",
+      categories: ["luxury", "premium", "standard", "hygenie"],
       description: "Designed for guest rooms and bathrooms, delivering a soft, quick-drying experience. Available in every quality tier.",
       sizes: "18x30\", 16x24\", 14x21\"",
       image: handTowels
     },
-    { 
-      name: "Face Towels", 
-      categories: ["luxury", "premium", "standard", "hygenie"], 
+    {
+      name: "Face Towels",
+      categories: ["luxury", "premium", "standard", "hygenie"],
       description: "Gentle on skin and ideal for spa, skincare, and hotel use. Crafted to provide comfort, hygiene, and durability.",
       sizes: "13x13\", 12x12\"",
       image: faceTowels
     },
-    { 
-      name: "Towel Sets", 
-      categories: ["luxury", "premium", "standard", "hygenie"], 
+    {
+      name: "Towel Sets",
+      categories: ["luxury", "premium", "standard", "hygenie"],
       description: "Curated sets combining bath, hand, and face towels in coordinated styles. Ideal for hotels and gifting programs.",
       sizes: "Bath 30x60\", Hand 16x24\", Face 12x12\"",
       image: towelSets
     },
-    { 
-      name: "Beach Towels", 
-      categories: ["premium", "standard", "hygenie"], 
+    {
+      name: "Beach Towels",
+      categories: ["premium", "standard", "hygenie"],
       description: "Vibrant, oversized, and fast-drying. Perfect for resorts, waterparks, and leisure brands.",
       sizes: "40x72\", 36x72\", 30x60\"",
       image: beachTowels
     },
-    { 
-      name: "Pool Towels", 
-      categories: ["premium", "standard", "hygenie"], 
+    {
+      name: "Pool Towels",
+      categories: ["premium", "standard", "hygenie"],
       description: "Built for performance in humid environments. Durable, highly absorbent, and fast-drying for hotels, spas, and health clubs.",
       sizes: "40x72\", 36x72\", 30x60\"",
       image: poolTowels
     },
-    { 
-      name: "Kitchen Towels", 
-      categories: ["premium", "standard", "hygenie"], 
+    {
+      name: "Kitchen Towels",
+      categories: ["premium", "standard", "hygenie"],
       description: "Absorbent and lint-free terry towels for drying dishes and cleaning surfaces. Used in hospitality kitchens and restaurants.",
       sizes: "18x32\", 16x24\", 13x13\"",
       image: kitchenTowels
     },
-    { 
-      name: "Bath Mats", 
-      categories: ["luxury", "premium", "standard", "hygenie"], 
+    {
+      name: "Bath Mats",
+      categories: ["luxury", "premium", "standard", "hygenie"],
       description: "Soft and sturdy mats to absorb moisture and prevent slips. Available in plush luxury or high-function options.",
       sizes: "20x30\", 18x32\"",
       image: bathMats
     },
-    { 
-      name: "Bathrobes", 
-      categories: ["premium", "standard", "hygenie"], 
+    {
+      name: "Bathrobes",
+      categories: ["premium", "standard", "hygenie"],
       description: "Wrap-around robes made from towel fabric for post-bath relaxation. Perfect for hotels, spas, and wellness resorts.",
       sizes: "S, M, L, XL",
       image: bathrobes
     },
-    { 
-      name: "Jacquard Towels", 
-      categories: ["luxury", "premium", "standard", "hygenie"], 
+    {
+      name: "Jacquard Towels",
+      categories: ["luxury", "premium", "standard", "hygenie"],
       description: "Woven with intricate patterns to elevate your brand. Suitable for premium gifting, luxury hotels, and custom collections.",
       sizes: "36x72\", 30x60\", 27x54\"",
       image: jacquardTowels
     },
-    { 
-      name: "Velour Towels", 
-      categories: ["premium", "standard", "hygenie"], 
+    {
+      name: "Velour Towels",
+      categories: ["premium", "standard", "hygenie"],
       description: "Velvet-like finish combining softness and style. Used for promotional events, spas, or retail with elegant texture.",
       sizes: "36x72\", 30x60\", 27x54\", 24x48\"",
       image: velourTowels
     },
-    { 
-      name: "Hotel White Towels", 
-      categories: ["luxury", "premium", "standard", "hygenie"], 
+    {
+      name: "Hotel White Towels",
+      categories: ["luxury", "premium", "standard", "hygenie"],
       description: "Crisp white towels for hotels and resorts. From ultra-luxury to cost-effective hygiene-treated versions for heavy laundering.",
       sizes: "36x72\", 30x60\", 27x54\", 16x24\"",
       image: hotelWhiteTowels
     },
-    { 
-      name: "Tea Towels", 
-      categories: ["premium", "standard", "hygenie"], 
+    {
+      name: "Tea Towels",
+      categories: ["premium", "standard", "hygenie"],
       description: "Lightweight and versatile for drying crockery and glassware. Used in hotels, cafes, and institutional kitchens.",
       sizes: "18x32\", 16x24\", 14x21\"",
       image: teaTowels
     },
-    { 
-      name: "Gym/Sports Towels", 
-      categories: ["premium", "standard", "hygenie"], 
+    {
+      name: "Gym/Sports Towels",
+      categories: ["premium", "standard", "hygenie"],
       description: "Compact high-performance towels for gyms and fitness studios. Quick-drying and odor-resistant.",
       sizes: "18x32\", 16x24\", 14x21\"",
       image: gymTowels
     },
-    { 
-      name: "Monogrammed Towels", 
-      categories: ["luxury", "premium", "standard", "hygenie"], 
+    {
+      name: "Monogrammed Towels",
+      categories: ["luxury", "premium", "standard", "hygenie"],
       description: "Add personal or brand touch with custom monogramming. Perfect for hotels, resorts, spas, and premium gifting.",
       sizes: "30x60\", 27x54\", 24x48\"",
       image: monogrammedTowels
     },
-    { 
-      name: "Embroidery Towels", 
-      categories: ["luxury", "premium", "standard", "hygenie"], 
+    {
+      name: "Embroidery Towels",
+      categories: ["luxury", "premium", "standard", "hygenie"],
       description: "High-definition embroidery craftsmanship with intricate multi-color motifs. From elegant monograms to artistic borders.",
       sizes: "30x60\", 27x54\", 24x48\"",
       image: embroideryTowels
     },
-    { 
-      name: "Promotional Towels", 
-      categories: ["luxury", "premium", "standard", "hygenie"], 
+    {
+      name: "Promotional Towels",
+      categories: ["luxury", "premium", "standard", "hygenie"],
       description: "Custom-branded towels for impactful giveaways, events, and brand campaigns. Logo jacquards, embroidery, or printed designs.",
       sizes: "30x60\", 27x54\", 24x48\"",
       image: promotionalTowels
     },
-    { 
-      name: "Custom Design Towels", 
-      categories: ["luxury", "premium", "standard"], 
+    {
+      name: "Custom Design Towels",
+      categories: ["luxury", "premium", "standard"],
       description: "Bring your creative vision to life. From concept sketch to final packaging, we transform your ideas into beautiful products.",
       sizes: "Customizable",
       image: customDesignTowels
     },
-    { 
-      name: "Turkish Towels (Pestemal)", 
-      categories: ["premium", "standard"], 
+    {
+      name: "Turkish Towels (Pestemal)",
+      categories: ["premium", "standard"],
       description: "Lightweight flat-weave towels with decorative fringes. Quick-drying, travel-friendly, and perfect for beach resorts and spas.",
       sizes: "30x60\", 35x70\", 40x80\"",
       image: turkishTowels
     },
-    { 
-      name: "Honeycomb/Waffle Towels", 
-      categories: ["premium", "standard"], 
+    {
+      name: "Honeycomb/Waffle Towels",
+      categories: ["premium", "standard"],
       description: "Unique honeycomb weave for faster drying and high absorbency. Lightweight, elegant, and ideal for spa aesthetics.",
       sizes: "30x60\", 27x54\", 24x48\"",
       image: honeycombTowels
@@ -178,14 +178,15 @@ const Products = () => {
     { id: "hygenie", label: "Welcot Hygenie" },
   ];
 
-  const filteredProducts = filter === "all" 
-    ? products 
+  const filteredProducts = filter === "all"
+    ? products
     : products.filter(p => p.categories.includes(filter));
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20">
+      <div className="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10"
+        style={{ paddingTop: "12rem", paddingBottom: "5rem" }}>
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Our Premium Towel Collection
@@ -201,7 +202,7 @@ const Products = () => {
 
       <div className="container mx-auto px-4 lg:px-8 py-16">
         {/* Filter Buttons */}
-        <div className="flex flex-wrap gap-3 justify-center mb-12">
+        {/* <div className="flex flex-wrap gap-3 justify-center mb-12">
           {categories.map((cat) => (
             <Button
               key={cat.id}
@@ -211,15 +212,15 @@ const Products = () => {
               {cat.label}
             </Button>
           ))}
-        </div>
+        </div> */}
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {filteredProducts.map((product, index) => (
             <Card key={index} className="overflow-hidden shadow-soft hover:shadow-premium transition-smooth group">
               <div className="aspect-video overflow-hidden">
-                <img 
-                  src={product.image} 
+                <img
+                  src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
                 />
@@ -251,7 +252,7 @@ const Products = () => {
                     <Link to="/contact">Request Quote</Link>
                   </Button>
                   <Button variant="default" size="sm" asChild>
-                    <Link to="/contact">Samples</Link>
+                    <Link to="/contact">Free Samples</Link>
                   </Button>
                 </div>
               </CardContent>

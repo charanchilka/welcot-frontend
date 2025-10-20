@@ -5,7 +5,8 @@ import { Factory, Users, Cog, Award, ArrowRight } from "lucide-react";
 
 const Workshops = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen"
+      style={{ marginTop: "9%" }}>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-primary/10 to-background">
         <div className="container mx-auto px-4 lg:px-8">
@@ -14,8 +15,8 @@ const Workshops = () => {
               Our Manufacturing Excellence
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Step inside Welcot's state-of-the-art facilities where tradition meets innovation. 
-              Our workshops are equipped with modern machinery and operated by skilled craftspeople 
+              Step inside Welcot's state-of-the-art facilities where tradition meets innovation.
+              Our workshops are equipped with modern machinery and operated by skilled craftspeople
               dedicated to creating the finest towels.
             </p>
           </div>
@@ -243,17 +244,17 @@ const Workshops = () => {
             Interested in Visiting Our Workshop?
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            We welcome business partners and clients to visit our facilities. 
+            We welcome business partners and clients to visit our facilities.
             Schedule a visit to experience Welcot's manufacturing excellence firsthand.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
               <Link to="/contact">Schedule a Visit</Link>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10" 
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10"
               asChild
             >
               <Link to="/products">

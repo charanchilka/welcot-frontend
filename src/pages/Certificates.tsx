@@ -105,9 +105,9 @@ const Certificates = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" style={{ marginTop: "9%" }}>
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-b from-primary/5 to-background">
+      <section className="relative py-20 lg:py-26 bg-gradient-to-b from-primary/5 to-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-foreground animate-fade-in">
@@ -117,33 +117,33 @@ const Certificates = () => {
               Welcot is committed to global standards. Our products meet the world's strictest safety, quality, and ethical benchmarks.
             </p>
             <div className="flex items-center justify-center gap-8 flex-wrap animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              {industries.map((industry, index) => (
+              {/* {industries.map((industry, index) => (
                 <div key={index} className="flex flex-col items-center gap-2">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary">
                     {industry.icon}
                   </div>
                   <span className="text-sm font-medium text-muted-foreground">{industry.name}</span>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>
       </section>
 
       {/* Main Content Section */}
-      <section className="py-20">
+      <section className="py-14">
         <div className="container mx-auto px-4 lg:px-8">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <div className="flex justify-center mb-12">
               <TabsList className="bg-muted p-1 rounded-full">
-                <TabsTrigger 
-                  value="certifications" 
+                <TabsTrigger
+                  value="certifications"
                   className="rounded-full px-8 py-3 data-[state=active]:bg-background data-[state=active]:shadow-soft"
                 >
                   Certifications
                 </TabsTrigger>
-                <TabsTrigger 
-                  value="test-reports" 
+                <TabsTrigger
+                  value="test-reports"
                   className="rounded-full px-8 py-3 data-[state=active]:bg-background data-[state=active]:shadow-soft"
                 >
                   Test Reports
@@ -155,7 +155,7 @@ const Certificates = () => {
             <TabsContent value="certifications" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {certifications.map((cert, index) => (
-                  <Card 
+                  <Card
                     key={index}
                     className="group overflow-hidden border-2 border-border hover:border-primary/30 transition-smooth shadow-soft hover:shadow-premium animate-fade-in"
                     style={{ animationDelay: `${index * 0.1}s` }}
@@ -174,8 +174,8 @@ const Certificates = () => {
                         <p className="text-muted-foreground leading-relaxed min-h-[80px]">
                           {cert.description}
                         </p>
-                        <Button 
-                          variant="outline" 
+                        {/* <Button
+                          variant="outline"
                           className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth"
                           asChild
                         >
@@ -183,7 +183,7 @@ const Certificates = () => {
                             <Download className="w-4 h-4 mr-2" />
                             Download Certificate
                           </a>
-                        </Button>
+                        </Button> */}
                       </div>
                     </CardContent>
                   </Card>
@@ -195,7 +195,7 @@ const Certificates = () => {
             <TabsContent value="test-reports" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {testReports.map((report, index) => (
-                  <Card 
+                  <Card
                     key={index}
                     className="group overflow-hidden border-2 border-border hover:border-primary/30 transition-smooth shadow-soft hover:shadow-premium animate-fade-in"
                     style={{ animationDelay: `${index * 0.1}s` }}
@@ -214,8 +214,8 @@ const Certificates = () => {
                         <p className="text-muted-foreground leading-relaxed min-h-[80px]">
                           {report.description}
                         </p>
-                        <Button 
-                          variant="outline" 
+                        {/* <Button
+                          variant="outline"
                           className="w-full group-hover:bg-accent group-hover:text-accent-foreground transition-smooth"
                           asChild
                         >
@@ -223,7 +223,7 @@ const Certificates = () => {
                             <Download className="w-4 h-4 mr-2" />
                             Download Report
                           </a>
-                        </Button>
+                        </Button> */}
                       </div>
                     </CardContent>
                   </Card>

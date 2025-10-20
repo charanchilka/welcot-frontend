@@ -35,9 +35,8 @@ const HeroCarousel = ({ slides, autoPlayInterval = 5000 }: HeroCarouselProps) =>
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
         >
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -56,11 +55,10 @@ const HeroCarousel = ({ slides, autoPlayInterval = 5000 }: HeroCarouselProps) =>
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`transition-all duration-700 ${
-              index === currentSlide
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8 pointer-events-none absolute"
-            }`}
+            className={`transition-all duration-700 ${index === currentSlide
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8 pointer-events-none absolute"
+              }`}
           >
             <div className="max-w-4xl">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white leading-tight">
@@ -75,9 +73,9 @@ const HeroCarousel = ({ slides, autoPlayInterval = 5000 }: HeroCarouselProps) =>
                 {slide.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
-                <Button 
-                  size="lg" 
-                  asChild 
+                <Button
+                  size="lg"
+                  asChild
                   className="text-lg px-10 py-7 bg-secondary text-secondary-foreground hover:bg-secondary/90 hover-glow font-semibold shadow-premium hover:scale-105 transition-smooth"
                 >
                   <a href={slide.cta1Link}>
@@ -85,11 +83,12 @@ const HeroCarousel = ({ slides, autoPlayInterval = 5000 }: HeroCarouselProps) =>
                   </a>
                 </Button>
                 {slide.cta2Text && slide.cta2Link && (
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    asChild 
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    asChild
                     className="text-lg px-10 py-7 border-2 border-white text-white hover:bg-white hover:text-primary font-semibold shadow-premium hover:scale-105 transition-smooth"
+                    style={{ color: "#265e62" }}
                   >
                     <Link to={slide.cta2Link}>{slide.cta2Text}</Link>
                   </Button>
@@ -106,11 +105,10 @@ const HeroCarousel = ({ slides, autoPlayInterval = 5000 }: HeroCarouselProps) =>
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-2 rounded-full transition-all ${
-              index === currentSlide
-                ? "w-12 bg-secondary"
-                : "w-2 bg-white/50 hover:bg-white/80"
-            }`}
+            className={`h-2 rounded-full transition-all ${index === currentSlide
+              ? "w-12 bg-secondary"
+              : "w-2 bg-white/50 hover:bg-white/80"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

@@ -76,7 +76,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ marginTop: "9%" }}>
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-b from-muted/50 to-background overflow-hidden">
         <div className="absolute inset-0 opacity-5">
@@ -109,8 +109,8 @@ const Testimonials = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="border-none shadow-medium hover:shadow-premium transition-smooth overflow-hidden group animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -221,10 +221,10 @@ const Testimonials = () => {
                 Request Free Samples <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="bg-transparent text-white border-white hover:bg-white/10" 
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-transparent text-white border-white hover:bg-white/10"
               asChild
             >
               <Link to="/products">Browse Collections</Link>

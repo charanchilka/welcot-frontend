@@ -142,7 +142,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Carousel - Apple-inspired */}
-      <HeroCarousel slides={heroSlides} autoPlayInterval={6000} />
+      <HeroCarousel slides={heroSlides} autoPlayInterval={4000} />
 
       {/* About Us Highlight - Luxurious */}
       <section className="relative py-32 overflow-hidden bg-muted/30">
@@ -156,15 +156,15 @@ const Home = () => {
                 Serving the finest hotels, spas, and homes worldwide.
               </p>
             </div>
-            
-            <Button 
-              size="lg" 
-              variant="outline" 
-              asChild 
+
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
               className="group hover:scale-105 transition-smooth shadow-soft border-2 hover:border-secondary hover:text-secondary"
             >
               <Link to="/about">
-                Read More About Us 
+                Read More About Us
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-smooth" size={20} />
               </Link>
             </Button>
@@ -208,7 +208,7 @@ const Home = () => {
           </div>
 
           <div className="max-w-7xl mx-auto">
-            <Carousel 
+            <Carousel
               opts={{
                 align: "start",
                 loop: true,
@@ -219,8 +219,8 @@ const Home = () => {
                 {whyChooseHighlights.map((item, index) => (
                   <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                     <Card className="relative overflow-hidden border border-primary/10 shadow-soft hover:shadow-premium hover:border-secondary/50 transition-slow group cursor-pointer h-full bg-card/80 backdrop-blur">
-                      <div 
-                        className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-slow group-hover:scale-110"
+                      <div
+                        className="absolute inset-0 bg-cover bg-center opacity-50 group-hover:opacity-20 transition-slow group-hover:scale-110"
                         style={{ backgroundImage: `url(${item.backgroundImage})` }}
                       />
                       <CardContent className="relative p-10 text-center flex flex-col items-center h-full">
@@ -242,9 +242,9 @@ const Home = () => {
           </div>
 
           <div className="text-center mt-16 animate-fade-in">
-            <Button 
-              size="lg" 
-              asChild 
+            <Button
+              size="lg"
+              asChild
               className="shadow-premium hover:scale-105 transition-smooth bg-secondary text-secondary-foreground hover:bg-secondary/90 hover-glow text-lg px-10 py-6"
             >
               <Link to="/about">
@@ -407,7 +407,7 @@ const Home = () => {
           <div className="max-w-4xl mx-auto mb-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               {certifications.map((cert, index) => (
-                <Card 
+                <Card
                   key={index}
                   className="border-2 border-primary/10 shadow-soft hover:shadow-premium hover:border-primary/30 transition-smooth group cursor-pointer"
                 >
@@ -423,9 +423,9 @@ const Home = () => {
           </div>
 
           <div className="text-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <Button 
-              size="lg" 
-              variant="outline" 
+            <Button
+              size="lg"
+              variant="outline"
               asChild
               className="shadow-medium hover:scale-105 transition-smooth"
             >
@@ -450,18 +450,18 @@ const Home = () => {
             We're Always Here to Support Your Vision.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <Button 
-              size="lg" 
-              variant="secondary" 
-              asChild 
+            <Button
+              size="lg"
+              variant="secondary"
+              asChild
               className="text-lg px-8 py-6 shadow-premium hover:scale-105 transition-smooth"
             >
               <Link to="/contact">Request Catalog</Link>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="bg-transparent text-primary-foreground border-2 border-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6 hover:scale-105 transition-smooth" 
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-transparent text-primary-foreground border-2 border-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6 hover:scale-105 transition-smooth"
               asChild
             >
               <Link to="/products">View All Products</Link>
