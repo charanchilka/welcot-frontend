@@ -201,63 +201,74 @@ const Products = () => {
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 py-16">
+
         {/* Filter Buttons */}
-        {/* <div className="flex flex-wrap gap-3 justify-center mb-12">
+        <div className="flex flex-wrap gap-3 justify-center mb-12">
           {categories.map((cat) => (
             <Button
               key={cat.id}
               variant={filter === cat.id ? "default" : "outline"}
               onClick={() => setFilter(cat.id)}
+              className="whitespace-nowrap"
             >
               {cat.label}
             </Button>
           ))}
-        </div> */}
+        </div>
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {filteredProducts.map((product, index) => (
-            <Card key={index} className="overflow-hidden shadow-soft hover:shadow-premium transition-smooth group">
-              <div className="aspect-video overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
-                />
-              </div>
-              <CardHeader>
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <CardTitle className="text-xl">{product.name}</CardTitle>
-                  <div className="flex flex-wrap gap-1 justify-end">
-                    {product.categories.slice(0, 2).map((cat) => (
-                      <Badge key={cat} variant="secondary" className="capitalize text-xs">
-                        {cat}
-                      </Badge>
-                    ))}
-                    {product.categories.length > 2 && (
-                      <Badge variant="secondary" className="text-xs">
-                        +{product.categories.length - 2}
-                      </Badge>
-                    )}
+          {filteredProducts.map((product, index) => {
+            const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            return (
+              <Card key={index} className="overflow-hidden shadow-soft hover:shadow-premium transition-smooth group">
+                <Link to={`/products/${slug}`}>
+                  <div className="aspect-video overflow-hidden cursor-pointer">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                    />
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
-                <p className="text-sm text-muted-foreground mb-4">
-                  <span className="font-semibold">Sizes:</span> {product.sizes}
-                </p>
-                <div className="flex gap-2">
-                  <Button variant="outline" className="flex-1" asChild>
-                    <Link to="/contact">Request Quote</Link>
-                  </Button>
-                  <Button variant="default" size="sm" asChild>
-                    <Link to="/contact">Free Samples</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </Link>
+                <CardHeader>
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <Link to={`/products/${slug}`}>
+                      <CardTitle className="text-xl hover:text-primary transition-smooth cursor-pointer">
+                        {product.name}
+                      </CardTitle>
+                    </Link>
+                    <div className="flex flex-wrap gap-1 justify-end">
+                      {product.categories.slice(0, 2).map((cat) => (
+                        <Badge key={cat} variant="secondary" className="capitalize text-xs">
+                          {cat}
+                        </Badge>
+                      ))}
+                      {product.categories.length > 2 && (
+                        <Badge variant="secondary" className="text-xs">
+                          +{product.categories.length - 2}
+                        </Badge>
+                      )}
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <span className="font-semibold">Sizes:</span> {product.sizes}
+                  </p>
+                  <div className="flex gap-2">
+                    <Button variant="default" className="flex-1" asChild>
+                      <Link to={`/products/${slug}`}>View Details</Link>
+                    </Button>
+                    <Button variant="outline" size="sm" asChild>
+                      <Link to="/contact">Samples</Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {/* CTA Section */}

@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
+import Accessories from "./pages/Accessories";
 import Sustainable from "./pages/Sustainable";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -30,6 +32,8 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/products/:slug" element={<ProductDetail />} />
+              <Route path="/accessories" element={<Accessories />} />
               <Route path="/sustainable" element={<Sustainable />} />
               <Route path="/about" element={<About />} />
               <Route path="/workshops" element={<Workshops />} />
