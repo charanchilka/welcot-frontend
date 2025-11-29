@@ -28,6 +28,7 @@ const Navigation = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Products", path: "/products" },
+    { name: "Accessories", path: "/accessories" },
     { name: "Sustainability", path: "/sustainable" },
     { name: "Workshops", path: "/workshops" },
     { name: "Certifications", path: "/certificates" },
@@ -41,8 +42,8 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-slow ${isScrolled || !isHomePage
-        ? "bg-primary/95 backdrop-blur-lg shadow-premium border-b border-white/10"
-        : "bg-transparent"
+        ? "bg-white/95 backdrop-blur-lg shadow-premium border-b border-border/20"
+        : "bg-gradient-to-b from-white/90 to-white/70 backdrop-blur-md"
         }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -53,8 +54,7 @@ const Navigation = () => {
             <img
               src={welcotLogo}
               alt="WELCOT Towels"
-              className={`h-12 w-auto transition-smooth ${isScrolled || !isHomePage ? "brightness-0 invert" : "brightness-0 invert drop-shadow-lg"
-                }`}
+              className="h-12 w-auto transition-smooth"
             />
           </Link>
 
@@ -65,17 +65,13 @@ const Navigation = () => {
                 key={link.path}
                 to={link.path}
                 className={`text-sm font-medium transition-smooth whitespace-nowrap relative group ${isActive(link.path)
-                  ? isScrolled || !isHomePage
-                    ? "text-secondary"
-                    : "text-white"
-                  : isScrolled || !isHomePage
-                    ? "text-white/80 hover:text-secondary"
-                    : "text-white/90 hover:text-white"
+                  ? "text-primary"
+                  : "text-foreground/70 hover:text-primary"
                   }`}
               >
                 {link.name}
                 <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all group-hover:w-full ${isActive(link.path) ? "w-full" : ""
-                  } ${isScrolled || !isHomePage ? "bg-secondary" : "bg-white"}`} />
+                  } bg-primary`} />
               </Link>
             ))}
             <Button
@@ -95,15 +91,13 @@ const Navigation = () => {
             <img
               src={welcotLogo}
               alt="WELCOT Towels"
-              className={`h-16 w-auto transition-smooth ${isScrolled || !isHomePage ? "brightness-0 invert" : "brightness-0 invert drop-shadow-lg"
-                }`}
+              className="h-16 w-auto transition-smooth"
             />
           </Link>
 
           {/* Mobile Menu Button */}
           <button
-            className={`p-2 transition-smooth ${isScrolled || !isHomePage ? "text-white" : "text-white"
-              }`}
+            className="p-2 transition-smooth text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -113,13 +107,13 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-white/10 bg-primary/95 backdrop-blur-lg">
+          <div className="lg:hidden py-4 border-t border-border/20 bg-white/95 backdrop-blur-lg">
             {links.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block py-3 text-sm font-medium transition-smooth ${isActive(link.path) ? "text-secondary" : "text-white/80 hover:text-secondary"
+                className={`block py-3 text-sm font-medium transition-smooth ${isActive(link.path) ? "text-primary" : "text-foreground/70 hover:text-primary"
                   }`}
               >
                 {link.name}
