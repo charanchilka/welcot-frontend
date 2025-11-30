@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Accessories from "./pages/Accessories";
+import AccessoryDetail from "./pages/AccessoryDetail";
 import Sustainable from "./pages/Sustainable";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -31,9 +32,10 @@ const App = () => (
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/products/:slug" element={<ProductDetail />} />
-              <Route path="/accessories" element={<Accessories />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:slug" element={<ProductDetail />} />
+          <Route path="/accessories" element={<Accessories />} />
+          <Route path="/accessories/:slug" element={<AccessoryDetail />} />
               <Route path="/sustainable" element={<Sustainable />} />
               <Route path="/about" element={<About />} />
               <Route path="/workshops" element={<Workshops />} />
