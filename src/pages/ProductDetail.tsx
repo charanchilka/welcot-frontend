@@ -1,8 +1,20 @@
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Check } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { 
+  Ruler, 
+  Palette, 
+  Package, 
+  Sparkles, 
+  ShoppingCart,
+  Scissors,
+  Weight,
+  Brush,
+  Grid3x3,
+  Eye,
+  Tag
+} from "lucide-react";
 import bathTowels from "@/assets/products/bath-towels.jpg";
 import handTowels from "@/assets/products/hand-towels.jpg";
 import faceTowels from "@/assets/products/face-towels.jpg";
@@ -23,6 +35,10 @@ import promotionalTowels from "@/assets/products/promotional-towels.jpg";
 import customDesignTowels from "@/assets/products/custom-design-towels.jpg";
 import turkishTowels from "@/assets/products/turkish-towels.jpg";
 import honeycombTowels from "@/assets/products/honeycomb-towels.jpg";
+import luxuryIcon from "@/assets/luxury-towel.jpg";
+import premiumIcon from "@/assets/premium-towel.jpg";
+import standardIcon from "@/assets/standard-towel.jpg";
+import hygieneIcon from "@/assets/hygiene-towel.jpg";
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -31,386 +47,212 @@ const ProductDetail = () => {
     {
       slug: "bath-towels",
       name: "Bath Towels",
-      categories: ["luxury", "premium", "standard", "hygenie"],
-      description: "Full-body coverage with exceptional absorbency and softness. From ultra-soft luxury options for 5-star resorts to durable standard variants.",
-      detailedDescription: "Our bath towels are designed to provide ultimate comfort and absorbency. Made from premium cotton, they offer a luxurious feel while maintaining durability for long-term use in hotels, spas, and homes.",
-      sizes: "30x60\", 27x54\", 24x48\"",
+      tagline: "Softness. Absorbency. Excellence.",
+      categories: ["luxury", "premium", "standard", "hygiene"],
+      description: "Our bath towels offer full-body coverage with exceptional absorbency and softness. From ultra-soft luxury options for 5-star resorts to durable standard variants for high-volume needs, we offer a complete range suitable for every level of hospitality and wellness.",
+      sizes: '30x60", 27x54", 24x48"',
       image: bathTowels,
-      features: [
-        "Premium cotton construction",
-        "High absorbency rate",
-        "Soft and plush texture",
-        "Durable for repeated washing",
-        "Available in multiple quality tiers",
-        "Custom colors and branding available"
-      ],
-      applications: ["5-star hotels", "Luxury resorts", "Spas & wellness centers", "Premium home use"],
-      gsm: "400-700 GSM depending on quality tier"
+      customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
       slug: "hand-towels",
       name: "Hand Towels",
-      categories: ["luxury", "premium", "standard", "hygenie"],
-      description: "Designed for guest rooms and bathrooms, delivering a soft, quick-drying experience. Available in every quality tier.",
-      detailedDescription: "Perfect for guest rooms and bathrooms, our hand towels combine functionality with elegance. They're designed to dry quickly while maintaining their softness wash after wash.",
-      sizes: "18x30\", 16x24\", 14x21\"",
+      tagline: "Soft Touch. Quick Dry. Perfect Hospitality.",
+      categories: ["luxury", "premium", "standard", "hygiene"],
+      description: "Designed for guest rooms and bathrooms, delivering a soft, quick-drying experience. Available in every quality tier, our hand towels combine functionality with elegance for the discerning hospitality professional.",
+      sizes: '18x30", 16x24", 14x21"',
       image: handTowels,
-      features: [
-        "Quick-drying properties",
-        "Soft and gentle on skin",
-        "Compact size for convenience",
-        "Fade-resistant colors",
-        "Multiple quality options",
-        "Ideal for hospitality use"
-      ],
-      applications: ["Hotels", "Guest bathrooms", "Restaurants", "Healthcare facilities"],
-      gsm: "350-600 GSM depending on quality tier"
+      customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
       slug: "face-towels",
       name: "Face Towels",
-      categories: ["luxury", "premium", "standard", "hygenie"],
-      description: "Gentle on skin and ideal for spa, skincare, and hotel use. Crafted to provide comfort, hygiene, and durability.",
-      detailedDescription: "Our face towels are specially crafted for gentle skin contact. Perfect for spas, skincare routines, and hotel amenities, they provide superior softness and hygiene.",
-      sizes: "13x13\", 12x12\"",
+      tagline: "Gentle Care. Pure Comfort. Spa Quality.",
+      categories: ["luxury", "premium", "standard", "hygiene"],
+      description: "Gentle on skin and ideal for spa, skincare, and hotel use. Crafted to provide comfort, hygiene, and durability with ultra-soft fibers perfect for delicate facial care.",
+      sizes: '13x13", 12x12"',
       image: faceTowels,
-      features: [
-        "Ultra-soft for facial use",
-        "Hypoallergenic materials",
-        "Excellent water absorption",
-        "Lint-free finish",
-        "Compact and portable",
-        "Perfect for skincare routines"
-      ],
-      applications: ["Spas", "Beauty salons", "Hotels", "Personal skincare"],
-      gsm: "300-500 GSM depending on quality tier"
+      customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
       slug: "towel-sets",
       name: "Towel Sets",
-      categories: ["luxury", "premium", "standard", "hygenie"],
-      description: "Curated sets combining bath, hand, and face towels in coordinated styles. Ideal for hotels and gifting programs.",
-      detailedDescription: "Complete towel sets that bring harmony to any bathroom. Our coordinated sets include bath, hand, and face towels in matching colors and quality, perfect for hotels and premium gifting.",
-      sizes: "Bath 30x60\", Hand 16x24\", Face 12x12\"",
+      tagline: "Complete Collection. Coordinated Elegance.",
+      categories: ["luxury", "premium", "standard", "hygiene"],
+      description: "Curated sets combining bath, hand, and face towels in coordinated styles. Ideal for hotels, corporate gifting programs, and premium retail. Available in all quality tiers with custom packaging options.",
+      sizes: 'Bath 30x60", Hand 16x24", Face 12x12"',
       image: towelSets,
-      features: [
-        "Coordinated color schemes",
-        "Complete bathroom solution",
-        "Premium packaging options",
-        "Consistent quality across all pieces",
-        "Ideal for gifting",
-        "Custom branding available"
-      ],
-      applications: ["Hotels", "Corporate gifting", "Retail", "Wedding gifts"],
-      gsm: "Varies by tier and piece"
+      customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
       slug: "beach-towels",
       name: "Beach Towels",
-      categories: ["premium", "standard", "hygenie"],
-      description: "Vibrant, oversized, and fast-drying. Perfect for resorts, waterparks, and leisure brands.",
-      detailedDescription: "Extra-large beach towels designed for maximum coverage and quick drying. Ideal for resorts, waterparks, and beach clubs, they combine functionality with vibrant designs.",
-      sizes: "40x72\", 36x72\", 30x60\"",
+      tagline: "Vibrant Colors. Oversized Comfort. Fast Drying.",
+      categories: ["premium", "standard", "hygiene"],
+      description: "Vibrant, oversized, and fast-drying. Perfect for resorts, waterparks, and leisure brands. Our beach towels combine bold designs with practical performance for high-traffic coastal locations.",
+      sizes: '40x72", 36x72", 30x60"',
       image: beachTowels,
-      features: [
-        "Oversized for full coverage",
-        "Fast-drying fabric",
-        "Vibrant color options",
-        "Sand-resistant",
-        "Lightweight yet absorbent",
-        "Custom designs available"
-      ],
-      applications: ["Beach resorts", "Waterparks", "Pool clubs", "Leisure brands"],
-      gsm: "400-550 GSM"
+      customization: ["Size", "GSM", "Color", "Design"],
     },
     {
       slug: "pool-towels",
       name: "Pool Towels",
-      categories: ["premium", "standard", "hygenie"],
-      description: "Built for performance in humid environments. Durable, highly absorbent, and fast-drying for hotels, spas, and health clubs.",
-      detailedDescription: "Engineered for high-traffic pool areas, our pool towels withstand frequent washing while maintaining their absorbency and softness. Perfect for commercial pool facilities.",
-      sizes: "40x72\", 36x72\", 30x60\"",
+      tagline: "Chlorine Resistant. High Performance. Hotel Grade.",
+      categories: ["premium", "standard", "hygiene"],
+      description: "Built for performance in humid environments. Durable, highly absorbent, and fast-drying for hotels, spas, and health clubs. Engineered to withstand frequent commercial laundering.",
+      sizes: '40x72", 36x72", 30x60"',
       image: poolTowels,
-      features: [
-        "Chlorine-resistant",
-        "High durability",
-        "Superior absorbency",
-        "Fast-drying properties",
-        "Industrial washing compatible",
-        "Color retention"
-      ],
-      applications: ["Hotels", "Spas", "Health clubs", "Swimming pools"],
-      gsm: "450-600 GSM"
+      customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
       slug: "kitchen-towels",
       name: "Kitchen Towels",
-      categories: ["premium", "standard", "hygenie"],
-      description: "Absorbent and lint-free terry towels for drying dishes and cleaning surfaces. Used in hospitality kitchens and restaurants.",
-      detailedDescription: "Professional-grade kitchen towels designed for commercial kitchens. Lint-free, highly absorbent, and durable enough for repeated use in demanding environments.",
-      sizes: "18x32\", 16x24\", 13x13\"",
+      tagline: "Lint-Free. Absorbent. Professional Grade.",
+      categories: ["premium", "standard", "hygiene"],
+      description: "Absorbent and lint-free terry towels for drying dishes and cleaning surfaces. Used in hospitality kitchens and restaurants where hygiene and performance matter.",
+      sizes: '18x32", 16x24", 13x13"',
       image: kitchenTowels,
-      features: [
-        "Lint-free for glassware",
-        "High absorbency",
-        "Durable construction",
-        "Easy to clean",
-        "Heat-resistant",
-        "Commercial-grade"
-      ],
-      applications: ["Restaurant kitchens", "Hotel kitchens", "Catering services", "Institutional use"],
-      gsm: "350-500 GSM"
+      customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
       slug: "bath-mats",
       name: "Bath Mats",
-      categories: ["luxury", "premium", "standard", "hygenie"],
-      description: "Soft and sturdy mats to absorb moisture and prevent slips. Available in plush luxury or high-function options.",
-      detailedDescription: "Our bath mats combine safety with comfort. Highly absorbent and slip-resistant, they're available in various quality tiers to suit different needs and budgets.",
-      sizes: "20x30\", 18x32\"",
+      tagline: "Plush Comfort. Safety First. Luxury Feel.",
+      categories: ["luxury", "premium", "standard", "hygiene"],
+      description: "Soft and sturdy mats to absorb moisture and prevent slips. Available in plush luxury or high-function options with slip-resistant backing for maximum safety.",
+      sizes: '20x30", 18x32"',
       image: bathMats,
-      features: [
-        "Slip-resistant backing",
-        "High moisture absorption",
-        "Plush comfort",
-        "Multiple sizes available",
-        "Machine washable",
-        "Durable construction"
-      ],
-      applications: ["Hotels", "Spas", "Homes", "Healthcare facilities"],
-      gsm: "600-900 GSM"
+      customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
       slug: "bathrobes",
       name: "Bathrobes",
-      categories: ["premium", "standard", "hygenie"],
-      description: "Wrap-around robes made from towel fabric for post-bath relaxation. Perfect for hotels, spas, and wellness resorts.",
-      detailedDescription: "Luxurious bathrobes crafted from premium terry fabric. Designed for comfort and elegance, they're perfect for hotels, spas, and upscale accommodations.",
+      tagline: "Wrap in Luxury. Supreme Comfort. Spa Experience.",
+      categories: ["premium", "standard", "hygiene"],
+      description: "Wrap-around robes made from towel fabric for post-bath relaxation. Perfect for hotels, spas, and wellness resorts. Available with custom embroidery and logo placement.",
       sizes: "S, M, L, XL",
       image: bathrobes,
-      features: [
-        "Soft terry fabric",
-        "Comfortable fit",
-        "Durable stitching",
-        "Absorbent material",
-        "Multiple sizes",
-        "Custom embroidery available"
-      ],
-      applications: ["Hotels", "Spas", "Wellness resorts", "Premium accommodations"],
-      gsm: "300-450 GSM"
+      customization: ["Size", "GSM", "Color", "Embroidery"],
     },
     {
       slug: "jacquard-towels",
       name: "Jacquard Towels",
-      categories: ["luxury", "premium", "standard", "hygenie"],
-      description: "Woven with intricate patterns to elevate your brand. Suitable for premium gifting, luxury hotels, and custom collections.",
-      detailedDescription: "Elegant jacquard towels featuring woven patterns that add sophistication to any setting. Perfect for luxury branding and premium presentations.",
-      sizes: "36x72\", 30x60\", 27x54\"",
+      tagline: "Woven Elegance. Intricate Patterns. Premium Art.",
+      categories: ["luxury", "premium", "standard", "hygiene"],
+      description: "Woven with intricate patterns to elevate your brand. Suitable for premium gifting, luxury hotels, and custom collections. Our jacquard designs create lasting impressions.",
+      sizes: '36x72", 30x60", 27x54"',
       image: jacquardTowels,
-      features: [
-        "Intricate woven patterns",
-        "Luxury appearance",
-        "Custom design capability",
-        "Premium quality",
-        "Elegant texture",
-        "Brand elevation"
-      ],
-      applications: ["Luxury hotels", "Premium gifting", "High-end retail", "Custom collections"],
-      gsm: "450-650 GSM"
+      customization: ["Size", "GSM", "Color", "Pattern"],
     },
     {
       slug: "velour-towels",
       name: "Velour Towels",
-      categories: ["premium", "standard", "hygenie"],
-      description: "Velvet-like finish combining softness and style. Used for promotional events, spas, or retail with elegant texture.",
-      detailedDescription: "Velour towels with a smooth, velvety finish on one side. They offer a unique tactile experience and are perfect for promotional items and luxury retail.",
-      sizes: "36x72\", 30x60\", 27x54\", 24x48\"",
+      tagline: "Velvet Touch. Elegant Finish. Promotional Perfect.",
+      categories: ["premium", "standard", "hygiene"],
+      description: "Velvet-like finish combining softness and style. Used for promotional events, spas, or retail with elegant texture. Perfect for printing and branding applications.",
+      sizes: '36x72", 30x60", 27x54", 24x48"',
       image: velourTowels,
-      features: [
-        "Velvet-like texture",
-        "Soft and luxurious",
-        "Excellent for printing",
-        "Elegant appearance",
-        "Versatile use",
-        "Premium feel"
-      ],
-      applications: ["Promotional events", "Spas", "Retail", "Beach clubs"],
-      gsm: "400-550 GSM"
+      customization: ["Size", "GSM", "Color", "Printing"],
     },
     {
       slug: "hotel-white-towels",
       name: "Hotel White Towels",
-      categories: ["luxury", "premium", "standard", "hygenie"],
-      description: "Crisp white towels for hotels and resorts. From ultra-luxury to cost-effective hygiene-treated versions for heavy laundering.",
-      detailedDescription: "Professional white towels designed specifically for the hospitality industry. Available in various quality tiers to suit different hotel categories and budgets.",
-      sizes: "36x72\", 30x60\", 27x54\", 16x24\"",
+      tagline: "Crisp White. Professional Grade. Built to Last.",
+      categories: ["luxury", "premium", "standard", "hygiene"],
+      description: "Crisp white towels for hotels and resorts. From ultra-luxury to cost-effective hygiene-treated versions for heavy laundering. The foundation of professional hospitality.",
+      sizes: '36x72", 30x60", 27x54", 16x24"',
       image: hotelWhiteTowels,
-      features: [
-        "Crisp white finish",
-        "Industrial washing resistant",
-        "Bleach-compatible options",
-        "Multiple quality tiers",
-        "High durability",
-        "Professional grade"
-      ],
-      applications: ["Hotels", "Resorts", "B&Bs", "Vacation rentals"],
-      gsm: "400-700 GSM depending on tier"
+      customization: ["Size", "GSM", "Bleach Treatment"],
     },
     {
       slug: "tea-towels",
       name: "Tea Towels",
-      categories: ["premium", "standard", "hygenie"],
-      description: "Lightweight and versatile for drying crockery and glassware. Used in hotels, cafes, and institutional kitchens.",
-      detailedDescription: "Traditional tea towels perfect for drying delicate items. Lint-free and highly absorbent, they're essential for any professional or home kitchen.",
-      sizes: "18x32\", 16x24\", 14x21\"",
+      tagline: "Classic Design. Highly Absorbent. Kitchen Essential.",
+      categories: ["premium", "standard", "hygiene"],
+      description: "Lightweight and versatile for drying crockery and glassware. Used in hotels, cafes, and institutional kitchens. Lint-free performance for delicate items.",
+      sizes: '18x32", 16x24", 14x21"',
       image: teaTowels,
-      features: [
-        "Lint-free for glassware",
-        "Lightweight and efficient",
-        "Quick-drying",
-        "Versatile use",
-        "Easy maintenance",
-        "Professional quality"
-      ],
-      applications: ["Hotels", "Cafes", "Restaurants", "Home kitchens"],
-      gsm: "300-400 GSM"
+      customization: ["Size", "GSM", "Color", "Design"],
     },
     {
       slug: "gym-sports-towels",
       name: "Gym/Sports Towels",
-      categories: ["premium", "standard", "hygenie"],
-      description: "Compact high-performance towels for gyms and fitness studios. Quick-drying and odor-resistant.",
-      detailedDescription: "Designed for active lifestyles, our gym towels are compact, quick-drying, and treated to resist odors. Perfect for fitness facilities and sports enthusiasts.",
-      sizes: "18x32\", 16x24\", 14x21\"",
+      tagline: "Quick Dry. Compact. Performance Ready.",
+      categories: ["premium", "standard", "hygiene"],
+      description: "Compact high-performance towels for gyms and fitness studios. Quick-drying and odor-resistant. Engineered for active lifestyles with antimicrobial options.",
+      sizes: '18x32", 16x24", 14x21"',
       image: gymTowels,
-      features: [
-        "Quick-drying fabric",
-        "Odor-resistant treatment",
-        "Compact and portable",
-        "High absorbency",
-        "Durable for frequent use",
-        "Antimicrobial options"
-      ],
-      applications: ["Gyms", "Fitness studios", "Sports clubs", "Personal training"],
-      gsm: "350-500 GSM"
+      customization: ["Size", "GSM", "Color", "Treatment"],
     },
     {
       slug: "monogrammed-towels",
       name: "Monogrammed Towels",
-      categories: ["luxury", "premium", "standard", "hygenie"],
-      description: "Add personal or brand touch with custom monogramming. Perfect for hotels, resorts, spas, and premium gifting.",
-      detailedDescription: "Personalized towels featuring custom monograms or logos. Add a distinctive touch to your brand or create memorable gifts with our embroidery services.",
-      sizes: "30x60\", 27x54\", 24x48\"",
+      tagline: "Personal Touch. Brand Identity. Elegant Detail.",
+      categories: ["luxury", "premium", "standard", "hygiene"],
+      description: "Add personal or brand touch with custom monogramming. Perfect for hotels, resorts, spas, and premium gifting. Multiple font options and thread colors available.",
+      sizes: '30x60", 27x54", 24x48"',
       image: monogrammedTowels,
-      features: [
-        "Custom monogramming",
-        "Multiple font options",
-        "Brand logo capability",
-        "Premium quality base",
-        "Elegant presentation",
-        "Gift-ready packaging"
-      ],
-      applications: ["Hotels", "Resorts", "Spas", "Premium gifting"],
-      gsm: "400-650 GSM depending on tier"
+      customization: ["Size", "GSM", "Color", "Monogram"],
     },
     {
       slug: "embroidery-towels",
       name: "Embroidery Towels",
-      categories: ["luxury", "premium", "standard", "hygenie"],
-      description: "High-definition embroidery craftsmanship with intricate multi-color motifs. From elegant monograms to artistic borders.",
-      detailedDescription: "Showcase your brand with intricate embroidery. Our skilled craftsmanship can create detailed multi-color designs, from simple monograms to elaborate artistic patterns.",
-      sizes: "30x60\", 27x54\", 24x48\"",
+      tagline: "Artistic Excellence. Multi-Color Detail. Luxury Craft.",
+      categories: ["luxury", "premium", "standard", "hygiene"],
+      description: "High-definition embroidery craftsmanship with intricate multi-color motifs. From elegant monograms to artistic borders. Perfect for luxury hotels and premium branding.",
+      sizes: '30x60", 27x54", 24x48"',
       image: embroideryTowels,
-      features: [
-        "High-definition embroidery",
-        "Multi-color designs",
-        "Intricate patterns",
-        "Custom artwork",
-        "Luxury finish",
-        "Artistic borders"
-      ],
-      applications: ["Luxury hotels", "Spas", "Premium retail", "Corporate gifting"],
-      gsm: "450-700 GSM"
+      customization: ["Size", "GSM", "Color", "Embroidery"],
     },
     {
       slug: "promotional-towels",
       name: "Promotional Towels",
-      categories: ["luxury", "premium", "standard", "hygenie"],
-      description: "Custom-branded towels for impactful giveaways, events, and brand campaigns. Logo jacquards, embroidery, or printed designs.",
-      detailedDescription: "Make a lasting impression with custom promotional towels. Available with jacquard weaving, embroidery, or printing, they're perfect for brand visibility and event marketing.",
-      sizes: "30x60\", 27x54\", 24x48\"",
+      tagline: "Brand Visibility. Event Ready. Marketing Power.",
+      categories: ["luxury", "premium", "standard", "hygiene"],
+      description: "Custom-branded towels for impactful giveaways, events, and brand campaigns. Logo jacquards, embroidery, or printed designs. Make lasting impressions with quality.",
+      sizes: '30x60", 27x54", 24x48"',
       image: promotionalTowels,
-      features: [
-        "Multiple branding options",
-        "Cost-effective marketing",
-        "High visibility",
-        "Quality that reflects your brand",
-        "Bulk order friendly",
-        "Fast turnaround options"
-      ],
-      applications: ["Corporate events", "Trade shows", "Brand campaigns", "Customer gifts"],
-      gsm: "350-600 GSM depending on tier"
+      customization: ["Size", "GSM", "Color", "Branding"],
     },
     {
       slug: "custom-design-towels",
       name: "Custom Design Towels",
+      tagline: "Your Vision. Our Expertise. Unlimited Possibilities.",
       categories: ["luxury", "premium", "standard"],
-      description: "Bring your creative vision to life. From concept sketch to final packaging, we transform your ideas into beautiful products.",
-      detailedDescription: "Complete custom design services from concept to delivery. Our team works with you to create unique towels that perfectly match your vision and brand identity.",
+      description: "Bring your creative vision to life. From concept sketch to final packaging, we transform your ideas into beautiful products. Full design consultation and prototype development.",
       sizes: "Customizable",
       image: customDesignTowels,
-      features: [
-        "Full design consultation",
-        "Custom sizes available",
-        "Unique color matching",
-        "Prototype development",
-        "Custom packaging",
-        "End-to-end project management"
-      ],
-      applications: ["Unique brand identities", "Special projects", "Designer collaborations", "Exclusive collections"],
-      gsm: "Customizable based on requirements"
+      customization: ["All Aspects Customizable"],
     },
     {
       slug: "turkish-towels",
       name: "Turkish Towels (Pestemal)",
+      tagline: "Lightweight Luxury. Travel Friendly. Beach Perfect.",
       categories: ["premium", "standard"],
-      description: "Lightweight flat-weave towels with decorative fringes. Quick-drying, travel-friendly, and perfect for beach resorts and spas.",
-      detailedDescription: "Authentic Turkish-style flat-weave towels that are lightweight, quick-drying, and beautifully designed. Perfect for travel, beaches, and spa experiences.",
-      sizes: "30x60\", 35x70\", 40x80\"",
+      description: "Lightweight flat-weave towels with decorative fringes. Quick-drying, travel-friendly, and perfect for beach resorts and spas. Authentic Turkish craftsmanship.",
+      sizes: '30x60", 35x70", 40x80"',
       image: turkishTowels,
-      features: [
-        "Lightweight and portable",
-        "Quick-drying",
-        "Decorative fringes",
-        "Space-saving",
-        "Versatile use",
-        "Traditional craftsmanship"
-      ],
-      applications: ["Beach resorts", "Spas", "Travel", "Yoga studios"],
-      gsm: "250-400 GSM"
+      customization: ["Size", "Color", "Fringe Style"],
     },
     {
       slug: "honeycomb-waffle-towels",
       name: "Honeycomb/Waffle Towels",
+      tagline: "Unique Weave. Fast Drying. Modern Aesthetic.",
       categories: ["premium", "standard"],
-      description: "Unique honeycomb weave for faster drying and high absorbency. Lightweight, elegant, and ideal for spa aesthetics.",
-      detailedDescription: "Distinctive waffle-weave towels that combine quick-drying properties with elegant aesthetics. The unique texture provides excellent absorbency while remaining lightweight.",
-      sizes: "30x60\", 27x54\", 24x48\"",
+      description: "Unique honeycomb weave for faster drying and high absorbency. Lightweight, elegant, and ideal for spa aesthetics. Contemporary design meets practical function.",
+      sizes: '30x60", 27x54", 24x48"',
       image: honeycombTowels,
-      features: [
-        "Unique honeycomb pattern",
-        "Fast-drying",
-        "Lightweight",
-        "Elegant texture",
-        "High absorbency",
-        "Modern aesthetic"
-      ],
-      applications: ["Spas", "Modern bathrooms", "Luxury hotels", "Contemporary retail"],
-      gsm: "300-450 GSM"
+      customization: ["Size", "GSM", "Color", "Pattern"],
     },
   ];
 
   const product = products.find(p => p.slug === slug);
+
+  // Get 4 random related products (excluding current)
+  const getRelatedProducts = () => {
+    const otherProducts = products.filter(p => p.slug !== slug);
+    return otherProducts.sort(() => 0.5 - Math.random()).slice(0, 4);
+  };
 
   if (!product) {
     return (
@@ -425,117 +267,258 @@ const ProductDetail = () => {
     );
   }
 
+  const relatedProducts = getRelatedProducts();
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10" style={{ paddingTop: "10rem", paddingBottom: "3rem" }}>
-        <div className="container mx-auto px-4 lg:px-8">
-          <Link to="/products" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-smooth mb-6">
-            <ArrowLeft size={20} />
-            Back to Products
-          </Link>
+      {/* Hero Section with Overlay */}
+      <div 
+        className="relative h-[70vh] bg-cover bg-center flex items-center justify-center"
+        style={{ 
+          backgroundImage: `url(${product.image})`,
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/70 to-background/90" />
+        
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-foreground">
+            {product.name}
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+            {product.tagline}
+          </p>
+          
+          {/* Quality Tier Badges */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {product.categories.includes("luxury") && (
+              <Badge variant="secondary" className="px-6 py-2 text-sm bg-accent/20 hover:bg-accent/30 border border-accent/40">
+                <img src={luxuryIcon} alt="Luxury" className="w-5 h-5 mr-2 inline-block" />
+                Welcot Luxury
+              </Badge>
+            )}
+            {product.categories.includes("premium") && (
+              <Badge variant="secondary" className="px-6 py-2 text-sm bg-accent/20 hover:bg-accent/30 border border-accent/40">
+                <img src={premiumIcon} alt="Premium" className="w-5 h-5 mr-2 inline-block" />
+                Welcot Premium
+              </Badge>
+            )}
+            {product.categories.includes("standard") && (
+              <Badge variant="secondary" className="px-6 py-2 text-sm bg-accent/20 hover:bg-accent/30 border border-accent/40">
+                <img src={standardIcon} alt="Standard" className="w-5 h-5 mr-2 inline-block" />
+                Welcot Standard
+              </Badge>
+            )}
+            {product.categories.includes("hygiene") && (
+              <Badge variant="secondary" className="px-6 py-2 text-sm bg-accent/20 hover:bg-accent/30 border border-accent/40">
+                <img src={hygieneIcon} alt="Hygiene" className="w-5 h-5 mr-2 inline-block" />
+                Welcot Hygiene
+              </Badge>
+            )}
+          </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 py-12">
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Product Image */}
-          <div className="relative">
-            <div className="aspect-square overflow-hidden rounded-2xl shadow-premium">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Product Info */}
-          <div className="flex flex-col justify-center">
-            <div className="flex flex-wrap gap-2 mb-4">
-              {product.categories.map((cat) => (
-                <Badge key={cat} variant="secondary" className="capitalize">
-                  {cat}
-                </Badge>
-              ))}
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              {product.name}
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6">
+      {/* Main Content */}
+      <div className="container mx-auto px-4 lg:px-8 py-16">
+        {/* Description Section */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+          <div>
+            <h2 className="text-4xl font-bold mb-6">{product.name}</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
               {product.description}
             </p>
-            <p className="text-base text-foreground mb-8">
-              {product.detailedDescription}
-            </p>
-
-            <div className="space-y-4 mb-8">
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Available Sizes</h3>
-                <p className="text-muted-foreground">{product.sizes}</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Weight (GSM)</h3>
-                <p className="text-muted-foreground">{product.gsm}</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild className="flex-1">
-                <Link to="/contact">Request Quote</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="flex-1">
-                <Link to="/contact">Request Free Samples</Link>
-              </Button>
-            </div>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-premium">
+            <img 
+              src={product.image} 
+              alt={`${product.name} detail`}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
-        {/* Features Section */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <Card className="p-8 shadow-soft">
-            <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-            <ul className="space-y-3">
-              {product.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <Check className="text-secondary mt-1 flex-shrink-0" size={20} />
-                  <span className="text-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
+        {/* Specifications & Options Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Specifications & Options</h2>
+            <p className="text-xl text-muted-foreground">Customized to your exact requirements</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {/* Quality Tiers Card */}
+            <Card className="p-6 shadow-soft hover:shadow-premium transition-smooth">
+              <div className="flex items-center gap-3 mb-4">
+                <Sparkles className="text-accent" size={24} />
+                <h3 className="text-lg font-semibold">Quality Tiers</h3>
+              </div>
+              <p className="text-muted-foreground">
+                {product.categories.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(", ")}
+              </p>
+            </Card>
+
+            {/* General Sizes Card */}
+            <Card className="p-6 shadow-soft hover:shadow-premium transition-smooth">
+              <div className="flex items-center gap-3 mb-4">
+                <Ruler className="text-accent" size={24} />
+                <h3 className="text-lg font-semibold">General Sizes</h3>
+              </div>
+              <p className="text-muted-foreground">
+                {product.sizes}
+              </p>
+            </Card>
+
+            {/* Customization Card */}
+            <Card className="p-6 shadow-soft hover:shadow-premium transition-smooth">
+              <div className="flex items-center gap-3 mb-4">
+                <Palette className="text-accent" size={24} />
+                <h3 className="text-lg font-semibold">Customization</h3>
+              </div>
+              <p className="text-muted-foreground">
+                {product.customization.join(", ")}
+              </p>
+            </Card>
+
+            {/* OEM & Branding Card */}
+            <Card className="p-6 shadow-soft hover:shadow-premium transition-smooth">
+              <div className="flex items-center gap-3 mb-4">
+                <Package className="text-accent" size={24} />
+                <h3 className="text-lg font-semibold">OEM & Branding</h3>
+              </div>
+              <p className="text-muted-foreground">
+                Custom branding & packaging
+              </p>
+            </Card>
+          </div>
+
+          {/* Full Customization Options */}
+          <Card className="p-8 md:p-12 shadow-premium bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+            <h3 className="text-3xl font-bold mb-8 text-center">Full Customization Options</h3>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+              <div className="flex items-start gap-4">
+                <Scissors className="text-accent mt-1" size={24} />
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Size</h4>
+                  <p className="text-muted-foreground">Any dimension to suit your needs</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Weight className="text-accent mt-1" size={24} />
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">GSM</h4>
+                  <p className="text-muted-foreground">Custom weight specifications</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Palette className="text-accent mt-1" size={24} />
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Color</h4>
+                  <p className="text-muted-foreground">Match any Pantone shade</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Grid3x3 className="text-accent mt-1" size={24} />
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Weave Pattern</h4>
+                  <p className="text-muted-foreground">Terry, jacquard, waffle & more</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Eye className="text-accent mt-1" size={24} />
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Border Design</h4>
+                  <p className="text-muted-foreground">Custom borders and edges</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Brush className="text-accent mt-1" size={24} />
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Custom Design</h4>
+                  <p className="text-muted-foreground">Embroidery, printing, jacquard</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t border-border pt-6">
+              <p className="text-muted-foreground text-center">
+                <strong>OEM Manufacturing:</strong> We offer complete OEM manufacturing services with custom branding, labeling, and packaging tailored to your brand identity.
+              </p>
+            </div>
           </Card>
 
-          <Card className="p-8 shadow-soft">
-            <h2 className="text-2xl font-bold mb-6">Applications</h2>
-            <ul className="space-y-3">
-              {product.applications.map((app, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <Check className="text-secondary mt-1 flex-shrink-0" size={20} />
-                  <span className="text-foreground">{app}</span>
-                </li>
-              ))}
-            </ul>
+          {/* MOQ Section */}
+          <Card className="p-8 mt-6 shadow-soft">
+            <div className="flex items-start gap-4 mb-4">
+              <ShoppingCart className="text-accent mt-1" size={28} />
+              <div>
+                <h3 className="text-2xl font-bold mb-3">Minimum Order Quantity</h3>
+                <p className="text-lg mb-2">
+                  <strong>MOQ:</strong> Minimum order starts from <span className="text-accent font-semibold">300 kg per color</span>.
+                </p>
+                <p className="text-muted-foreground">
+                  Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications.
+                </p>
+              </div>
+            </div>
           </Card>
         </div>
 
-        {/* CTA Section */}
-        <Card className="p-12 text-center shadow-premium bg-gradient-to-br from-primary/10 via-background to-secondary/10 border-primary/20">
-          <h2 className="text-3xl font-bold mb-4">Ready to Order?</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Get in touch with our team to discuss your requirements, request samples, or place an order. We're here to help bring your vision to life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link to="/contact">Contact Our Team</Link>
-            </Button>
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
+          <Button size="lg" asChild className="text-lg px-8 py-6">
+            <Link to="/contact">Contact Us to Know Your MOQ in Pieces</Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6">
+            <Link to="/contact">Need Free Samples? Contact Us</Link>
+          </Button>
+        </div>
+
+        {/* Related Products Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Explore More Towels</h2>
+            <p className="text-xl text-muted-foreground">Discover our complete collection</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {relatedProducts.map((relatedProduct) => (
+              <Link 
+                key={relatedProduct.slug} 
+                to={`/products/${relatedProduct.slug}`}
+                className="group"
+              >
+                <Card className="overflow-hidden shadow-soft hover:shadow-premium transition-smooth">
+                  <div className="relative aspect-square overflow-hidden">
+                    <img 
+                      src={relatedProduct.image} 
+                      alt={relatedProduct.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-semibold text-lg mb-2">{relatedProduct.name}</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      {relatedProduct.description}
+                    </p>
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center">
             <Button size="lg" variant="outline" asChild>
-              <Link to="/products">View More Products</Link>
+              <Link to="/products">View All Products</Link>
             </Button>
           </div>
-          <p className="text-sm text-muted-foreground mt-6">
-            MOQ: Starting from 300 kg per color/design • Lead time: 3-7 weeks
-          </p>
-        </Card>
+        </div>
       </div>
     </div>
   );
