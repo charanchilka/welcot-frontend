@@ -7,59 +7,57 @@ const Accessories = () => {
   const accessories = [
     {
       name: "Bags",
-      categories: ["luxury", "premium", "standard"],
       description: "Stylish and functional bags made from premium terry fabric. Perfect for beach trips, gym sessions, or everyday use.",
       sizes: "Small, Medium, Large",
       image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&h=600&fit=crop"
     },
     {
       name: "Pouches",
-      categories: ["luxury", "premium", "standard"],
       description: "Elegant terry pouches for organizing essentials. Ideal for toiletries, accessories, or travel items.",
       sizes: "Small, Medium",
       image: "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=800&h=600&fit=crop"
     },
     {
       name: "Hats / Caps",
-      categories: ["premium", "standard"],
       description: "Terry-lined hats and caps that provide sun protection with style. Absorbent inner lining keeps you cool and comfortable.",
       sizes: "One Size, Adjustable",
       image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&h=600&fit=crop"
     },
     {
       name: "Beach Ponchos",
-      categories: ["premium", "standard"],
       description: "Convenient terry ponchos for quick changes at the beach or pool. Soft, absorbent, and perfect for resorts.",
       sizes: "Adult, Kids",
       image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop"
     },
     {
-      name: "Baby Hooded Towels",
-      categories: ["luxury", "premium", "standard"],
-      description: "Adorable hooded towels designed especially for babies and toddlers. Ultra-soft, gentle on delicate skin.",
-      sizes: "0-12 months, 1-3 years",
+      name: "Hair Towels",
+      description: "Quick-dry hair towels with button closure for hands-free drying. Gentle on hair and prevents damage.",
+      sizes: "One Size",
+      image: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&h=600&fit=crop"
+    },
+    {
+      name: "Dish Scrubbers",
+      description: "Terry dish scrubbers with non-scratch texture for effective cleaning. Absorbent and lint-free.",
+      sizes: "Standard",
+      image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=800&h=600&fit=crop"
+    },
+    {
+      name: "Baby Bibs / Burp Cloths",
+      description: "Soft terry bibs and burp cloths for babies. Highly absorbent and gentle on delicate skin.",
+      sizes: "Standard",
       image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=600&fit=crop"
     },
     {
-      name: "Slippers",
-      categories: ["luxury", "premium", "standard"],
-      description: "Luxurious terry slippers for hotels, spas, and home use. Soft, comfortable, and available with custom embroidery.",
-      sizes: "S, M, L, XL",
-      image: "https://images.unsplash.com/photo-1585897258642-682d4c57b2ff?w=800&h=600&fit=crop"
+      name: "Baby Bath Robes",
+      description: "Adorable hooded bath robes for babies and toddlers. Ultra-soft terry fabric with cute designs.",
+      sizes: "0-12 months, 1-3 years, 3-5 years",
+      image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?w=800&h=600&fit=crop"
     },
     {
-      name: "Headbands",
-      categories: ["premium", "standard"],
-      description: "Terry headbands perfect for spa treatments, skincare routines, and beauty applications. Soft and absorbent.",
-      sizes: "One Size",
-      image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=600&fit=crop"
-    },
-    {
-      name: "Eye Masks",
-      categories: ["premium", "standard"],
-      description: "Soft terry eye masks for spa treatments and relaxation. Can be used with hot or cold therapy.",
-      sizes: "One Size",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop"
+      name: "Terry Apparel",
+      description: "Fashion-forward terry cloth clothing including shorts, t-shirts, and loungewear. Comfortable and stylish.",
+      sizes: "XS, S, M, L, XL, XXL",
+      image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&h=600&fit=crop"
     },
   ];
 
@@ -89,34 +87,20 @@ const Accessories = () => {
             return (
               <Card key={index} className="overflow-hidden shadow-soft hover:shadow-premium transition-smooth group">
                 <Link to={`/accessories/${slug}`}>
-                  <div className="aspect-video overflow-hidden cursor-pointer">
+                  <div className="aspect-square overflow-hidden cursor-pointer">
                     <img
                       src={accessory.image}
                       alt={accessory.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
                     />
                   </div>
                 </Link>
                 <CardHeader>
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <Link to={`/accessories/${slug}`}>
-                      <CardTitle className="text-xl hover:text-primary transition-smooth cursor-pointer">
-                        {accessory.name}
-                      </CardTitle>
-                    </Link>
-                    <div className="flex flex-wrap gap-1 justify-end">
-                      {accessory.categories.slice(0, 2).map((cat) => (
-                        <Badge key={cat} variant="secondary" className="capitalize text-xs">
-                          {cat}
-                        </Badge>
-                      ))}
-                      {accessory.categories.length > 2 && (
-                        <Badge variant="secondary" className="text-xs">
-                          +{accessory.categories.length - 2}
-                        </Badge>
-                      )}
-                    </div>
-                  </div>
+                  <Link to={`/accessories/${slug}`}>
+                    <CardTitle className="text-xl hover:text-primary transition-smooth cursor-pointer">
+                      {accessory.name}
+                    </CardTitle>
+                  </Link>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-3 line-clamp-2">{accessory.description}</p>
