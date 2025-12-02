@@ -1,181 +1,428 @@
+import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, Eye, Heart, Globe, Users, Award } from "lucide-react";
-import heroTowels from "@/assets/hero-towels.jpg";
-import missionImage from "@/assets/mission-image.png";
-import visionImage from "@/assets/vision-image.png";
+import { Linkedin } from "lucide-react";
+import aboutHero from "@/assets/about-hero.jpg";
+import aboutPartners from "@/assets/about-partners.jpg";
+import teamRohan from "@/assets/team-rohan.jpg";
+import teamNikhil from "@/assets/team-nikhil.jpg";
+import teamSiddharth from "@/assets/team-siddharth.jpg";
+import aboutVision from "@/assets/about-vision.jpg";
+import aboutMission from "@/assets/about-mission.jpg";
+import valueQuality from "@/assets/value-quality.jpg";
+import valueCollection from "@/assets/value-collection.jpg";
+import valueManufacturing from "@/assets/value-manufacturing.jpg";
+import valuePartnership from "@/assets/value-partnership.jpg";
+import valueInnovation from "@/assets/value-innovation.jpg";
+import valueSustainability from "@/assets/value-sustainability.jpg";
 
 const About = () => {
+  const [counts, setCounts] = useState({ countries: 0, years: 0, quality: 0 });
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const counterRef = useRef<HTMLDivElement>(null);
+  const valueSectionsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Counter animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            
+            // Animate countries counter
+            let countriesCount = 0;
+            const countriesInterval = setInterval(() => {
+              countriesCount += 1;
+              setCounts((prev) => ({ ...prev, countries: countriesCount }));
+              if (countriesCount >= 25) clearInterval(countriesInterval);
+            }, 50);
+
+            // Animate years counter
+            let yearsCount = 0;
+            const yearsInterval = setInterval(() => {
+              yearsCount += 1;
+              setCounts((prev) => ({ ...prev, years: yearsCount }));
+              if (yearsCount >= 20) clearInterval(yearsInterval);
+            }, 50);
+
+            // Animate quality counter
+            let qualityCount = 0;
+            const qualityInterval = setInterval(() => {
+              qualityCount += 5;
+              setCounts((prev) => ({ ...prev, quality: qualityCount }));
+              if (qualityCount >= 100) clearInterval(qualityInterval);
+            }, 30);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  // Navigation bar hide/show on core values sections
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const nav = document.querySelector('nav');
+          if (entry.isIntersecting) {
+            nav?.classList.add('opacity-0', 'pointer-events-none');
+          } else {
+            nav?.classList.remove('opacity-0', 'pointer-events-none');
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    valueSectionsRef.current.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const teamMembers = [
+    {
+      name: "Rohan Chilka",
+      role: "Marketing & Client Relations",
+      image: teamRohan,
+      linkedin: "#"
+    },
+    {
+      name: "Nikhil Maheshwar",
+      role: "Marketing & Operations",
+      image: teamNikhil,
+      linkedin: "#"
+    },
+    {
+      name: "Siddharth Kavaddevi",
+      role: "Finance & Administration",
+      image: teamSiddharth,
+      linkedin: "#"
+    }
+  ];
+
+  const coreValues = [
+    {
+      title: "Reliable Quality with Responsible Support",
+      content: `Every Welcot towel goes through a carefully supervised inspection process, ensuring top-tier quality at every stage. However, as with all hand-finished products, occasional human errors are a reality in textile production.
+
+What sets us apart is how we respond:
+
+• Replace it immediately or issue a full refund
+• Handle all return shipping and coordination at our cost
+• Ensure you're never left with a problem — only a solution
+
+We don't just promise quality. We protect it.`,
+      image: valueQuality
+    },
+    {
+      title: "Widest Product Collection, Tailored for Every Need",
+      content: `At Welcot, we understand that different markets require different towel solutions — in material, price point, design, and purpose. That's why we've built one of the most versatile and scalable towel collections in the industry.
+
+From ultra-luxury zero-twist bath towels to value-based recycled yarn products, our range is designed to meet the unique needs of:
+
+• Importers & wholesalers
+• Private label brands
+• Retail chains & hypermarkets
+• Hotels, salons, and institutions`,
+      image: valueCollection
+    },
+    {
+      title: "Large-Scale, Modern Towel Manufacturing",
+      content: `Our manufacturing facilities are equipped with state-of-the-art machinery and operated by experienced professionals who understand the nuances of terry towel production.
+
+We combine traditional craftsmanship with modern technology to deliver:
+
+• Consistent quality across large production runs
+• Fast turnaround times without compromising standards
+• Scalable capacity to meet growing demand
+• Advanced quality control at every production stage`,
+      image: valueManufacturing
+    },
+    {
+      title: "True Partnership, Not Just Transactions",
+      content: `At Welcot, we believe in building lasting relationships with our clients. We're not just another supplier — we're your manufacturing partner invested in your success.
+
+Our partnership approach includes:
+
+• Transparent pricing with no hidden costs
+• Flexible MOQs to support your business growth
+• Dedicated account management
+• Proactive communication throughout production
+• Solutions-focused problem solving`,
+      image: valuePartnership
+    },
+    {
+      title: "Innovation in Every Thread",
+      content: `We continuously invest in research, development, and technology to stay ahead of industry trends and deliver innovative products that give our clients a competitive edge.
+
+Our innovation focus includes:
+
+• New fabric technologies and weaving techniques
+• Sustainable and eco-friendly manufacturing methods
+• Custom design capabilities and pattern development
+• Advanced dyeing and finishing processes
+• Smart packaging and branding solutions`,
+      image: valueInnovation
+    },
+    {
+      title: "Commitment to Sustainability",
+      content: `We recognize our responsibility to the environment and are committed to sustainable manufacturing practices that protect our planet for future generations.
+
+Our sustainability initiatives include:
+
+• Use of organic and recycled cotton materials
+• Water-efficient production processes
+• Energy-saving manufacturing equipment
+• Eco-friendly dyes and chemicals
+• Waste reduction and recycling programs
+• Ethical labor practices and fair wages`,
+      image: valueSustainability
+    }
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Banner with Image */}
-      <div className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* Hero Banner */}
+      <div className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroTowels})` }}
+          style={{ backgroundImage: `url(${aboutHero})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background/80"></div>
         </div>
-        <div className="relative z-10 text-center text-white px-4">
-          <div className="inline-block px-6 py-2 rounded-full border border-white/30 mb-6">
-            <p className="text-sm font-medium">About Us</p>
+        <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+          <div className="inline-block px-6 py-2 rounded-full border border-white/30 mb-6 animate-fade-in">
+            <p className="text-sm font-medium tracking-wide">About Us</p>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            About Us
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in leading-tight">
+            Manufacturing Quality Towels for Global Markets with Excellence
           </h1>
-          <div className="flex items-center justify-center gap-2 text-sm">
-            <span>Home</span>
-            <span>•</span>
-            <span>About Us</span>
+          <p className="text-lg md:text-xl text-white/90 animate-fade-in max-w-3xl mx-auto">
+            Softness, reliability, and craftsmanship woven into every product we deliver.
+          </p>
+        </div>
+      </div>
+
+      {/* About Us + Partners Image */}
+      <div className="container mx-auto px-4 lg:px-8 py-20 md:py-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+                Manufacturing Quality Towels for Global Markets with Excellence
+              </h2>
+              <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Welcot Towels is a manufacturer and exporter of terry towels, Turkish towels, and terry toweling accessories and apparel, founded by three second-generation entrepreneurs with a strong family legacy of over two decades in the towel manufacturing industry.
+                </p>
+                <p>
+                  Built on years of local expertise and domestic supply experience, Welcot was established with a shared vision — to bring together resources, craftsmanship, and innovation under one brand focused on the global market.
+                </p>
+                <p>
+                  We collaborate closely with our trusted manufacturing partners to oversee production, ensure superior quality, and deliver innovative product solutions. At Welcot, we are committed to serving international clients with quality towels, toweling accessories, and apparel backed by reliable service and professional excellence.
+                </p>
+                <p className="font-semibold text-foreground">
+                  With Welcot, you get more than great towels — you get a manufacturing partner focused on your growth.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-square overflow-hidden rounded-2xl shadow-2xl">
+                <img 
+                  src={aboutPartners} 
+                  alt="Welcot Partners" 
+                  className="w-full h-full object-cover hover:scale-105 transition-smooth"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 lg:px-8 py-20">
-        {/* Introduction Section */}
-        <div className="max-w-6xl mx-auto mb-24">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block px-4 py-1 rounded-full border border-primary/30 mb-6">
-                <p className="text-sm font-medium text-primary">About Us</p>
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                Manufacturing Quality Towels for Global Markets with Excellence
-              </h2>
-              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                At Welcot Towels LLP, we manufacture towels that truly represent your brand — from design to packaging. With a strong commitment to innovation and quality, we design products that are both durable and stylish, catering to the diverse needs of global customers.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Our focus on excellence drives us to consistently exceed industry standards, providing solutions that enhance everyday living. At Welcot Towels LLP, we prioritize customer satisfaction and strive to create products that enrich lives across all markets we serve.
-              </p>
-            </div>
-            
-            {/* Stats Card */}
-            <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-10 border border-primary/10">
-              <h3 className="text-2xl font-bold mb-6">Delivering Quality Worldwide</h3>
-              <p className="text-muted-foreground mb-8">
-                With decades of experience in towel production, Welcot Towels LLP has mastered innovation and quality, delivering exceptional products worldwide.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-primary mb-2">25+</div>
-                  <p className="text-sm text-muted-foreground">Countries Served</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-primary mb-2">150+</div>
-                  <p className="text-sm text-muted-foreground">Team Members</p>
-                </div>
-              </div>
-              <div className="mt-8 pt-6 border-t border-primary/20">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-secondary mb-2">2014</div>
-                  <p className="text-sm text-muted-foreground">Year Established</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* What Defines Us Section */}
-        <div className="mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">What Defines Us</h2>
+      {/* Our Team */}
+      <div className="bg-muted/30 py-20 md:py-32">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We are defined by our commitment to quality, innovation, and exceptional customer satisfaction
+              Meet the leaders driving Welcot's vision forward
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Mission Card */}
-            <Card className="overflow-hidden group hover:shadow-premium transition-smooth">
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={missionImage} 
-                  alt="Our Mission" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
-                />
-              </div>
-              <CardContent className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Target className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold">Our Mission</h3>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {teamMembers.map((member, index) => (
+              <Card key={index} className="overflow-hidden group hover:shadow-premium transition-smooth">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                  />
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  Our mission is to deliver innovative, high-quality towels that enhance everyday life. We are dedicated to exceeding industry standards through exceptional craftsmanship and sustainability, focusing on meeting the diverse needs of our global customers.
-                </p>
-              </CardContent>
-            </Card>
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
+                  <p className="text-muted-foreground mb-4">{member.role}</p>
+                  <a 
+                    href={member.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
 
-            {/* Vision Card */}
+      {/* Counters Section */}
+      <div ref={counterRef} className="py-20 md:py-32">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Delivering Quality Worldwide</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card className="p-10 text-center hover:shadow-premium transition-smooth">
+              <div className="text-6xl md:text-7xl font-bold text-primary mb-4">
+                {counts.countries}+
+              </div>
+              <p className="text-xl text-muted-foreground">Countries Served</p>
+            </Card>
+            <Card className="p-10 text-center hover:shadow-premium transition-smooth">
+              <div className="text-6xl md:text-7xl font-bold text-primary mb-4">
+                {counts.years}+
+              </div>
+              <p className="text-xl text-muted-foreground">Years of Manufacturing Experience</p>
+            </Card>
+            <Card className="p-10 text-center hover:shadow-premium transition-smooth">
+              <div className="text-6xl md:text-7xl font-bold text-primary mb-4">
+                {counts.quality}%
+              </div>
+              <p className="text-xl text-muted-foreground">Quality Assured</p>
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      {/* What Defines Us */}
+      <div className="bg-muted/30 py-20 md:py-32">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">What Defines Us</h2>
+            <p className="text-xl text-muted-foreground">
+              Our vision, mission, and the principles that guide our craftsmanship.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Vision + Mission */}
+      <div className="py-20 md:py-32">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <Card className="overflow-hidden group hover:shadow-premium transition-smooth">
-              <div className="aspect-video overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img 
-                  src={visionImage} 
+                  src={aboutVision} 
                   alt="Our Vision" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
                 />
               </div>
               <CardContent className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Eye className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold">Our Vision</h3>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  To be a globally trusted towel manufacturing partner known for quality, customization, and reliability — empowering brands to thrive in their markets with confidence and setting new benchmarks in product excellence.
+                <h3 className="text-3xl font-bold mb-4">Vision</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  To be a globally trusted towel manufacturing partner known for quality, customization, and reliability — empowering brands to thrive in their markets with confidence.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden group hover:shadow-premium transition-smooth">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={aboutMission} 
+                  alt="Our Mission" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                />
+              </div>
+              <CardContent className="p-8">
+                <h3 className="text-3xl font-bold mb-4">Mission</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Our goal is to help clients grow by offering not just great products, but also dependable service, transparency, and flexibility.
                 </p>
               </CardContent>
             </Card>
           </div>
         </div>
+      </div>
 
-        {/* Core Values Section */}
-        <div className="mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Core Values</h2>
+      {/* Our Core Values - Heading */}
+      <div className="bg-muted/30 py-20 md:py-32">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Core Values</h2>
             <p className="text-xl text-muted-foreground">
-              The principles that guide everything we do
+              What drives the way we work, produce, support, and grow with our clients.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {[
-              { icon: <Heart className="w-8 h-8" />, title: "Quality & Reliability", desc: "Consistent excellence in every product we manufacture" },
-              { icon: <Globe className="w-8 h-8" />, title: "Transparency", desc: "Open communication and fair pricing for all partners" },
-              { icon: <Users className="w-8 h-8" />, title: "Customer-First", desc: "Your success is our top priority in every interaction" },
-              { icon: <Award className="w-8 h-8" />, title: "Flexibility", desc: "Adaptable solutions tailored to your unique needs" },
-              { icon: <Target className="w-8 h-8" />, title: "Innovation", desc: "Continuous improvement in products and processes" },
-              { icon: <Eye className="w-8 h-8" />, title: "Service Excellence", desc: "Dependable support throughout our partnership" },
-            ].map((value, index) => (
-              <Card key={index} className="p-6 hover:shadow-premium transition-smooth group">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4 text-white group-hover:scale-110 transition-smooth">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{value.title}</h3>
-                <p className="text-muted-foreground">{value.desc}</p>
-              </Card>
-            ))}
-          </div>
         </div>
+      </div>
 
-        {/* Partner CTA */}
-        <div className="max-w-5xl mx-auto">
-          <Card className="overflow-hidden border-2 border-primary/20">
-            <div className="bg-gradient-to-br from-primary via-primary to-secondary p-12 text-center text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Partner With Excellence
-              </h2>
-              <p className="text-lg mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">
-                Whether you're outfitting a luxury hotel, building your retail brand, or expanding your product line, WELCOT Towels LLP delivers quality towels backed by decades of expertise, transparent service, and a true commitment to your success.
-              </p>
-              <div className="inline-block bg-white text-primary px-10 py-4 rounded-xl font-bold text-xl">
-                Your Growth is Our Mission
+      {/* Core Values - Full Width Sections */}
+      {coreValues.map((value, index) => (
+        <div 
+          key={index}
+          ref={(el) => (valueSectionsRef.current[index] = el)}
+          className="relative min-h-screen flex items-center"
+        >
+          <div className="absolute inset-0">
+            <img 
+              src={value.image} 
+              alt={value.title} 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+          </div>
+          <div className="relative z-10 container mx-auto px-4 lg:px-8 py-20">
+            <div className="max-w-2xl text-white">
+              <h3 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+                {value.title}
+              </h3>
+              <div className="text-lg md:text-xl leading-relaxed space-y-4 whitespace-pre-line">
+                {value.content}
               </div>
             </div>
-          </Card>
+          </div>
+        </div>
+      ))}
+
+      {/* Partner With Excellence */}
+      <div className="py-20 md:py-32">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <Card className="overflow-hidden border-2 border-primary/20">
+              <div className="bg-gradient-to-br from-primary via-primary to-secondary p-12 md:p-16 text-center text-white">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                  Partner With Excellence
+                </h2>
+                <p className="text-lg md:text-xl mb-10 opacity-95 max-w-3xl mx-auto leading-relaxed">
+                  Whether you're outfitting a luxury hotel, building your retail brand, or expanding your product line, WELCOT Towels LLP delivers quality towels backed by decades of expertise, transparent service, and a true commitment to your success.
+                </p>
+                <div className="inline-block bg-white text-primary px-10 py-5 rounded-xl font-bold text-xl md:text-2xl shadow-lg">
+                  Your Growth is Our Mission
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
