@@ -22,6 +22,10 @@ import whyUsManufacturing from "@/assets/why-us-manufacturing.jpg";
 import whyUsPartnership from "@/assets/why-us-partnership.jpg";
 import whyUsInnovation from "@/assets/why-us-innovation.jpg";
 import whyUsCollection from "@/assets/why-us-collection.jpg";
+import certDgft from "@/assets/cert-dgft.jpg";
+import certMsme from "@/assets/cert-msme.png";
+import certIcegate from "@/assets/cert-icegate.png";
+import certGst from "@/assets/cert-gst.png";
 
 const Home = () => {
   const heroSlides = [
@@ -126,10 +130,10 @@ const Home = () => {
   ];
 
   const certifications = [
-    { name: "ISO Certified", icon: <Award className="w-8 h-8" /> },
-    { name: "OEKO-TEX", icon: <Leaf className="w-8 h-8" /> },
-    { name: "GOTS", icon: <Shield className="w-8 h-8" /> },
-    { name: "Quality Tested", icon: <CheckCircle className="w-8 h-8" /> },
+    { name: "DGFT Registered", image: certDgft },
+    { name: "MSME Registered", image: certMsme },
+    { name: "ICEGATE", image: certIcegate },
+    { name: "GST Registered", image: certGst },
   ];
 
   const workshopImages = [
@@ -412,8 +416,8 @@ const Home = () => {
                   className="border-2 border-primary/10 shadow-soft hover:shadow-premium hover:border-primary/30 transition-smooth group cursor-pointer"
                 >
                   <CardContent className="p-8 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4 group-hover:scale-110 group-hover:bg-primary/20 transition-smooth">
-                      {cert.icon}
+                    <div className="inline-flex items-center justify-center w-32 h-32 mb-4 group-hover:scale-110 transition-smooth">
+                      <img src={cert.image} alt={cert.name} className="w-full h-full object-contain" />
                     </div>
                     <h3 className="text-base font-bold text-foreground">{cert.name}</h3>
                   </CardContent>
