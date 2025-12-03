@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Linkedin } from "lucide-react";
+import { Linkedin, CheckCircle, Package, Factory, Lightbulb, Target, Award } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutPartners from "@/assets/about-partners.jpg";
 import teamRohan from "@/assets/team-rohan.jpg";
@@ -111,6 +111,7 @@ const About = () => {
 
   const coreValues = [
     {
+      icon: <CheckCircle className="w-10 h-10" />,
       title: "Reliable Quality with Responsible Support",
       content: `Every Welcot towel goes through a carefully supervised inspection process, ensuring top-tier quality at every stage. However, as with all hand-finished products, occasional human errors are a reality in textile production.
 
@@ -124,6 +125,7 @@ We don't just promise quality. We protect it.`,
       image: valueQuality
     },
     {
+      icon: <Package className="w-10 h-10" />,
       title: "Widest Product Collection, Tailored for Every Need",
       content: `At Welcot, we understand that different markets require different towel solutions — in material, price point, design, and purpose. That's why we've built one of the most versatile and scalable towel collections in the industry.
 
@@ -136,6 +138,7 @@ From ultra-luxury zero-twist bath towels to value-based recycled yarn products, 
       image: valueCollection
     },
     {
+      icon: <Factory className="w-10 h-10" />,
       title: "Large-Scale, Modern Towel Manufacturing",
       content: `Our manufacturing facilities are equipped with state-of-the-art machinery and operated by experienced professionals who understand the nuances of terry towel production.
 
@@ -148,43 +151,45 @@ We combine traditional craftsmanship with modern technology to deliver:
       image: valueManufacturing
     },
     {
-      title: "True Partnership, Not Just Transactions",
-      content: `At Welcot, we believe in building lasting relationships with our clients. We're not just another supplier — we're your manufacturing partner invested in your success.
+      icon: <Lightbulb className="w-10 h-10" />,
+      title: "Sample Development / Sampling Solutions for Custom Towels",
+      content: `We offer a dedicated sampling process to help clients visualize and approve their custom towel designs before bulk production begins.
 
-Our partnership approach includes:
+Our sampling solutions include:
 
-• Transparent pricing with no hidden costs
-• Flexible MOQs to support your business growth
-• Dedicated account management
-• Proactive communication throughout production
-• Solutions-focused problem solving`,
-      image: valuePartnership
-    },
-    {
-      title: "Innovation in Every Thread",
-      content: `We continuously invest in research, development, and technology to stay ahead of industry trends and deliver innovative products that give our clients a competitive edge.
-
-Our innovation focus includes:
-
-• New fabric technologies and weaving techniques
-• Sustainable and eco-friendly manufacturing methods
-• Custom design capabilities and pattern development
-• Advanced dyeing and finishing processes
-• Smart packaging and branding solutions`,
+• Custom design development based on client specifications
+• Material and color matching for brand consistency
+• Multiple sample iterations until approval
+• Detailed cost and timeline estimates with each sample
+• Fast turnaround for urgent sampling needs`,
       image: valueInnovation
     },
     {
-      title: "Commitment to Sustainability",
-      content: `We recognize our responsibility to the environment and are committed to sustainable manufacturing practices that protect our planet for future generations.
+      icon: <Target className="w-10 h-10" />,
+      title: "Long-Term Business Vision",
+      content: `At Welcot, we don't just focus on the immediate transaction — we build partnerships designed for long-term success.
 
-Our sustainability initiatives include:
+Our business vision encompasses:
 
-• Use of organic and recycled cotton materials
-• Water-efficient production processes
-• Energy-saving manufacturing equipment
-• Eco-friendly dyes and chemicals
-• Waste reduction and recycling programs
-• Ethical labor practices and fair wages`,
+• Consistent quality that builds customer loyalty for your brand
+• Flexible growth support as your business scales
+• Transparent communication and pricing
+• Continuous product innovation to keep you ahead
+• Dedicated account management for personalized service`,
+      image: valuePartnership
+    },
+    {
+      icon: <Award className="w-10 h-10" />,
+      title: "Tested and Proven Quality",
+      content: `Every Welcot product undergoes rigorous testing to ensure it meets international quality standards before reaching our clients.
+
+Our quality assurance includes:
+
+• Third-party lab testing for colorfastness, absorbency, and durability
+• Compliance with OEKO-TEX and other international standards
+• In-house quality control at every production stage
+• Detailed test reports available upon request
+• Consistent quality across all production batches`,
       image: valueSustainability
     }
   ];
@@ -377,28 +382,35 @@ Our sustainability initiatives include:
         </div>
       </div>
 
-      {/* Core Values - Full Width Sections */}
+      {/* Core Values - Split Layout Sections */}
       {coreValues.map((value, index) => (
         <div 
           key={index}
           ref={(el) => (valueSectionsRef.current[index] = el)}
           className="relative min-h-screen flex items-center"
         >
-          <div className="absolute inset-0">
-            <img 
-              src={value.image} 
-              alt={value.title} 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
-          </div>
-          <div className="relative z-10 container mx-auto px-4 lg:px-8 py-20">
-            <div className="max-w-2xl text-white">
-              <h3 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
-                {value.title}
-              </h3>
-              <div className="text-lg md:text-xl leading-relaxed space-y-4 whitespace-pre-line">
-                {value.content}
+          <div className="w-full grid lg:grid-cols-2 min-h-screen">
+            {/* Image Side - Always Left */}
+            <div className="relative h-[50vh] lg:h-auto lg:min-h-screen order-1">
+              <img 
+                src={value.image} 
+                alt={value.title} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            {/* Content Side - Always Right */}
+            <div className="relative flex items-center bg-background order-2">
+              <div className="p-8 lg:p-16 xl:p-20 max-w-2xl">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-8">
+                  {value.icon}
+                </div>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight text-foreground">
+                  {value.title}
+                </h3>
+                <div className="text-lg md:text-xl leading-relaxed space-y-4 text-muted-foreground whitespace-pre-line">
+                  {value.content}
+                </div>
               </div>
             </div>
           </div>
@@ -411,15 +423,16 @@ Our sustainability initiatives include:
           <div className="max-w-5xl mx-auto">
             <Card className="overflow-hidden border-2 border-primary/20">
               <div className="bg-gradient-to-br from-primary via-primary to-secondary p-12 md:p-16 text-center text-white">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                  Partner With Excellence
-                </h2>
-                <p className="text-lg md:text-xl mb-10 opacity-95 max-w-3xl mx-auto leading-relaxed">
-                  Whether you're outfitting a luxury hotel, building your retail brand, or expanding your product line, WELCOT Towels LLP delivers quality towels backed by decades of expertise, transparent service, and a true commitment to your success.
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">Partner With Excellence</h2>
+                <p className="text-xl md:text-2xl opacity-90 mb-8 max-w-3xl mx-auto">
+                  Ready to elevate your towel collection? Let's work together to bring your vision to life.
                 </p>
-                <div className="inline-block bg-white text-primary px-10 py-5 rounded-xl font-bold text-xl md:text-2xl shadow-lg">
-                  Your Growth is Our Mission
-                </div>
+                <a 
+                  href="/contact" 
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-white text-primary hover:bg-white/90 transition-smooth shadow-premium"
+                >
+                  Contact Us Today
+                </a>
               </div>
             </Card>
           </div>

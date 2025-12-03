@@ -151,27 +151,33 @@ const Home = () => {
       {/* About Us Highlight - Luxurious */}
       <section className="relative py-32 overflow-hidden bg-muted/30">
         <div className="relative container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="space-y-6 animate-fade-in">
-              <p className="text-3xl lg:text-5xl leading-relaxed text-foreground font-light">
-                Welcot redefines towel craftsmanship — blending quality, care, and innovation.
-              </p>
-              <p className="text-xl lg:text-2xl leading-relaxed text-muted-foreground font-light">
-                Serving the finest hotels, spas, and homes worldwide.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+            <div className="order-2 lg:order-1 animate-fade-in">
+              <img 
+                src={whyUsManufacturing} 
+                alt="Towel Manufacturing" 
+                className="rounded-2xl shadow-premium w-full hover:scale-[1.02] transition-smooth"
+              />
             </div>
-
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="group hover:scale-105 transition-smooth shadow-soft border-2 hover:border-secondary hover:text-secondary"
-            >
-              <Link to="/about">
-                Read More About Us
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-smooth" size={20} />
-              </Link>
-            </Button>
+            <div className="order-1 lg:order-2 space-y-8 animate-fade-in">
+              <h2 className="text-3xl lg:text-5xl font-bold leading-tight text-foreground">
+                Redefining Towel Craftsmanship for the Global Market
+              </h2>
+              <p className="text-xl lg:text-2xl leading-relaxed text-muted-foreground font-light">
+                Welcot brings together tradition, innovation, and precision weaving to create premium towels trusted by international importers, hotels, and retail brands. From Solapur, India — to homes and stores worldwide.
+              </p>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="group hover:scale-105 transition-smooth shadow-soft border-2 hover:border-secondary hover:text-secondary"
+              >
+                <Link to="/about">
+                  Read More About Us
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-smooth" size={20} />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
