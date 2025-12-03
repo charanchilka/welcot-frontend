@@ -7,57 +7,57 @@ const Testimonials = () => {
   const testimonials = [
     {
       rating: 5,
-      text: "Absolutely the best towels we've ever used.",
-      description: "Our hotel guests frequently compliment the luxurious texture and softness. Welcot Luxury towels have set a new standard for our rooms.",
-      author: "Amit Sharma",
-      role: "General Manager",
-      company: "Oasis Grand Hotel",
-      initial: "AS"
+      text: "Outstanding finishing and packaging quality.",
+      description: "The finishing and packaging quality of their towels and toweling accessories are outstanding. Each shipment arrives exactly as ordered, with no surprises.",
+      country: "USA",
+      flag: "🇺🇸",
+      role: "Retail Importer",
+      initial: "RI"
     },
     {
       rating: 5,
-      text: "Soft, stylish, and built to last.",
-      description: "We've been using Welcot Premium towels for our spa for over a year — the feel is still incredible, even after countless washes.",
-      author: "Priyanka S.",
-      role: "Owner",
-      company: "Pure Bliss Spa",
-      initial: "PS"
-    },
-    {
-      rating: 4,
-      text: "Impressive quality at great value.",
-      description: "The Standard range has been perfect for our gym operations — quick-drying, durable, and comfortable for everyday use.",
-      author: "Ravi Mehta",
-      role: "Operations Head",
-      company: "FitZone Gyms",
-      initial: "RM"
+      text: "Extremely professional execution.",
+      description: "We developed a customized towel and toweling accessory range for our retail and online stores. The finishing, colors, and packaging were delivered exactly as promised. Extremely professional execution.",
+      country: "Greece",
+      flag: "🇬🇷",
+      role: "Retail & Online Brand",
+      initial: "RO"
     },
     {
       rating: 5,
-      text: "Excellent hygiene features.",
-      description: "The Hygiene collection is perfect for our clinic — soft to touch, easy to clean, and fresh after every use.",
-      author: "Dr. Kavya Nair",
-      role: "Chief Physician",
-      company: "Harmony Wellness Center",
-      initial: "KN"
+      text: "True premium hospitality standards.",
+      description: "Our branded embroidered and woven towel range supplied for our luxury resort met our highest expectations. The softness, craftsmanship, and finishing reflect true premium hospitality standards.",
+      country: "Maldives",
+      flag: "🇲🇻",
+      role: "Luxury Resort Group",
+      initial: "LR"
     },
     {
       rating: 5,
-      text: "Service and samples were outstanding.",
-      description: "Welcot's team quickly provided samples and helped us choose the right product lines for our needs. Excellent customer support experience.",
-      author: "Suresh Patel",
-      role: "Procurement Manager",
-      company: "Lotus Suites",
-      initial: "SP"
+      text: "Remarkable sampling accuracy.",
+      description: "The sampling accuracy is remarkable. What we approve is exactly what we receive in bulk production. Timely communication and delivery make them reliable suppliers.",
+      country: "Japan",
+      flag: "🇯🇵",
+      role: "Online Home Textile Brand",
+      initial: "OH"
     },
     {
       rating: 5,
-      text: "Exceptional quality and consistency.",
-      description: "We've been sourcing towels from Welcot for our chain of boutique hotels. The quality is consistent across all orders, and our guests love them.",
-      author: "Meera Reddy",
-      role: "Director of Procurement",
-      company: "Heritage Hotels Group",
-      initial: "MR"
+      text: "Exceptional price-to-quality ratio.",
+      description: "The price-to-quality ratio is exceptional. After switching to Welcot, customer repeat orders increased significantly.",
+      country: "Israel",
+      flag: "🇮🇱",
+      role: "Distributor",
+      initial: "DI"
+    },
+    {
+      rating: 5,
+      text: "Perfectly managed from development to shipment.",
+      description: "They handled our private label towel range from development to final shipment smoothly. Quality, compliance, and branding were all perfectly managed.",
+      country: "South Korea",
+      flag: "🇰🇷",
+      role: "Private Label Brand",
+      initial: "PL"
     }
   ];
 
@@ -133,18 +133,15 @@ const Testimonials = () => {
 
                   {/* Author Info */}
                   <div className="flex items-center gap-4 pt-6 border-t border-border relative z-10">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-semibold">
-                      {testimonial.initial}
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-semibold text-2xl">
+                      {testimonial.flag}
                     </div>
                     <div>
                       <p className="font-semibold text-foreground">
-                        {testimonial.author}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
                         {testimonial.role}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        {testimonial.company}
+                        {testimonial.country}
                       </p>
                     </div>
                   </div>
