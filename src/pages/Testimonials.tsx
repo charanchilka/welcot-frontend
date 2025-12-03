@@ -1,9 +1,65 @@
+import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Quote, Star, ArrowRight, Users } from "lucide-react";
 
 const Testimonials = () => {
+  const [counts, setCounts] = useState({ clients: 0, satisfaction: 0, towels: 0, countries: 0 });
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  // Counter animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            
+            // Animate clients counter (500+)
+            let clientsCount = 0;
+            const clientsInterval = setInterval(() => {
+              clientsCount += 10;
+              setCounts((prev) => ({ ...prev, clients: clientsCount }));
+              if (clientsCount >= 500) clearInterval(clientsInterval);
+            }, 20);
+
+            // Animate satisfaction counter (98%)
+            let satisfactionCount = 0;
+            const satisfactionInterval = setInterval(() => {
+              satisfactionCount += 2;
+              setCounts((prev) => ({ ...prev, satisfaction: satisfactionCount }));
+              if (satisfactionCount >= 98) clearInterval(satisfactionInterval);
+            }, 30);
+
+            // Animate towels counter (1M+)
+            let towelsCount = 0;
+            const towelsInterval = setInterval(() => {
+              towelsCount += 1;
+              setCounts((prev) => ({ ...prev, towels: towelsCount }));
+              if (towelsCount >= 1) clearInterval(towelsInterval);
+            }, 50);
+
+            // Animate countries counter (20+)
+            let countriesCount = 0;
+            const countriesInterval = setInterval(() => {
+              countriesCount += 1;
+              setCounts((prev) => ({ ...prev, countries: countriesCount }));
+              if (countriesCount >= 20) clearInterval(countriesInterval);
+            }, 50);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
   const testimonials = [
     {
       rating: 5,
@@ -153,23 +209,23 @@ const Testimonials = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-muted/30" ref={statsRef}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">500+</div>
+              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">{counts.clients}+</div>
               <p className="text-muted-foreground">Happy Clients</p>
             </div>
             <div>
-              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">98%</div>
+              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">{counts.satisfaction}%</div>
               <p className="text-muted-foreground">Customer Satisfaction</p>
             </div>
             <div>
-              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">1M+</div>
+              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">{counts.towels}M+</div>
               <p className="text-muted-foreground">Towels Delivered</p>
             </div>
             <div>
-              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">20+</div>
+              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">{counts.countries}+</div>
               <p className="text-muted-foreground">Countries Served</p>
             </div>
           </div>
