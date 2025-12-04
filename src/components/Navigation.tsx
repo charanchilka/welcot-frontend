@@ -82,6 +82,14 @@ const Navigation = () => {
             >
               <Link to="/contact">Get Catalog</Link>
             </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="ml-2 font-semibold"
+            >
+              <a href="/company-profile.pdf" download>Company Profile</a>
+            </Button>
           </div>
         </div>
 
@@ -128,6 +136,16 @@ const Navigation = () => {
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                 Get Catalog
               </Link>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="mt-2 w-full"
+              asChild
+            >
+              <a href="/company-profile.pdf" download onClick={() => setMobileMenuOpen(false)}>
+                Company Profile
+              </a>
             </Button>
           </div>
         )}

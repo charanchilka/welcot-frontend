@@ -11,6 +11,7 @@ import {
   Box,
   Sparkles
 } from "lucide-react";
+import ImageGalleryScroll from "@/components/ImageGalleryScroll";
 
 const AccessoryDetail = () => {
   const { slug } = useParams();
@@ -21,7 +22,11 @@ const AccessoryDetail = () => {
       name: "Terry Bags",
       tagline: "Function meets fashion in premium terry toweling",
       description: "Stylish and functional bags made from premium terry fabric. Perfect for beach trips, gym sessions, or everyday use. Our terry bags combine the absorbent properties of towel fabric with durable construction and stylish designs. Available in various sizes and colors with custom branding options.",
-      image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=800&h=600&fit=crop"
+      ],
       sizes: ["Small (30x20 cm)", "Medium (40x30 cm)", "Large (50x40 cm)"],
       moq: "300 kg per color/design (approximately 150-200 pieces depending on size)",
       relatedProducts: ["pouches", "beach-ponchos", "slippers"]
@@ -30,7 +35,11 @@ const AccessoryDetail = () => {
       name: "Terry Pouches",
       tagline: "Luxury storage solutions for every need",
       description: "Elegant terry pouches for organizing essentials. Ideal for toiletries, accessories, or travel items. Soft, absorbent, and beautifully crafted with custom branding options. Perfect for hotel amenity kits, spa packages, and promotional gifts.",
-      image: "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1605733513597-a8f8341084e6?w=800&h=600&fit=crop"
+      ],
       sizes: ["Small (15x10 cm)", "Medium (20x15 cm)"],
       moq: "300 kg per color/design (approximately 200-300 pieces depending on size)",
       relatedProducts: ["bags", "headbands", "eye-masks"]
@@ -39,7 +48,11 @@ const AccessoryDetail = () => {
       name: "Terry Hats & Caps",
       tagline: "Cool comfort for sunny days",
       description: "Terry-lined hats and caps that provide sun protection with style. Absorbent inner lining keeps you cool and comfortable during outdoor activities. Perfect for beach resorts, sports clubs, and promotional events.",
-      image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=800&h=600&fit=crop"
+      ],
       sizes: ["One Size", "Adjustable"],
       moq: "300 kg per color/design (approximately 200-250 pieces)",
       relatedProducts: ["beach-ponchos", "bags", "slippers"]
@@ -48,7 +61,11 @@ const AccessoryDetail = () => {
       name: "Beach Ponchos",
       tagline: "Easy on, easy off beach essential",
       description: "Convenient terry ponchos for quick changes at the beach or pool. Soft, absorbent, and perfect for resorts and beach clubs. Available in adult and kids sizes with custom designs and branding options.",
-      image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800&h=600&fit=crop"
+      ],
       sizes: ["Adult (One Size)", "Kids (8-12 years)"],
       moq: "300 kg per color/design (approximately 100-150 pieces)",
       relatedProducts: ["baby-hooded-towels", "bags", "hats-caps"]
@@ -57,7 +74,11 @@ const AccessoryDetail = () => {
       name: "Baby Hooded Towels",
       tagline: "Soft comfort for little ones",
       description: "Adorable hooded towels designed especially for babies and toddlers. Ultra-soft, gentle on delicate skin, and featuring cute designs. Perfect for bath time and pool fun. Made with premium terry fabric and available with custom embroidery.",
-      image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1544568100-847a948585b9?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&h=600&fit=crop"
+      ],
       sizes: ["0-12 months", "1-3 years"],
       moq: "300 kg per color/design (approximately 150-200 pieces)",
       relatedProducts: ["beach-ponchos", "pouches", "slippers"]
@@ -66,7 +87,11 @@ const AccessoryDetail = () => {
       name: "Terry Slippers",
       tagline: "Plush comfort for your feet",
       description: "Luxurious terry slippers for hotels, spas, and home use. Soft, comfortable, and available with custom embroidery. Disposable or reusable options available. Perfect for hospitality amenities and promotional gifts.",
-      image: "https://images.unsplash.com/photo-1585897258642-682d4c57b2ff?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1585897258642-682d4c57b2ff?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1631125915902-d8abe9225ff2?w=800&h=600&fit=crop"
+      ],
       sizes: ["S (36-37)", "M (38-39)", "L (40-41)", "XL (42-43)"],
       moq: "300 kg per color/design (approximately 200-300 pairs)",
       relatedProducts: ["bathrobes", "pouches", "bags"]
@@ -75,7 +100,11 @@ const AccessoryDetail = () => {
       name: "Terry Headbands",
       tagline: "Spa-style comfort and convenience",
       description: "Terry headbands perfect for spa treatments, skincare routines, and beauty applications. Soft, absorbent, and keeps hair securely in place. Available in various colors with custom branding options.",
-      image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&h=600&fit=crop"
+      ],
       sizes: ["One Size"],
       moq: "300 kg per color/design (approximately 400-500 pieces)",
       relatedProducts: ["eye-masks", "pouches", "slippers"]
@@ -84,10 +113,79 @@ const AccessoryDetail = () => {
       name: "Terry Eye Masks",
       tagline: "Soothing relaxation essentials",
       description: "Soft terry eye masks for spa treatments and relaxation. Can be used with hot or cold therapy. Perfect for wellness centers and luxury spa packages. Available with custom branding.",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&h=600&fit=crop"
+      ],
       sizes: ["One Size"],
       moq: "300 kg per color/design (approximately 500-600 pieces)",
       relatedProducts: ["headbands", "pouches", "slippers"]
+    },
+    "hair-towels": {
+      name: "Hair Towels",
+      tagline: "Quick-dry protection for your hair",
+      description: "Quick-dry hair towels with button closure for hands-free drying. Gentle on hair and prevents damage. Our hair towels are made from ultra-soft microfiber terry that reduces frizz and breakage while speeding up drying time. Perfect for salons, spas, and retail.",
+      images: [
+        "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=600&fit=crop"
+      ],
+      sizes: ["One Size"],
+      moq: "300 kg per color/design (approximately 400-500 pieces)",
+      relatedProducts: ["headbands", "pouches", "eye-masks"]
+    },
+    "dish-scrubbers": {
+      name: "Terry Dish Scrubbers",
+      tagline: "Effective cleaning with gentle care",
+      description: "Terry dish scrubbers with non-scratch texture for effective cleaning. Absorbent and lint-free, perfect for delicate surfaces and glassware. Our dish scrubbers combine the softness of terry with effective cleaning power. Available for hospitality kitchens and retail.",
+      images: [
+        "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1581622558663-b2e33377dfb2?w=800&h=600&fit=crop"
+      ],
+      sizes: ["Standard"],
+      moq: "300 kg per color/design (approximately 600-800 pieces)",
+      relatedProducts: ["pouches", "bags", "headbands"]
+    },
+    "baby-bibs-burp-cloths": {
+      name: "Baby Bibs & Burp Cloths",
+      tagline: "Soft protection for little ones",
+      description: "Soft terry bibs and burp cloths for babies. Highly absorbent and gentle on delicate skin. Our baby products are made with hypoallergenic terry fabric that's safe and comfortable. Perfect for baby stores, gift sets, and wholesale.",
+      images: [
+        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1544568100-847a948585b9?w=800&h=600&fit=crop"
+      ],
+      sizes: ["Standard"],
+      moq: "300 kg per color/design (approximately 500-700 pieces)",
+      relatedProducts: ["baby-hooded-towels", "pouches", "headbands"]
+    },
+    "baby-bath-robes": {
+      name: "Baby Bath Robes",
+      tagline: "Adorable comfort after bath time",
+      description: "Adorable hooded bath robes for babies and toddlers. Ultra-soft terry fabric with cute designs. Perfect for keeping little ones warm and cozy after bath time. Available with custom embroidery and designs.",
+      images: [
+        "https://images.unsplash.com/photo-1522771930-78848d9293e8?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&h=600&fit=crop"
+      ],
+      sizes: ["0-12 months", "1-3 years", "3-5 years"],
+      moq: "300 kg per color/design (approximately 150-200 pieces)",
+      relatedProducts: ["baby-bibs-burp-cloths", "baby-hooded-towels", "pouches"]
+    },
+    "terry-apparel": {
+      name: "Terry Apparel",
+      tagline: "Fashion-forward comfort in terry",
+      description: "Fashion-forward terry cloth clothing including shorts, t-shirts, and loungewear. Comfortable and stylish for beach resorts, spas, and retail fashion. Our terry apparel combines the softness of towel fabric with contemporary designs.",
+      images: [
+        "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&h=600&fit=crop"
+      ],
+      sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+      moq: "300 kg per color/design (approximately 100-200 pieces depending on item)",
+      relatedProducts: ["slippers", "beach-ponchos", "bags"]
     }
   };
 
@@ -122,7 +220,7 @@ const AccessoryDetail = () => {
       <div 
         className="relative h-[70vh] bg-cover bg-center flex items-center justify-center"
         style={{ 
-          backgroundImage: `url(${accessory.image})`,
+          backgroundImage: `url(${accessory.images[0]})`,
         }}
       >
         {/* Overlay */}
@@ -149,11 +247,11 @@ const AccessoryDetail = () => {
               {accessory.description}
             </p>
           </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-premium">
-            <img 
-              src={accessory.image} 
-              alt={`${accessory.name} detail`}
-              className="w-full h-full object-cover"
+          <div className="relative rounded-2xl overflow-hidden shadow-premium aspect-square">
+            <ImageGalleryScroll 
+              images={accessory.images} 
+              alt={accessory.name}
+              className="w-full h-full"
             />
           </div>
         </div>
