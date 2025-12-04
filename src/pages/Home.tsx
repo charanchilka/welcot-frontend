@@ -16,6 +16,7 @@ import premiumImage from "@/assets/premium-towel.jpg";
 import standardImage from "@/assets/standard-towel.jpg";
 import hygieneImage from "@/assets/hygiene-towel.jpg";
 import sustainableHero from "@/assets/sustainable-hero.jpg";
+import heroBanner3 from "@/assets/hero-banner-3.png";
 import whyUsQuality from "@/assets/why-us-quality.jpg";
 import whyUsVariety from "@/assets/why-us-variety.jpg";
 import whyUsManufacturing from "@/assets/why-us-manufacturing.jpg";
@@ -48,7 +49,7 @@ const Home = () => {
       cta2Link: "/about",
     },
     {
-      image: sustainableHero,
+      image: heroBanner3,
       title: "Sustainable Luxury.\nResponsible Innovation.",
       subtitle: "Eco-friendly towels without compromising on quality",
       cta1Text: "Explore Sustainability",
