@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Linkedin, CheckCircle, Package, Factory, Lightbulb, Target, Award } from "lucide-react";
+import { Linkedin, Mail, MessageCircle, CheckCircle, Package, Factory, Lightbulb, Target, Award } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutPartners from "@/assets/about-partners.jpg";
 import teamRohan from "@/assets/team-rohan.jpg";
@@ -93,19 +93,25 @@ const About = () => {
       name: "Rohan Chilka",
       role: "Marketing & Client Relations",
       image: teamRohan,
-      linkedin: "#"
+      linkedin: "#",
+      email: "rohan@welcot.com",
+      whatsapp: "919404947907"
     },
     {
       name: "Nikhil Maheshwar",
       role: "Marketing & Operations",
       image: teamNikhil,
-      linkedin: "#"
+      linkedin: "#",
+      email: "nikhil@welcot.com",
+      whatsapp: "919404947907"
     },
     {
       name: "Siddharth Kavaddevi",
       role: "Finance & Administration",
       image: teamSiddharth,
-      linkedin: "#"
+      linkedin: "#",
+      email: "siddharth@welcot.com",
+      whatsapp: "919404947907"
     }
   ];
 
@@ -275,14 +281,30 @@ Our quality assurance includes:
                 <CardContent className="p-6 text-center">
                   <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
                   <p className="text-muted-foreground mb-4">{member.role}</p>
-                  <a 
-                    href={member.linkedin} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
+                  <div className="flex items-center justify-center gap-3">
+                    <a 
+                      href={member.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors hover:scale-110"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href={`mailto:${member.email}`}
+                      className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors hover:scale-110"
+                    >
+                      <Mail className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href={`https://wa.me/${member.whatsapp}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] text-white hover:bg-[#20BA5A] transition-colors hover:scale-110"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             ))}

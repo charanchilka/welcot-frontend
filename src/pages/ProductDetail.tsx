@@ -15,6 +15,7 @@ import {
   Eye,
   Tag
 } from "lucide-react";
+import ImageGalleryScroll from "@/components/ImageGalleryScroll";
 import bathTowels from "@/assets/products/bath-towels.jpg";
 import handTowels from "@/assets/products/hand-towels.jpg";
 import faceTowels from "@/assets/products/face-towels.jpg";
@@ -51,7 +52,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard", "hygiene"],
       description: "Our bath towels offer full-body coverage with exceptional absorbency and softness. From ultra-soft luxury options for 5-star resorts to durable standard variants for high-volume needs, we offer a complete range suitable for every level of hospitality and wellness.",
       sizes: '30x60", 27x54", 24x48"',
-      image: bathTowels,
+      images: [bathTowels, handTowels, faceTowels],
       customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
@@ -61,7 +62,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard", "hygiene"],
       description: "Designed for guest rooms and bathrooms, delivering a soft, quick-drying experience. Available in every quality tier, our hand towels combine functionality with elegance for the discerning hospitality professional.",
       sizes: '18x30", 16x24", 14x21"',
-      image: handTowels,
+      images: [handTowels, bathTowels, faceTowels],
       customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
@@ -71,7 +72,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard", "hygiene"],
       description: "Gentle on skin and ideal for spa, skincare, and hotel use. Crafted to provide comfort, hygiene, and durability with ultra-soft fibers perfect for delicate facial care.",
       sizes: '13x13", 12x12"',
-      image: faceTowels,
+      images: [faceTowels, handTowels, bathTowels],
       customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
@@ -81,7 +82,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard", "hygiene"],
       description: "Curated sets combining bath, hand, and face towels in coordinated styles. Ideal for hotels, corporate gifting programs, and premium retail. Available in all quality tiers with custom packaging options.",
       sizes: 'Bath 30x60", Hand 16x24", Face 12x12"',
-      image: towelSets,
+      images: [towelSets, bathTowels, handTowels],
       customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
@@ -91,7 +92,7 @@ const ProductDetail = () => {
       categories: ["premium", "standard", "hygiene"],
       description: "Vibrant, oversized, and fast-drying. Perfect for resorts, waterparks, and leisure brands. Our beach towels combine bold designs with practical performance for high-traffic coastal locations.",
       sizes: '40x72", 36x72", 30x60"',
-      image: beachTowels,
+      images: [beachTowels, poolTowels, bathTowels],
       customization: ["Size", "GSM", "Color", "Design"],
     },
     {
@@ -101,7 +102,7 @@ const ProductDetail = () => {
       categories: ["premium", "standard", "hygiene"],
       description: "Built for performance in humid environments. Durable, highly absorbent, and fast-drying for hotels, spas, and health clubs. Engineered to withstand frequent commercial laundering.",
       sizes: '40x72", 36x72", 30x60"',
-      image: poolTowels,
+      images: [poolTowels, beachTowels, bathTowels],
       customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
@@ -111,7 +112,7 @@ const ProductDetail = () => {
       categories: ["premium", "standard", "hygiene"],
       description: "Absorbent and lint-free terry towels for drying dishes and cleaning surfaces. Used in hospitality kitchens and restaurants where hygiene and performance matter.",
       sizes: '18x32", 16x24", 13x13"',
-      image: kitchenTowels,
+      images: [kitchenTowels, teaTowels, handTowels],
       customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
@@ -121,7 +122,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard", "hygiene"],
       description: "Soft and sturdy mats to absorb moisture and prevent slips. Available in plush luxury or high-function options with slip-resistant backing for maximum safety.",
       sizes: '20x30", 18x32"',
-      image: bathMats,
+      images: [bathMats, bathTowels, handTowels],
       customization: ["Size", "GSM", "Color", "Weave"],
     },
     {
@@ -131,7 +132,7 @@ const ProductDetail = () => {
       categories: ["premium", "standard", "hygiene"],
       description: "Wrap-around robes made from towel fabric for post-bath relaxation. Perfect for hotels, spas, and wellness resorts. Available with custom embroidery and logo placement.",
       sizes: "S, M, L, XL",
-      image: bathrobes,
+      images: [bathrobes, bathTowels, handTowels],
       customization: ["Size", "GSM", "Color", "Embroidery"],
     },
     {
@@ -141,7 +142,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard", "hygiene"],
       description: "Woven with intricate patterns to elevate your brand. Suitable for premium gifting, luxury hotels, and custom collections. Our jacquard designs create lasting impressions.",
       sizes: '36x72", 30x60", 27x54"',
-      image: jacquardTowels,
+      images: [jacquardTowels, velourTowels, bathTowels],
       customization: ["Size", "GSM", "Color", "Pattern"],
     },
     {
@@ -151,7 +152,7 @@ const ProductDetail = () => {
       categories: ["premium", "standard", "hygiene"],
       description: "Velvet-like finish combining softness and style. Used for promotional events, spas, or retail with elegant texture. Perfect for printing and branding applications.",
       sizes: '36x72", 30x60", 27x54", 24x48"',
-      image: velourTowels,
+      images: [velourTowels, jacquardTowels, bathTowels],
       customization: ["Size", "GSM", "Color", "Printing"],
     },
     {
@@ -161,7 +162,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard", "hygiene"],
       description: "Crisp white towels for hotels and resorts. From ultra-luxury to cost-effective hygiene-treated versions for heavy laundering. The foundation of professional hospitality.",
       sizes: '36x72", 30x60", 27x54", 16x24"',
-      image: hotelWhiteTowels,
+      images: [hotelWhiteTowels, bathTowels, handTowels],
       customization: ["Size", "GSM", "Bleach Treatment"],
     },
     {
@@ -171,7 +172,7 @@ const ProductDetail = () => {
       categories: ["premium", "standard", "hygiene"],
       description: "Lightweight and versatile for drying crockery and glassware. Used in hotels, cafes, and institutional kitchens. Lint-free performance for delicate items.",
       sizes: '18x32", 16x24", 14x21"',
-      image: teaTowels,
+      images: [teaTowels, kitchenTowels, handTowels],
       customization: ["Size", "GSM", "Color", "Design"],
     },
     {
@@ -181,7 +182,7 @@ const ProductDetail = () => {
       categories: ["premium", "standard", "hygiene"],
       description: "Compact high-performance towels for gyms and fitness studios. Quick-drying and odor-resistant. Engineered for active lifestyles with antimicrobial options.",
       sizes: '18x32", 16x24", 14x21"',
-      image: gymTowels,
+      images: [gymTowels, handTowels, bathTowels],
       customization: ["Size", "GSM", "Color", "Treatment"],
     },
     {
@@ -191,7 +192,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard", "hygiene"],
       description: "Add personal or brand touch with custom monogramming. Perfect for hotels, resorts, spas, and premium gifting. Multiple font options and thread colors available.",
       sizes: '30x60", 27x54", 24x48"',
-      image: monogrammedTowels,
+      images: [monogrammedTowels, embroideryTowels, bathTowels],
       customization: ["Size", "GSM", "Color", "Monogram"],
     },
     {
@@ -201,7 +202,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard", "hygiene"],
       description: "High-definition embroidery craftsmanship with intricate multi-color motifs. From elegant monograms to artistic borders. Perfect for luxury hotels and premium branding.",
       sizes: '30x60", 27x54", 24x48"',
-      image: embroideryTowels,
+      images: [embroideryTowels, monogrammedTowels, bathTowels],
       customization: ["Size", "GSM", "Color", "Embroidery"],
     },
     {
@@ -211,7 +212,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard", "hygiene"],
       description: "Custom-branded towels for impactful giveaways, events, and brand campaigns. Logo jacquards, embroidery, or printed designs. Make lasting impressions with quality.",
       sizes: '30x60", 27x54", 24x48"',
-      image: promotionalTowels,
+      images: [promotionalTowels, velourTowels, bathTowels],
       customization: ["Size", "GSM", "Color", "Branding"],
     },
     {
@@ -221,7 +222,7 @@ const ProductDetail = () => {
       categories: ["luxury", "premium", "standard"],
       description: "Bring your creative vision to life. From concept sketch to final packaging, we transform your ideas into beautiful products. Full design consultation and prototype development.",
       sizes: "Customizable",
-      image: customDesignTowels,
+      images: [customDesignTowels, jacquardTowels, embroideryTowels],
       customization: ["All Aspects Customizable"],
     },
     {
@@ -231,7 +232,7 @@ const ProductDetail = () => {
       categories: ["premium", "standard"],
       description: "Lightweight flat-weave towels with decorative fringes. Quick-drying, travel-friendly, and perfect for beach resorts and spas. Authentic Turkish craftsmanship.",
       sizes: '30x60", 35x70", 40x80"',
-      image: turkishTowels,
+      images: [turkishTowels, beachTowels, poolTowels],
       customization: ["Size", "Color", "Fringe Style"],
     },
     {
@@ -241,7 +242,7 @@ const ProductDetail = () => {
       categories: ["premium", "standard"],
       description: "Unique honeycomb weave for faster drying and high absorbency. Lightweight, elegant, and ideal for spa aesthetics. Contemporary design meets practical function.",
       sizes: '30x60", 27x54", 24x48"',
-      image: honeycombTowels,
+      images: [honeycombTowels, bathTowels, handTowels],
       customization: ["Size", "GSM", "Color", "Pattern"],
     },
   ];
@@ -275,7 +276,7 @@ const ProductDetail = () => {
       <div 
         className="relative h-[70vh] bg-cover bg-center flex items-center justify-center"
         style={{ 
-          backgroundImage: `url(${product.image})`,
+          backgroundImage: `url(${product.images[0]})`,
         }}
       >
         {/* Overlay */}
@@ -330,11 +331,11 @@ const ProductDetail = () => {
               {product.description}
             </p>
           </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-premium">
-            <img 
-              src={product.image} 
-              alt={`${product.name} detail`}
-              className="w-full h-full object-cover"
+          <div className="relative rounded-2xl overflow-hidden shadow-premium aspect-square">
+            <ImageGalleryScroll 
+              images={product.images} 
+              alt={product.name}
+              className="w-full h-full"
             />
           </div>
         </div>
@@ -497,7 +498,7 @@ const ProductDetail = () => {
                 <Card className="overflow-hidden shadow-soft hover:shadow-premium transition-smooth">
                   <div className="relative aspect-square overflow-hidden">
                     <img 
-                      src={relatedProduct.image} 
+                      src={relatedProduct.images[0]} 
                       alt={relatedProduct.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
                     />
