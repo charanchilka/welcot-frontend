@@ -15,7 +15,7 @@ import {
   Eye,
   Tag
 } from "lucide-react";
-import ImageGalleryScroll from "@/components/ImageGalleryScroll";
+import HorizontalCarousel from "@/components/HorizontalCarousel";
 import bathTowels from "@/assets/products/bath-towels.jpg";
 import handTowels from "@/assets/products/hand-towels.jpg";
 import faceTowels from "@/assets/products/face-towels.jpg";
@@ -332,7 +332,7 @@ const ProductDetail = () => {
             </p>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-premium aspect-square">
-            <ImageGalleryScroll 
+            <HorizontalCarousel 
               images={product.images} 
               alt={product.name}
               className="w-full h-full"
