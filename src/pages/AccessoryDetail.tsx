@@ -11,7 +11,7 @@ import {
   Box,
   Sparkles
 } from "lucide-react";
-import ImageGalleryScroll from "@/components/ImageGalleryScroll";
+import HorizontalCarousel from "@/components/HorizontalCarousel";
 
 const AccessoryDetail = () => {
   const { slug } = useParams();
@@ -248,7 +248,7 @@ const AccessoryDetail = () => {
             </p>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-premium aspect-square">
-            <ImageGalleryScroll 
+            <HorizontalCarousel 
               images={accessory.images} 
               alt={accessory.name}
               className="w-full h-full"
