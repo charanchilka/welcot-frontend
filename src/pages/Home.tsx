@@ -23,6 +23,7 @@ import whyUsManufacturing from "@/assets/why-us-manufacturing.jpg";
 import whyUsPartnership from "@/assets/why-us-partnership.jpg";
 import whyUsInnovation from "@/assets/why-us-innovation.jpg";
 import whyUsCollection from "@/assets/why-us-collection.jpg";
+import aboutUsHome from "@/assets/about-us-home.jpg";
 import certDgft from "@/assets/cert-dgft.jpg";
 import certMsme from "@/assets/cert-msme.png";
 import certIcegate from "@/assets/cert-icegate.png";
@@ -155,7 +156,7 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
             <div className="order-2 lg:order-1 animate-fade-in">
               <img 
-                src={whyUsManufacturing} 
+                src={aboutUsHome} 
                 alt="Towel Manufacturing" 
                 className="rounded-2xl shadow-premium w-full hover:scale-[1.02] transition-smooth"
               />
