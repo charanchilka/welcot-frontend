@@ -21,14 +21,10 @@ const HorizontalCarousel = ({ images, alt, className = "" }: HorizontalCarouselP
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
-      align: "start",
+      align: "center",
       slidesToScroll: 1,
       dragFree: false,
-      containScroll: "trimSnaps",
-      breakpoints: {
-        "(min-width: 1024px)": { slidesToScroll: 1 },
-        "(min-width: 768px)": { slidesToScroll: 1 },
-      },
+      containScroll: false,
     },
     [autoplayPlugin]
   );
@@ -82,13 +78,6 @@ const HorizontalCarousel = ({ images, alt, className = "" }: HorizontalCarouselP
     );
   }
 
-  // Calculate slides per view based on screen size and image count
-  const getSlidesPerView = () => {
-    if (typeof window === "undefined") return 3;
-    if (window.innerWidth < 768) return 1;
-    if (window.innerWidth < 1024) return Math.min(2, images.length);
-    return Math.min(3, images.length);
-  };
 
   return (
     <div 
@@ -100,51 +89,40 @@ const HorizontalCarousel = ({ images, alt, className = "" }: HorizontalCarouselP
       {/* Carousel Container */}
       <div className="overflow-hidden h-full" ref={emblaRef}>
         <div className="flex h-full touch-pan-y">
-          {images.map((image, index) => {
-            // Calculate opacity for fade effect
-            const isVisible = index >= currentIndex && index < currentIndex + 3;
-            
-            return (
-              <div
-                key={index}
-                className="flex-shrink-0 min-w-0 h-full px-1 transition-opacity duration-500 ease-out"
-                style={{
-                  flex: `0 0 ${100 / Math.min(3, images.length)}%`,
-                }}
-                role="group"
-                aria-roledescription="slide"
-                aria-label={`Slide ${index + 1} of ${images.length}`}
-              >
-                <div className="relative w-full h-full overflow-hidden rounded-lg">
-                  <img
-                    src={image}
-                    alt={`${alt} ${index + 1}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-all duration-700 ease-out hover:scale-105"
-                    style={{
-                      opacity: 1,
-                    }}
-                  />
-                  {/* Subtle gradient overlay for depth */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/10 to-transparent pointer-events-none" />
-                </div>
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 min-w-0 h-full transition-opacity duration-500 ease-out"
+              style={{ flex: "0 0 100%" }}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`Slide ${index + 1} of ${images.length}`}
+            >
+              <div className="relative w-full h-full overflow-hidden rounded-lg">
+                <img
+                  src={image}
+                  alt={`${alt} ${index + 1}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-all duration-700 ease-out hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/10 to-transparent pointer-events-none" />
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Optional dots indicator - subtle and matching theme */}
-      {images.length > 3 && (
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+      {/* Dots indicator */}
+      {images.length > 1 && (
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => emblaApi?.scrollTo(index)}
-              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex 
-                  ? "bg-primary w-4" 
-                  : "bg-foreground/20 hover:bg-foreground/40"
+                  ? "bg-primary w-6" 
+                  : "bg-foreground/30 hover:bg-foreground/50"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
