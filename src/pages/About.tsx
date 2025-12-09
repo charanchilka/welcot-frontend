@@ -265,7 +265,7 @@ Our quality assurance includes:
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Visionaries</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The founders behind Welcot's legacy
+              The legacy behind Welcot
             </p>
           </div>
           <div className="flex justify-center gap-8 max-w-4xl mx-auto">
