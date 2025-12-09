@@ -259,6 +259,38 @@ Our quality assurance includes:
         </div>
       </div>
 
+      {/* Our Visionaries */}
+      <div className="py-20 md:py-32">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Visionaries</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              The founders behind Welcot's legacy
+            </p>
+          </div>
+          <div className="flex justify-center gap-8 max-w-4xl mx-auto">
+            {[
+              { name: "Visionary Name 1", role: "Founder / Visionary", image: teamRohan },
+              { name: "Visionary Name 2", role: "Founder / Visionary", image: teamNikhil }
+            ].map((visionary, index) => (
+              <Card key={index} className="overflow-hidden group hover:shadow-premium transition-smooth w-full max-w-sm">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={visionary.image} 
+                    alt={visionary.name} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                  />
+                </div>
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-2xl font-bold mb-2">{visionary.name}</h3>
+                  <p className="text-muted-foreground">{visionary.role}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Our Team */}
       <div className="bg-muted/30 py-20 md:py-32">
         <div className="container mx-auto px-4 lg:px-8">
