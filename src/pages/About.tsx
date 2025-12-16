@@ -14,6 +14,8 @@ import valueManufacturing from "@/assets/value-manufacturing.jpg";
 import valuePartnership from "@/assets/value-partnership.jpg";
 import valueInnovation from "@/assets/value-innovation.jpg";
 import valueSustainability from "@/assets/value-sustainability.jpg";
+import whyUsManufacturing from "@/assets/why-us-manufacturing.jpg";
+import whyUsQuality from "@/assets/why-us-quality.jpg";
 
 const About = () => {
   const [counts, setCounts] = useState({ countries: 0, years: 0, quality: 0 });
@@ -344,30 +346,45 @@ Our quality assurance includes:
         </div>
       </div>
 
-      {/* Counters Section */}
-      <div ref={counterRef} className="py-20 md:py-32">
-        <div className="container mx-auto px-4 lg:px-8">
+      {/* Counters Section with Animated Background */}
+      <div ref={counterRef} className="relative py-20 md:py-32 overflow-hidden">
+        {/* Animated Background Images */}
+        <div className="absolute inset-0">
+          <img src={valueManufacturing} alt="" className="stats-bg-image" loading="lazy" />
+          <img src={whyUsManufacturing} alt="" className="stats-bg-image" loading="lazy" />
+          <img src={valueQuality} alt="" className="stats-bg-image" loading="lazy" />
+          <img src={whyUsQuality} alt="" className="stats-bg-image" loading="lazy" />
+        </div>
+        
+        {/* Dark Overlay for Readability */}
+        <div className="absolute inset-0 bg-graphite/70" />
+        
+        {/* Subtle Textile Weave Texture */}
+        <div className="absolute inset-0 textile-overlay" />
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Delivering Quality Worldwide</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Delivering Quality Worldwide</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="p-10 text-center hover:shadow-premium transition-smooth">
-              <div className="text-6xl md:text-7xl font-bold text-primary mb-4">
+            <Card className="p-10 text-center hover:shadow-premium transition-smooth bg-white/10 backdrop-blur-sm border-white/20">
+              <div className="text-6xl md:text-7xl font-bold text-secondary mb-4">
                 {counts.countries}+
               </div>
-              <p className="text-xl text-muted-foreground">Countries Served</p>
+              <p className="text-xl text-white/80">Countries Served</p>
             </Card>
-            <Card className="p-10 text-center hover:shadow-premium transition-smooth">
-              <div className="text-6xl md:text-7xl font-bold text-primary mb-4">
+            <Card className="p-10 text-center hover:shadow-premium transition-smooth bg-white/10 backdrop-blur-sm border-white/20">
+              <div className="text-6xl md:text-7xl font-bold text-secondary mb-4">
                 {counts.years}+
               </div>
-              <p className="text-xl text-muted-foreground">Years of Manufacturing Experience</p>
+              <p className="text-xl text-white/80">Years of Manufacturing Experience</p>
             </Card>
-            <Card className="p-10 text-center hover:shadow-premium transition-smooth">
-              <div className="text-6xl md:text-7xl font-bold text-primary mb-4">
+            <Card className="p-10 text-center hover:shadow-premium transition-smooth bg-white/10 backdrop-blur-sm border-white/20">
+              <div className="text-6xl md:text-7xl font-bold text-secondary mb-4">
                 {counts.quality}%
               </div>
-              <p className="text-xl text-muted-foreground">Quality Assured</p>
+              <p className="text-xl text-white/80">Quality Assured</p>
             </Card>
           </div>
         </div>
