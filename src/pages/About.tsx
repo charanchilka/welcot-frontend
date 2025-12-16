@@ -346,21 +346,20 @@ Our quality assurance includes:
         </div>
       </div>
 
-      {/* Counters Section with Animated Background */}
+      {/* Counters Section with Background */}
       <div ref={counterRef} className="relative py-20 md:py-32 overflow-hidden">
-        {/* Animated Background Images */}
+        {/* Static Background Image */}
         <div className="absolute inset-0">
-          <img src={valueManufacturing} alt="" className="stats-bg-image" loading="lazy" />
-          <img src={whyUsManufacturing} alt="" className="stats-bg-image" loading="lazy" />
-          <img src={valueQuality} alt="" className="stats-bg-image" loading="lazy" />
-          <img src={whyUsQuality} alt="" className="stats-bg-image" loading="lazy" />
+          <img 
+            src={valueManufacturing} 
+            alt="" 
+            className="w-full h-full object-cover"
+            loading="lazy" 
+          />
         </div>
         
         {/* Dark Overlay for Readability */}
-        <div className="absolute inset-0 bg-graphite/70" />
-        
-        {/* Subtle Textile Weave Texture */}
-        <div className="absolute inset-0 textile-overlay" />
+        <div className="absolute inset-0 bg-graphite/65" />
         
         {/* Content */}
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
