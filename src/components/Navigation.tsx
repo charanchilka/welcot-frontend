@@ -32,6 +32,7 @@ const Navigation = () => {
     { name: "Sustainability", path: "/sustainable" },
     { name: "Workshops", path: "/workshops" },
     { name: "Certifications", path: "/certificates" },
+    { name: "CSR", path: "/csr" },
     { name: "Testimonials", path: "/testimonials" },
     { name: "Contact", path: "/contact" },
   ];

@@ -87,6 +87,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/csr" className="opacity-80 hover:opacity-100 hover:text-secondary transition-smooth text-sm">
+                  CSR Activities
+                </Link>
+              </li>
+              <li>
                 <Link to="/contact" className="opacity-80 hover:opacity-100 hover:text-secondary transition-smooth text-sm">
                   Contact
                 </Link>
