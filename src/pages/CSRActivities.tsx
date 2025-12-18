@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Heart, Leaf, Users, Recycle } from "lucide-react";
 
 // CSR Images
-import csrHero from "@/assets/csr/csr-hero.jpg";
+import csrHero from "@/assets/csr/csr-hero-new.jpg";
 import csrCommitment from "@/assets/csr/csr-commitment.jpg";
 import communityWelfare from "@/assets/csr/community-welfare.jpg";
 import environmentalResponsibility from "@/assets/csr/environmental-responsibility.jpg";
