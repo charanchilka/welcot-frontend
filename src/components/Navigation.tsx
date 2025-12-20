@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import welcotLogo from "@/assets/welcot-logo.png";
+import welcotLogo from "@/assets/logo/welcot-logo.png";
 
 const Navigation = () => {
   const location = useLocation();
@@ -36,6 +36,7 @@ const Navigation = () => {
   ];
 
   const aboutSubLinks = [
+    { name: "About Us", path: "/about" },
     { name: "Workshops", path: "/workshops" },
     { name: "Certifications", path: "/certificates" },
     { name: "CSR", path: "/csr" },
@@ -53,7 +54,7 @@ const Navigation = () => {
         : "bg-gradient-to-b from-white/90 to-white/70 backdrop-blur-md"
         }`}
     >
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-10 lg:px-8">
         {/* Desktop Layout - Centered */}
         <div className="hidden lg:flex flex-col items-center py-3">
           {/* Logo */}
@@ -86,7 +87,7 @@ const Navigation = () => {
                     <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${aboutDropdownOpen ? "rotate-180" : ""}`} />
                     <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all group-hover:w-full ${isAboutActive ? "w-full" : ""} bg-primary`} />
                   </Link>
-                  
+
                   {/* Dropdown Menu */}
                   <div className={`absolute top-full left-0 mt-1 min-w-[160px] bg-white rounded-lg shadow-lg border border-border/20 overflow-hidden transition-all duration-200 ${aboutDropdownOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}>
                     {aboutSubLinks.map((subLink) => (

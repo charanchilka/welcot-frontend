@@ -60,8 +60,8 @@ const HeroCarousel = ({ slides, autoPlayInterval = 5000 }: HeroCarouselProps) =>
               : "opacity-0 translate-y-8 pointer-events-none absolute"
               }`}
           >
-            <div className="max-w-4xl">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white leading-tight">
+            <div className="max-w-4xl pt-10">
+              <h1 className="text-4xl md:text-6xl lg:text-6xl font-bold mb-6 text-white leading-tight">
                 {slide.title.split('\n').map((line, i) => (
                   <span key={i}>
                     {line}
@@ -69,7 +69,7 @@ const HeroCarousel = ({ slides, autoPlayInterval = 5000 }: HeroCarouselProps) =>
                   </span>
                 ))}
               </h1>
-              <p className="text-xl md:text-2xl lg:text-3xl mb-10 text-white/90 font-light">
+              <p className="text-xl md:text-2xl lg:text-2xl mb-10 text-white/90 font-light">
                 {slide.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
