@@ -10,7 +10,7 @@ interface HorizontalCarouselProps {
 
 const HorizontalCarousel = ({ images, alt, className = "" }: HorizontalCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   // Autoplay plugin with pauseOnHover
   const autoplayPlugin = Autoplay({
     delay: 2200,
@@ -37,11 +37,11 @@ const HorizontalCarousel = ({ images, alt, className = "" }: HorizontalCarouselP
 
   useEffect(() => {
     if (!emblaApi) return;
-    
+
     onSelect();
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
-    
+
     return () => {
       emblaApi.off("select", onSelect);
       emblaApi.off("reInit", onSelect);
@@ -80,7 +80,7 @@ const HorizontalCarousel = ({ images, alt, className = "" }: HorizontalCarouselP
 
 
   return (
-    <div 
+    <div
       className={`relative overflow-hidden ${className}`}
       role="region"
       aria-label="Image carousel"
@@ -113,22 +113,21 @@ const HorizontalCarousel = ({ images, alt, className = "" }: HorizontalCarouselP
       </div>
 
       {/* Dots indicator */}
-      {images.length > 1 && (
+      {/* {images.length > 1 && (
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => emblaApi?.scrollTo(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? "bg-primary w-6" 
-                  : "bg-foreground/30 hover:bg-foreground/50"
-              }`}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
+                ? "bg-primary w-6"
+                : "bg-foreground/30 hover:bg-foreground/50"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
-      )}
+      )} */}
     </div>
   );
 };
