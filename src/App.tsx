@@ -18,6 +18,7 @@ import Workshops from "./pages/Workshops";
 import Testimonials from "./pages/Testimonials";
 import Certificates from "./pages/Certificates";
 import CSRActivities from "./pages/CSRActivities";
+import Dealership from "./pages/Dealership";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ const App = () => (
               <Route path="/testimonials" element={<Testimonials />} />
               <Route path="/certificates" element={<Certificates />} />
               <Route path="/csr" element={<CSRActivities />} />
+              <Route path="/dealership" element={<Dealership />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
