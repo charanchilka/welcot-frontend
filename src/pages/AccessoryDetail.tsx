@@ -1,10 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Ruler, 
-  Palette, 
-  Package, 
+import {
+  Ruler,
+  Palette,
+  Package,
   ShoppingCart,
   Scissors,
   Tag,
@@ -13,179 +13,162 @@ import {
 } from "lucide-react";
 import HorizontalCarousel from "@/components/HorizontalCarousel";
 
+
 const AccessoryDetail = () => {
   const { slug } = useParams();
+
+  const bagImages = Object.values(
+    import.meta.glob("@/assets/accessories/bags/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
+
+  const pouchesImages = Object.values(
+    import.meta.glob("@/assets/accessories/pouches/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
+
+  const hatsImages = Object.values(
+    import.meta.glob("@/assets/accessories/hats/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
+
+  const beachPonchoImage = Object.values(
+    import.meta.glob("@/assets/accessories/beach-ponchos/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
+
+  const babyTowelImages = Object.values(
+    import.meta.glob("@/assets/accessories/baby-towels/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
+
+  const hairTowelImages = Object.values(
+    import.meta.glob("@/assets/accessories/hair-towels/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
+
+  const dishScrubberImages = Object.values(
+    import.meta.glob("@/assets/accessories/dish-scrubbers/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
+
+  const babyBibsImages = Object.values(
+    import.meta.glob("@/assets/accessories/baby-bibs/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
+
+  const babyBathRobeImages = Object.values(
+    import.meta.glob("@/assets/accessories/baby-bath-robes/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
+
+  const terryApparelImages = Object.values(
+    import.meta.glob("@/assets/accessories/terry-apparels/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
 
   // Accessory data with all details
   const accessoryData: Record<string, any> = {
     "bags": {
       name: "Terry Bags",
       tagline: "Function meets fashion in premium terry toweling",
-      description: "Stylish and functional bags made from premium terry fabric. Perfect for beach trips, gym sessions, or everyday use. Our terry bags combine the absorbent properties of towel fabric with durable construction and stylish designs. Available in various sizes and colors with custom branding options.",
-      images: [
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=800&h=600&fit=crop"
-      ],
+      description: "Designed using terry-woven fabric, these bags combine functionality with distinctive woven aesthetics. The toweling construction allows attractive designs and patterns to be woven directly into the fabric, creating a unique textured look while maintaining softness and durability.\nThey are developed for full customization, offering flexibility in weave pattern, design, colors, size, and overall style to match specific brand or collection requirements. \nFor customized woven designs, a defined MOQ applies, which can be comfortably achieved by combining bags with other toweling accessories such as hats, pouches, hair towels, or towels within the same production order. \nAdditionally, a selection of ready-to-use designs and patterns is available, offered with very low MOQ, making them ideal for quick launches or smaller programs.",
+      images: bagImages,
       sizes: ["Small (30x20 cm)", "Medium (40x30 cm)", "Large (50x40 cm)"],
       moq: "300 kg per color/design (approximately 150-200 pieces depending on size)",
-      relatedProducts: ["pouches", "beach-ponchos", "slippers"]
+      relatedProducts: ["pouches", "beach-ponchos", 'terry-apparel-solapur-chaddar-apparel', 'hats-caps']
     },
     "pouches": {
       name: "Terry Pouches",
       tagline: "Luxury storage solutions for every need",
-      description: "Elegant terry pouches for organizing essentials. Ideal for toiletries, accessories, or travel items. Soft, absorbent, and beautifully crafted with custom branding options. Perfect for hotel amenity kits, spa packages, and promotional gifts.",
-      images: [
-        "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1605733513597-a8f8341084e6?w=800&h=600&fit=crop"
-      ],
+      description: "Crafted from terry-woven toweling fabric, these pouches offer a balance of softness, durability, and refined visual appeal. The woven structure allows patterns and textures to be integrated directly into the fabric, resulting in a premium look while remaining highly functional.\n\nThey are designed for complete customization, with flexibility in woven patterns, design layouts, color options, size, and styling to suit specific branding or collection needs.\n\nA curated range of ready-to-use designs is also available with low MOQ, making them suitable for fast-moving retail programs or smaller quantity requirements.",
+      images: pouchesImages,
       sizes: ["Small (15x10 cm)", "Medium (20x15 cm)"],
       moq: "300 kg per color/design (approximately 200-300 pieces depending on size)",
-      relatedProducts: ["bags", "headbands", "eye-masks"]
+      relatedProducts: ["bags", "beach-ponchos", "hats-caps", "dish-scrubbers"]
     },
     "hats-caps": {
       name: "Terry Hats & Caps",
       tagline: "Cool comfort for sunny days",
-      description: "Terry-lined hats and caps that provide sun protection with style. Absorbent inner lining keeps you cool and comfortable during outdoor activities. Perfect for beach resorts, sports clubs, and promotional events.",
-      images: [
-        "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=800&h=600&fit=crop"
-      ],
+      description: "Made from terry-woven toweling fabric, these hats are designed to offer comfort, breathability, and a distinctive textured look. The toweling weave allows attractive patterns and designs to be woven directly into the fabric, enhancing both visual appeal and functionality.\n\nThey are suitable for full customization, with flexibility in woven patterns, colors, sizing, and overall style — making them ideal for beachwear, resort collections, and casual lifestyle use.\n\nAlongside customized options, a selection of ready-to-use designs and styles is available with low MOQ, allowing easy entry for seasonal programs or quick product launches.",
+      images: hatsImages,
       sizes: ["One Size", "Adjustable"],
       moq: "300 kg per color/design (approximately 200-250 pieces)",
-      relatedProducts: ["beach-ponchos", "bags", "slippers"]
+      relatedProducts: ["beach-ponchos", "bags", "hair-towels", "pouches"]
     },
     "beach-ponchos": {
       name: "Beach Ponchos",
       tagline: "Easy on, easy off beach essential",
-      description: "Convenient terry ponchos for quick changes at the beach or pool. Soft, absorbent, and perfect for resorts and beach clubs. Available in adult and kids sizes with custom designs and branding options.",
-      images: [
-        "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800&h=600&fit=crop"
-      ],
+      description: "Made from toweling fabric, these beach ponchos are designed for easy drying and relaxed comfort after swimming. The absorbent structure provides warmth and coverage while remaining lightweight and breathable, making them ideal for beach, pool, and resort use.\n\nThey are available in ready-to-use designs for quick programs as well as fully customized options, with flexibility in size, colors, patterns, and styling to meet specific collection or branding requirements.",
+      images: beachPonchoImage,
       sizes: ["Adult (One Size)", "Kids (8-12 years)"],
       moq: "300 kg per color/design (approximately 100-150 pieces)",
-      relatedProducts: ["baby-hooded-towels", "bags", "hats-caps"]
-    },
-    "baby-hooded-towels": {
-      name: "Baby Hooded Towels",
-      tagline: "Soft comfort for little ones",
-      description: "Adorable hooded towels designed especially for babies and toddlers. Ultra-soft, gentle on delicate skin, and featuring cute designs. Perfect for bath time and pool fun. Made with premium terry fabric and available with custom embroidery.",
-      images: [
-        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1544568100-847a948585b9?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&h=600&fit=crop"
-      ],
-      sizes: ["0-12 months", "1-3 years"],
-      moq: "300 kg per color/design (approximately 150-200 pieces)",
-      relatedProducts: ["beach-ponchos", "pouches", "slippers"]
-    },
-    "slippers": {
-      name: "Terry Slippers",
-      tagline: "Plush comfort for your feet",
-      description: "Luxurious terry slippers for hotels, spas, and home use. Soft, comfortable, and available with custom embroidery. Disposable or reusable options available. Perfect for hospitality amenities and promotional gifts.",
-      images: [
-        "https://images.unsplash.com/photo-1585897258642-682d4c57b2ff?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1631125915902-d8abe9225ff2?w=800&h=600&fit=crop"
-      ],
-      sizes: ["S (36-37)", "M (38-39)", "L (40-41)", "XL (42-43)"],
-      moq: "300 kg per color/design (approximately 200-300 pairs)",
-      relatedProducts: ["bathrobes", "pouches", "bags"]
-    },
-    "headbands": {
-      name: "Terry Headbands",
-      tagline: "Spa-style comfort and convenience",
-      description: "Terry headbands perfect for spa treatments, skincare routines, and beauty applications. Soft, absorbent, and keeps hair securely in place. Available in various colors with custom branding options.",
-      images: [
-        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&h=600&fit=crop"
-      ],
-      sizes: ["One Size"],
-      moq: "300 kg per color/design (approximately 400-500 pieces)",
-      relatedProducts: ["eye-masks", "pouches", "slippers"]
-    },
-    "eye-masks": {
-      name: "Terry Eye Masks",
-      tagline: "Soothing relaxation essentials",
-      description: "Soft terry eye masks for spa treatments and relaxation. Can be used with hot or cold therapy. Perfect for wellness centers and luxury spa packages. Available with custom branding.",
-      images: [
-        "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&h=600&fit=crop"
-      ],
-      sizes: ["One Size"],
-      moq: "300 kg per color/design (approximately 500-600 pieces)",
-      relatedProducts: ["headbands", "pouches", "slippers"]
+      relatedProducts: ["baby-bibs-burp-cloths", "bags", "hats-caps", "terry-apparel-solapur-chaddar-apparel"]
     },
     "hair-towels": {
       name: "Hair Towels",
       tagline: "Quick-dry protection for your hair",
-      description: "Quick-dry hair towels with button closure for hands-free drying. Gentle on hair and prevents damage. Our hair towels are made from ultra-soft microfiber terry that reduces frizz and breakage while speeding up drying time. Perfect for salons, spas, and retail.",
-      images: [
-        "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=600&fit=crop"
-      ],
+      description: "Made from terry-woven toweling fabric, these hair towels are designed for efficient moisture absorption while remaining gentle on hair. The toweling structure allows functional and decorative patterns to be woven into the fabric, enhancing both performance and appearance.\n\nThey are suitable for full customization, with flexibility in weave patterns, colors, sizes, and fastening styles to meet specific branding or collection requirements.\n\nIn addition to customized designs, a range of ready-to-use styles is available with low MOQ, making them ideal for salons, spas, retail collections, and quick-launch programs.",
+      images: hairTowelImages,
       sizes: ["One Size"],
       moq: "300 kg per color/design (approximately 400-500 pieces)",
-      relatedProducts: ["headbands", "pouches", "eye-masks"]
+      relatedProducts: ["bags", "pouches", "dish-scrubbers", "bags"]
     },
     "dish-scrubbers": {
       name: "Terry Dish Scrubbers",
       tagline: "Effective cleaning with gentle care",
-      description: "Terry dish scrubbers with non-scratch texture for effective cleaning. Absorbent and lint-free, perfect for delicate surfaces and glassware. Our dish scrubbers combine the softness of terry with effective cleaning power. Available for hospitality kitchens and retail.",
-      images: [
-        "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1581622558663-b2e33377dfb2?w=800&h=600&fit=crop"
-      ],
+      description: "Developed using toweling fabric, these dish scrubbers are designed to offer effective cleaning while remaining gentle on cookware. The textured toweling surface supports both functionality and design flexibility, allowing shapes and patterns to be tailored as per specific requirements.\n\nCustomization extends beyond product design to include packaging, labeling, and branding, making these scrubbers suitable for private label, retail, and promotional programs.",
+      images: dishScrubberImages,
       sizes: ["Standard"],
       moq: "300 kg per color/design (approximately 600-800 pieces)",
-      relatedProducts: ["pouches", "bags", "headbands"]
+      relatedProducts: ["pouches", "bags", "hair-towels", "baby-bibs-burp-cloths"]
     },
     "baby-bibs-burp-cloths": {
       name: "Baby Bibs & Burp Cloths",
       tagline: "Soft protection for little ones",
-      description: "Soft terry bibs and burp cloths for babies. Highly absorbent and gentle on delicate skin. Our baby products are made with hypoallergenic terry fabric that's safe and comfortable. Perfect for baby stores, gift sets, and wholesale.",
-      images: [
-        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1544568100-847a948585b9?w=800&h=600&fit=crop"
-      ],
+      description: "Made from soft and absorbent toweling fabric, baby bibs and burp cloths are designed for everyday feeding and care routines. Their gentle texture helps absorb spills, drool, and milk while remaining comfortable against delicate skin.\n\nAvailable in ready-to-use designs as well as customized options, they can be developed in various shapes, sizes, colors, edging styles, and fastening options to suit baby care and private label programs.",
+      images: babyBibsImages,
       sizes: ["Standard"],
       moq: "300 kg per color/design (approximately 500-700 pieces)",
-      relatedProducts: ["baby-hooded-towels", "pouches", "headbands"]
+      relatedProducts: ["baby-bath-robes", "pouches", "bags", "dish-scrubbers"]
     },
     "baby-bath-robes": {
       name: "Baby Bath Robes",
       tagline: "Adorable comfort after bath time",
-      description: "Adorable hooded bath robes for babies and toddlers. Ultra-soft terry fabric with cute designs. Perfect for keeping little ones warm and cozy after bath time. Available with custom embroidery and designs.",
-      images: [
-        "https://images.unsplash.com/photo-1522771930-78848d9293e8?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&h=600&fit=crop"
-      ],
+      description: "Made from soft toweling fabric, baby bathrobes are designed to provide gentle warmth, comfort, and absorbency for delicate skin. The toweling structure ensures effective drying after bath time while remaining lightweight, breathable, and cozy for infants and toddlers.\n\nAvailable in ready-to-use designs as well as fully customized options, these bathrobes can be tailored in size, colors, patterns, hood styles, and detailing to suit baby care collections or private label programs.",
+      images: babyBathRobeImages,
       sizes: ["0-12 months", "1-3 years", "3-5 years"],
       moq: "300 kg per color/design (approximately 150-200 pieces)",
-      relatedProducts: ["baby-bibs-burp-cloths", "baby-hooded-towels", "pouches"]
+      relatedProducts: ["baby-bibs-burp-cloths", "baby-bath-robes", "pouches", "bags"]
     },
-    "terry-apparel": {
-      name: "Terry Apparel",
+    "terry-apparel-solapur-chaddar-apparel": {
+      name: "Terry Apparel & Solapur Chaddar Apparel",
       tagline: "Fashion-forward comfort in terry",
-      description: "Fashion-forward terry cloth clothing including shorts, t-shirts, and loungewear. Comfortable and stylish for beach resorts, spas, and retail fashion. Our terry apparel combines the softness of towel fabric with contemporary designs.",
-      images: [
-        "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=800&h=600&fit=crop"
-      ],
+      description: "Terry apparel represents an innovative extension of toweling fabric into wearable design. These garments are developed by combining unique woven patterns and existing design elements to create visually distinctive and comfortable apparel. Each piece is thoughtfully constructed to balance absorbency, softness, and wearability.\nAlongside toweling-based apparel, selected styles such as jackets developed from Solapur chaddars are also offered. Solapur chaddars are a GI-tagged (Geographical Indication) textile, recognized for their origin-specific weaving techniques, distinct texture, and long-standing reputation. This GI status, protected under India’s Geographical Indications of Goods (Registration and Protection) Act, 1999, ensures authenticity and preserves the unique characteristics linked to their place of origin.",
+      images: terryApparelImages,
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
       moq: "300 kg per color/design (approximately 100-200 pieces depending on item)",
-      relatedProducts: ["slippers", "beach-ponchos", "bags"]
+      relatedProducts: ["beach-ponchos", "pouches", "hair-towels", "bags"]
     }
   };
 
@@ -217,15 +200,15 @@ const AccessoryDetail = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Overlay - Matching ProductDetail */}
-      <div 
+      <div
         className="relative h-[70vh] bg-cover bg-center flex items-center justify-center"
-        style={{ 
+        style={{
           backgroundImage: `url(${accessory.images[0]})`,
         }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/70 to-background/90" />
-        
+
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-foreground">
@@ -243,15 +226,15 @@ const AccessoryDetail = () => {
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           <div>
             <h2 className="text-4xl font-bold mb-6">{accessory.name}</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
               {accessory.description}
             </p>
           </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-premium aspect-square">
-            <HorizontalCarousel 
-              images={accessory.images} 
+          <div className="relative rounded-2xl overflow-hidden shadow-premium aspect-rectangle">
+            <HorizontalCarousel
+              images={accessory.images}
               alt={accessory.name}
-              className="w-full h-full"
+              className="w-[41rem] h-[30rem]"
             />
           </div>
         </div>
@@ -399,7 +382,7 @@ const AccessoryDetail = () => {
                 <Link to={`/accessories/${related.slug}`}>
                   <div className="aspect-video overflow-hidden cursor-pointer">
                     <img
-                      src={related.image}
+                      src={related.images[0]}
                       alt={related.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
                     />

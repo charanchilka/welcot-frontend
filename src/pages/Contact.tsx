@@ -225,7 +225,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="gradient-card shadow-medium text-center">
               <CardContent className="pt-6">
-                <h3 className="text-2xl font-bold mb-3">Request a Catalog</h3>
+                <h3 className="text-2xl font-bold mb-3">Request a Company Profile</h3>
                 <p className="text-muted-foreground mb-4">
                   Get our comprehensive product catalog with specifications and pricing
                 </p>
@@ -235,11 +235,11 @@ const Contact = () => {
 
             <Card className="gradient-card shadow-medium text-center">
               <CardContent className="pt-6">
-                <h3 className="text-2xl font-bold mb-3">Request Samples</h3>
+                <h3 className="text-2xl font-bold mb-3">Request a Catalog</h3>
                 <p className="text-muted-foreground mb-4">
-                  Experience our quality firsthand with physical samples
+                  Get our comprehensive product catalog with specifications and pricing
                 </p>
-                <Button variant="default">Request Samples</Button>
+                <Button variant="default">Download Catalog</Button>
               </CardContent>
             </Card>
           </div>

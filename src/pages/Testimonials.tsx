@@ -16,7 +16,7 @@ const Testimonials = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true);
-            
+
             // Animate clients counter (500+)
             let clientsCount = 0;
             const clientsInterval = setInterval(() => {
@@ -62,7 +62,7 @@ const Testimonials = () => {
   }, [hasAnimated]);
   const testimonials = [
     {
-      rating: 5,
+      rating: 4,
       text: "Outstanding finishing and packaging quality.",
       description: "The finishing and packaging quality of their towels and toweling accessories are outstanding. Each shipment arrives exactly as ordered, with no surprises.",
       country: "USA",
@@ -89,7 +89,7 @@ const Testimonials = () => {
       initial: "LR"
     },
     {
-      rating: 5,
+      rating: 4,
       text: "Remarkable sampling accuracy.",
       description: "The sampling accuracy is remarkable. What we approve is exactly what we receive in bulk production. Timely communication and delivery make them reliable suppliers.",
       country: "Japan",
@@ -98,7 +98,7 @@ const Testimonials = () => {
       initial: "OH"
     },
     {
-      rating: 5,
+      rating: 4,
       text: "Exceptional price-to-quality ratio.",
       description: "The price-to-quality ratio is exceptional. After switching to Welcot, customer repeat orders increased significantly.",
       country: "Israel",

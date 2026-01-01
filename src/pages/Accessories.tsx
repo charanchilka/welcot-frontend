@@ -3,61 +3,71 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 
+import bagImage from "@/assets/accessories/bags/bag-2.png";
+import pouchesImage from "@/assets/accessories/pouches/pouche-1.png";
+import hatsImage from "@/assets/accessories/hats/hat-1.png";
+import beachPonchoImage from "@/assets/accessories/beach-ponchos/beach-ponchos-1.png";
+import hairTowelImage from "@/assets/accessories/hair-towels/hair-towel-1.png";
+import dishScrubberImage from "@/assets/accessories/dish-scrubbers/dish-scrubber-1.png";
+import babyBibsImage from "@/assets/accessories/baby-bibs/baby-bib-1.png";
+import babyBathRobeImage from "@/assets/accessories/baby-bath-robes/baby-bath-robes-1.png";
+import terryApparelImage from "@/assets/accessories/terry-apparels/terry-apparel-1.png";
+
 const Accessories = () => {
   const accessories = [
     {
       name: "Bags",
-      description: "Stylish and functional bags made from premium terry fabric. Perfect for beach trips, gym sessions, or everyday use.",
+      description: "Designed using terry-woven fabric, these bags combine functionality with distinctive woven aesthetics. The toweling construction allows attractive designs and patterns to be woven directly into the fabric, creating a unique textured look while maintaining softness and durability.",
       sizes: "Small, Medium, Large",
-      image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&h=600&fit=crop"
+      image: bagImage
     },
     {
       name: "Pouches",
-      description: "Elegant terry pouches for organizing essentials. Ideal for toiletries, accessories, or travel items.",
+      description: "Crafted from terry-woven toweling fabric, these pouches offer a balance of softness, durability, and refined visual appeal. The woven structure allows patterns and textures to be integrated directly into the fabric, resulting in a premium look while remaining highly functional.",
       sizes: "Small, Medium",
-      image: "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=800&h=600&fit=crop"
+      image: pouchesImage
     },
     {
       name: "Hats / Caps",
-      description: "Terry-lined hats and caps that provide sun protection with style. Absorbent inner lining keeps you cool and comfortable.",
+      description: "Made from terry-woven toweling fabric, these hats are designed to offer comfort, breathability, and a distinctive textured look. The toweling weave allows attractive patterns and designs to be woven directly into the fabric, enhancing both visual appeal and functionality.",
       sizes: "One Size, Adjustable",
-      image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&h=600&fit=crop"
+      image: hatsImage
     },
     {
       name: "Beach Ponchos",
-      description: "Convenient terry ponchos for quick changes at the beach or pool. Soft, absorbent, and perfect for resorts.",
+      description: "Made from toweling fabric, these beach ponchos are designed for easy drying and relaxed comfort after swimming. The absorbent structure provides warmth and coverage while remaining lightweight and breathable, making them ideal for beach, pool, and resort use.",
       sizes: "Adult, Kids",
-      image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop"
+      image: beachPonchoImage
     },
     {
       name: "Hair Towels",
-      description: "Quick-dry hair towels with button closure for hands-free drying. Gentle on hair and prevents damage.",
+      description: "Made from terry-woven toweling fabric, these hair towels are designed for efficient moisture absorption while remaining gentle on hair. The toweling structure allows functional and decorative patterns to be woven into the fabric, enhancing both performance and appearance.",
       sizes: "One Size",
-      image: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&h=600&fit=crop"
+      image: hairTowelImage
     },
     {
       name: "Dish Scrubbers",
-      description: "Terry dish scrubbers with non-scratch texture for effective cleaning. Absorbent and lint-free.",
+      description: "Developed using toweling fabric, these dish scrubbers are designed to offer effective cleaning while remaining gentle on cookware. The textured toweling surface supports both functionality and design flexibility, allowing shapes and patterns to be tailored as per specific requirements.",
       sizes: "Standard",
-      image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=800&h=600&fit=crop"
+      image: dishScrubberImage
     },
     {
       name: "Baby Bibs / Burp Cloths",
-      description: "Soft terry bibs and burp cloths for babies. Highly absorbent and gentle on delicate skin.",
+      description: "Made from soft and absorbent toweling fabric, baby bibs and burp cloths are designed for everyday feeding and care routines. Their gentle texture helps absorb spills, drool, and milk while remaining comfortable against delicate skin.",
       sizes: "Standard",
-      image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=600&fit=crop"
+      image: babyBibsImage
     },
     {
       name: "Baby Bath Robes",
-      description: "Adorable hooded bath robes for babies and toddlers. Ultra-soft terry fabric with cute designs.",
+      description: "Made from soft toweling fabric, baby bathrobes are designed to provide gentle warmth, comfort, and absorbency for delicate skin. The toweling structure ensures effective drying after bath time while remaining lightweight, breathable, and cozy for infants and toddlers.",
       sizes: "0-12 months, 1-3 years, 3-5 years",
-      image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?w=800&h=600&fit=crop"
+      image: babyBathRobeImage
     },
     {
-      name: "Terry Apparel",
-      description: "Fashion-forward terry cloth clothing including shorts, t-shirts, and loungewear. Comfortable and stylish.",
+      name: "Terry Apparel & Solapur Chaddar Apparel",
+      description: "Terry apparel represents an innovative extension of toweling fabric into wearable design. These garments are developed by combining unique woven patterns and existing design elements to create visually distinctive and comfortable apparel.",
       sizes: "XS, S, M, L, XL, XXL",
-      image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&h=600&fit=crop"
+      image: terryApparelImage
     },
   ];
 

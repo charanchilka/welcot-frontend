@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Leaf, Recycle, Shield, Droplets, Zap, Wind, Heart, Sprout, Palette, TreePine } from "lucide-react";
 import sustainableHero from "@/assets/sustainable-hero.jpg";
-import recycledCottonImg from "@/assets/sustainable/recycled-cotton.jpg";
-import bambooImg from "@/assets/sustainable/bamboo-towels.jpg";
-import antibacterialImg from "@/assets/sustainable/antibacterial-towels.jpg";
-import vatDyedImg from "@/assets/sustainable/vat-dyed-towels.jpg";
-import organicImg from "@/assets/sustainable/organic-towels.jpg";
+import recycledCottonImg from "@/assets/sustainable/recycled-cotton.png";
+import bambooImg from "@/assets/sustainable/bamboo-towels.png";
+import antibacterialImg from "@/assets/sustainable/antibacterial-towels.png";
+import vatDyedImg from "@/assets/sustainable/vat-dyed-towels.png";
+import organicImg from "@/assets/sustainable/organic-towels.png";
 
 const Sustainable = () => {
   const ecoFeatures = [
@@ -115,7 +115,7 @@ const Sustainable = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
         </div>
-        
+
         <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center lg:text-left">
           <div className="max-w-3xl">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-foreground">
@@ -167,14 +167,14 @@ const Sustainable = () => {
                   <div className="grid md:grid-cols-2 gap-0">
                     {/* Image */}
                     <div className="relative h-64 md:h-auto overflow-hidden">
-                      <img 
-                        src={product.image} 
+                      <img
+                        src={product.image}
                         alt={product.name}
                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-smooth"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t to-transparent" />
                     </div>
-                    
+
                     {/* Content */}
                     <div className="p-8">
                       <CardHeader className="p-0 mb-6">
@@ -184,11 +184,11 @@ const Sustainable = () => {
                         </CardTitle>
                         <p className="text-muted-foreground text-lg">{product.description}</p>
                       </CardHeader>
-                      
+
                       <CardContent className="p-0">
                         <div className="space-y-4">
                           <h4 className="font-semibold text-sm uppercase tracking-wide text-accent mb-4">Environmental Impact:</h4>
-                          
+
                           {/* Table Header */}
                           <div className="grid grid-cols-12 gap-3 pb-3 border-b border-accent/20">
                             <div className="col-span-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -201,7 +201,7 @@ const Sustainable = () => {
                               What It Means
                             </div>
                           </div>
-                          
+
                           {/* Table Rows */}
                           <div className="space-y-3">
                             {product.impacts.map((impact, i) => (

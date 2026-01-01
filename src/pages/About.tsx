@@ -4,8 +4,9 @@ import { Linkedin, Mail, MessageCircle, CheckCircle, Package, Factory, Lightbulb
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutPartners from "@/assets/about-us/partners.png";
 import visionary1 from "@/assets/about-us/visionary-1.png";
-import teamRohan from "@/assets/team-rohan.jpg";
-import teamNikhil from "@/assets/team-nikhil.jpg";
+import visionary2 from "@/assets/about-us/visionary-21.png";
+import teamRohan from "@/assets/about-us/about-us-rohan.png";
+import teamNikhil from "@/assets/about-us/about-us-nikhil.png";
 import teamSiddharth from "@/assets/about-us/sidha.png";
 import aboutVision from "@/assets/about-us/vision.png";
 import aboutMission from "@/assets/about-us/mission.png";
@@ -94,7 +95,7 @@ const About = () => {
   const teamMembers = [
     {
       name: "Rohan Chilka",
-      role: "Marketing & Client Relations [ Americas & Europe]",
+      role: "Marketing & Client Relations [ North America & Europe]",
       image: teamRohan,
       linkedin: "#",
       email: "rohan@welcot.com",
@@ -274,7 +275,7 @@ Final inspection before shipment to ensure compliance with approved standards
       <div className="py-20 md:py-32">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Visionaries</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Leadership</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               The legacy behind Welcot
             </p>
@@ -282,8 +283,7 @@ Final inspection before shipment to ensure compliance with approved standards
           <div className="flex justify-center gap-8 max-w-4xl mx-auto">
             {[
               { name: "Rajesham Chilka", role: "Founder / Visionary", image: visionary1 },
-              { name: "Laxminarayan Dyma", role: "Founder / Visionary", image: visionary1 },
-              { name: "Anand Maheswar", role: "Founder / Visionary", image: teamNikhil }
+              { name: "Anand Maheswar", role: "Founder / Visionary", image: visionary2 }
             ].map((visionary, index) => (
               <Card key={index} className="overflow-hidden group hover:shadow-premium transition-smooth w-full max-w-sm">
                 <div className="aspect-square overflow-hidden">
@@ -307,7 +307,7 @@ Final inspection before shipment to ensure compliance with approved standards
       <div className="bg-muted/30 py-20 md:py-32">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Core Team</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Meet the leaders driving Welcot's vision forward
             </p>

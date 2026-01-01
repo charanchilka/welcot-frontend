@@ -195,9 +195,9 @@ const Home = () => {
       <section className="py-32 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6">Watch Our Factory Unit</h2>
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6">How Welcot Towels Are Manufactured</h2>
             <p className="text-xl lg:text-1xl text-muted-foreground max-w-3xl mx-auto font-light">
-              Step inside our world of innovation
+              From yarn processing to finished towels, explore the key stages carried out at our approved partner manufacturing unit.
             </p>
           </div>
           <div className="max-w-6xl mx-auto">

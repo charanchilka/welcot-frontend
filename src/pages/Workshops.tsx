@@ -4,6 +4,14 @@ import { Link } from "react-router-dom";
 import { Factory, Users, Cog, Award, ArrowRight } from "lucide-react";
 
 const Workshops = () => {
+
+  const workshopImages = Object.values(
+    import.meta.glob("@/assets/about-us/workshop/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      import: "default",
+    })
+  ) as string[];
+
   return (
     <div className="min-h-screen"
       style={{ marginTop: "9%" }}>
@@ -214,26 +222,38 @@ const Workshops = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((index) => (
-              <Card key={index} className="overflow-hidden border-none shadow-medium hover:shadow-premium transition-smooth group">
-                <CardContent className="p-0">
-                  <div className="relative aspect-[4/3] bg-muted overflow-hidden">
-                    <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                      <Factory size={48} />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-smooth">
-                      <p className="text-sm font-medium">Workshop Photo {index}</p>
-                    </div>
-                  </div>
-                </CardContent>
+            {workshopImages.map((index) => (
+
+              <Card
+                key={index}
+                className="group relative overflow-hidden rounded-2xl border border-border/40 bg-background shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:-translate-y-1"
+              >
+                <div className="relative h-[300px] w-full bg-gradient-to-br from-muted/50 to-muted overflow-hidden flex items-center justify-center">
+
+                  <img
+                    src={index}
+                    alt="Workshop"
+                    loading="lazy"
+                    onLoad={(e) => {
+                      const img = e.currentTarget
+                      if (img.naturalHeight > img.naturalWidth) {
+                        img.classList.add("h-full")
+                      } else {
+                        img.classList.add("w-full")
+                      }
+                    }}
+                    className="object-contain transition-transform duration-500 group-hover:scale-110"
+                  />
+
+                  {/* Soft dark overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Subtle border glow */}
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10 pointer-events-none" />
+                </div>
               </Card>
             ))}
           </div>
-
-          <p className="text-center text-muted-foreground mt-8 italic">
-            * Replace placeholder video IDs and add actual workshop photos for production use
-          </p>
         </div>
       </section>
 
