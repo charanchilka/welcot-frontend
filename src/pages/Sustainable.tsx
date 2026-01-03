@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Leaf, Recycle, Shield, Droplets, Zap, Wind, Heart, Sprout, Palette, TreePine } from "lucide-react";
-import sustainableHero from "@/assets/sustainable-hero.jpg";
+import sustainableHero from "@/assets/sustainable/hero-banner.png";
 import recycledCottonImg from "@/assets/sustainable/recycled-cotton.png";
 import bambooImg from "@/assets/sustainable/bamboo-towels.png";
 import antibacterialImg from "@/assets/sustainable/antibacterial-towels.png";
@@ -113,7 +113,7 @@ const Sustainable = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${sustainableHero})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/50 to-background/60" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center lg:text-left">
@@ -236,23 +236,23 @@ const Sustainable = () => {
       <section className="py-20 gradient-hero">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center">Making a Difference</h2>
+            <h2 className="text-4xl font-bold mb-8 text-center text-accent">Making a Difference</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div className="text-center">
                 <div className="text-4xl font-bold text-accent mb-2">50%</div>
-                <p className="text-muted-foreground">Less Water Usage</p>
+                <p className="text-white">Less Water Usage</p>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-accent mb-2">40%</div>
-                <p className="text-muted-foreground">Reduced Carbon Footprint</p>
+                <p className="text-white">Reduced Carbon Footprint</p>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-accent mb-2">100%</div>
-                <p className="text-muted-foreground">Recyclable Materials</p>
+                <p className="text-white">Recyclable Materials</p>
               </div>
             </div>
             <div className="text-center">
-              <Button size="lg" asChild>
+              <Button className="group hover:scale-105 transition-smooth shadow-soft border-2 hover:border-secondary" size="lg" asChild>
                 <Link to="/contact">Request Sustainable Collection Catalog</Link>
               </Button>
             </div>

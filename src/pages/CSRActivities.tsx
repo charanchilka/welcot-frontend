@@ -3,15 +3,15 @@ import { Heart, Leaf, Users, Recycle } from "lucide-react";
 
 // CSR Images
 import csrHero from "@/assets/csr/csr-hero-new.jpg";
-import csrCommitment from "@/assets/csr/csr-commitment.jpg";
-import communityWelfare from "@/assets/csr/community-welfare.jpg";
+import csrCommitment from "@/assets/about-us/csr/our-values.png";
+import communityWelfare from "@/assets/about-us/csr/community-welfare.jpg";
 import environmentalResponsibility from "@/assets/csr/environmental-responsibility.jpg";
-import employeeWellbeing from "@/assets/csr/employee-wellbeing.jpg";
-import sustainableProducts from "@/assets/csr/sustainable-products.jpg";
-import galleryCommunity from "@/assets/csr/gallery-community.jpg";
-import galleryEnvironment from "@/assets/csr/gallery-environment.jpg";
-import galleryWorkers from "@/assets/csr/gallery-workers.jpg";
-import gallerySustainability from "@/assets/csr/gallery-sustainability.jpg";
+import employeeWellbeing from "@/assets/about-us/csr/emplo-well-beign.png";
+import sustainableProducts from "@/assets/about-us/csr/antibacterial-towels.png";
+import galleryCommunity from "@/assets/about-us/csr/community-support.jpg";
+import galleryEnvironment from "@/assets/about-us/csr/env-initiatives.jpg";
+import galleryWorkers from "@/assets/about-us/csr/worker-wellfare.jpg";
+import gallerySustainability from "@/assets/about-us/csr/green-practice.webp";
 
 const CSRActivities = () => {
   useEffect(() => {

@@ -30,7 +30,6 @@ import beachTowels1 from "@/assets/products/beach-towels/beach-towel-1.png";
 import beachTowels2 from "@/assets/products/beach-towels/beach-towel-2.png";
 import beachTowels3 from "@/assets/products/beach-towels/beach-towel-3.png";
 import beachTowels4 from "@/assets/products/beach-towels/beach-towel-4.png";
-import beachTowels5 from "@/assets/products/beach-towels/beach-towel-5.png";
 import poolTowels1 from "@/assets/products/pool-towels/pool-towel-1.png";
 import poolTowels2 from "@/assets/products/pool-towels/pool-towel-2.png";
 import kitchenTowels1 from "@/assets/products/kitchen-towels/kitchen-towels-1.png";
@@ -90,6 +89,9 @@ const ProductDetail = () => {
       sizes: '30x60", 27x54", 24x48"',
       images: [bathTowels1, bathTowels2],
       customization: ["Size", "GSM", "Color", "Weave"],
+      moq1: "Minimum order starts from ",
+      moq2: "300 kg per color",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
     {
       slug: "hand-towels",
@@ -100,6 +102,9 @@ const ProductDetail = () => {
       sizes: '18x30", 16x24", 14x21"',
       images: [handTowels1, handTowels2, handTowels3],
       customization: ["Size", "GSM", "Color", "Weave"],
+      moq1: "Minimum order starts from ",
+      moq2: "300 kg per color",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
     {
       slug: "face-towels",
@@ -110,6 +115,9 @@ const ProductDetail = () => {
       sizes: '13x13", 12x12", 13x13"',
       images: [faceTowels1, faceTowels2, faceTowels3],
       customization: ["Size", "GSM", "Color", "Weave"],
+      moq1: "Minimum order starts from ",
+      moq2: "300 kg per color",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
     {
       slug: "towel-sets",
@@ -120,6 +128,9 @@ const ProductDetail = () => {
       sizes: 'Bath 30x60", Hand 16x24", Face 12x12" or any other sizes',
       images: [towelSets1, towelSets2],
       customization: ["Size", "GSM", "Color", "Weave"],
+      moq1: "Minimum order starts from 300 sets per color  for plain,dobby & piece dyed towels,",
+      moq2: "MOQ for yarn dyed towels depends on number of colors in towel",
+      moq3: "Final quantity depends on selected GSM and towel dimensions"
     },
     {
       slug: "beach-towels",
@@ -128,8 +139,11 @@ const ProductDetail = () => {
       categories: ["premium", "standard", "hygiene"],
       description: "Vibrant, oversized, and fast-drying, our beach towels are perfect for resorts, waterparks, and leisure brands. Offered in premium softness, practical standard builds, or hygiene-focused finishes for shared-use settings.",
       sizes: '40x72", 36x72", 30x60"',
-      images: [beachTowels1, beachTowels2, beachTowels3, beachTowels4, beachTowels5],
+      images: [beachTowels2, beachTowels1, beachTowels3, beachTowels4],
       customization: ["Size", "GSM", "Color", "Design"],
+      moq1: "Minimum order starts from ",
+      moq2: "500 Kg per design",
+      moq3: "Final quantity depends on selected GSM and towel dimensions"
     },
     {
       slug: "pool-towels",
@@ -140,6 +154,9 @@ const ProductDetail = () => {
       sizes: '40x72", 36x72", 30x60"',
       images: [poolTowels1, poolTowels2],
       customization: ["Size", "GSM", "Color", "Weave"],
+      moq1: "Minimum order starts from ",
+      moq2: "500 Kg per design",
+      moq3: "Final quantity depends on selected GSM and towel dimensions"
     },
     {
       slug: "kitchen-towels",
@@ -150,6 +167,9 @@ const ProductDetail = () => {
       sizes: '18x32", 16x24", 13x13"',
       images: [kitchenTowels1, kitchenTowels2],
       customization: ["Size", "GSM", "Color", "Weave"],
+      moq1: "Minimum order starts from ",
+      moq2: "300 Kg  per color  for plain, dobby & piece dyed towels",
+      moq3: "MOQ for yarn dyed towels depends on number of colors in towel"
     },
     {
       slug: "bath-mats",
@@ -160,6 +180,9 @@ const ProductDetail = () => {
       sizes: '20x30", 18x32"',
       images: [bathMats4, bathMats3, bathMats5, bathMats2, bathMats1],
       customization: ["Size", "GSM", "Color", "Weave"],
+      moq1: "Minimum order starts from ",
+      moq2: "300 Kg  per color  for plain, dobby & piece dyed towels",
+      moq3: "MOQ for yarn dyed Bath mat  depends on number of colors in towel"
     },
     {
       slug: "bathrobes",
@@ -170,6 +193,9 @@ const ProductDetail = () => {
       sizes: "S, M, L, XL",
       images: [bathrobes1, bathrobes2],
       customization: ["Size", "GSM", "Color", "Embroidery"],
+      moq1: "Minimum order starts from ",
+      moq2: "50 pieces for White Color  in plain, Dobby, Waffle",
+      moq3: "MOQ for yarn dyed Terry fabric robes like strips or other designs depends on number of colors"
     },
     {
       slug: "jacquard-towels",
@@ -180,6 +206,9 @@ const ProductDetail = () => {
       sizes: '36x72", 30x60", 27x54"',
       images: [jacquardTowels3, jacquardTowels2, jacquardTowels1, jacquardTowels4],
       customization: ["Size", "GSM", "Color", "Pattern"],
+      moq1: "Minimum order starts from ",
+      moq2: "300 Kg  per color  for piece dyed Jacquard towels",
+      moq3: "MOQ for yarn dyed Jacquard towels depends on number of colors in towel"
     },
     {
       slug: "velour-towels",
@@ -190,6 +219,9 @@ const ProductDetail = () => {
       sizes: '36x72", 30x60", 27x54", 24x48", 16x24", 14x21", 13x13"',
       images: [velourTowels3, velourTowels2, velourTowels1],
       customization: ["Size", "GSM", "Color", "Printing"],
+      moq1: "Minimum order starts from ",
+      moq2: "300 Kg  per color  for piece dyed Velour towels",
+      moq3: "MOQ for yarn dyed Velour towels depends on number of colors in towel"
     },
     {
       slug: "hotel-white-towels",
@@ -200,6 +232,9 @@ const ProductDetail = () => {
       sizes: '36x72", 30x60", 27x54", 16x24"',
       images: [hotelWhiteTowels2, hotelWhiteTowels1],
       customization: ["Size", "GSM", "Logo Weaving"],
+      moq1: "Minimum order starts from ",
+      moq2: "500 kg per colour",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
     {
       slug: "tea-towels",
@@ -210,6 +245,9 @@ const ProductDetail = () => {
       sizes: '18x32", 16x24", 14x21"',
       images: [teaTowels1, teaTowels2],
       customization: ["Size", "GSM", "Color", "Design"],
+      moq1: "Minimum order starts from ",
+      moq2: "500 kg per colour",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
     {
       slug: "gym-sports-towels",
@@ -220,6 +258,9 @@ const ProductDetail = () => {
       sizes: '18x32", 16x24", 14x21", 13x13"',
       images: [gymTowels4, gymTowels2, gymTowels3, gymTowels1],
       customization: ["Size", "GSM", "Color", "Treatment"],
+      moq1: "Minimum order starts from ",
+      moq2: "500 kg per colour",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
     {
       slug: "monogrammed-towels",
@@ -230,6 +271,9 @@ const ProductDetail = () => {
       sizes: '30x60", 27x54", 24x48"',
       images: [monogrammedTowels1, monogrammedTowels2, monogrammedTowels3],
       customization: ["Size", "GSM", "Color", "Monogram"],
+      moq1: "Minimum order starts from ",
+      moq2: "500 kg per colour",
+      moq3: "For monogramming, embroidery, or woven logo designs, MOQ may vary depending on complexity"
     },
     {
       slug: "embroidery-towels",
@@ -240,6 +284,9 @@ const ProductDetail = () => {
       sizes: '30x60", 27x54", 24x48"',
       images: [embroideryTowels2, embroideryTowels3, embroideryTowels1],
       customization: ["Size", "GSM", "Color", "Embroidery"],
+      moq1: "Minimum order starts from ",
+      moq2: "300 kg per colour",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
     {
       slug: "promotional-towels",
@@ -250,6 +297,9 @@ const ProductDetail = () => {
       sizes: '30x60", 27x54", 24x48"',
       images: [promotionalTowels1, promotionalTowels2],
       customization: ["Size", "GSM", "Color", "Branding"],
+      moq1: "Minimum order depends on the type of ",
+      moq2: "customization required",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
     {
       slug: "custom-design-towels",
@@ -260,6 +310,9 @@ const ProductDetail = () => {
       sizes: "Customizable",
       images: [customDesignTowels2, customDesignTowels3, customDesignTowels1],
       customization: ["All Aspects Customizable"],
+      moq1: "Minimum order starts from ",
+      moq2: "400-500kg per design or color, depending on complexity and weave structure",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
     {
       slug: "turkish-towels-pestemal",
@@ -270,6 +323,9 @@ const ProductDetail = () => {
       sizes: '30x60", 35x70", 40x80"',
       images: [turkishTowels1, turkishTowels2],
       customization: ["Size", "Color", "Fringe Style"],
+      moq1: "Minimum order starts from ",
+      moq2: "300 kg per color or design",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
     {
       slug: "honeycomb-waffle-towels",
@@ -280,6 +336,9 @@ const ProductDetail = () => {
       sizes: '30x60", 27x54", 24x48"',
       images: [honeycombTowels2, honeycombTowels1],
       customization: ["Size", "GSM", "Color", "Pattern"],
+      moq1: "Minimum order starts from",
+      moq2: "300 kg per color or design",
+      moq3: "Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications"
     },
   ];
 
@@ -497,10 +556,10 @@ const ProductDetail = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-3">Minimum Order Quantity</h3>
                 <p className="text-lg mb-2">
-                  <strong>MOQ:</strong> Minimum order starts from <span className="text-accent font-semibold">300 kg per color</span>.
+                  <strong>MOQ:</strong>  {product.moq1} <span className="text-accent font-semibold"> {product.moq2}</span>.
                 </p>
                 <p className="text-muted-foreground">
-                  Final quantity in pieces depends on selected GSM and towel dimensions. Contact us for exact piece counts for your specifications.
+                  {product.moq3}.
                 </p>
               </div>
             </div>

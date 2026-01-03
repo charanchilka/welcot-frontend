@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { 
-  Percent, 
-  Package, 
-  MapPin, 
-  Sparkles, 
-  Palette, 
-  Warehouse, 
-  DollarSign, 
-  Truck, 
-  UserCheck, 
-  Users, 
+import {
+  Percent,
+  Package,
+  MapPin,
+  Sparkles,
+  Palette,
+  Warehouse,
+  DollarSign,
+  Truck,
+  UserCheck,
+  Users,
   ShieldCheck,
   FileText,
   CheckCircle2,
@@ -23,7 +23,7 @@ import { useToast } from "@/hooks/use-toast";
 
 // Images
 import dealershipHero from "@/assets/dealership/dealership-hero.jpg";
-import dealershipPartnership from "@/assets/dealership/dealership-partnership.jpg";
+import dealershipPartnership from "@/assets/about-us/delearship/dealership.jpg";
 
 const Dealership = () => {
   const { toast } = useToast();
@@ -126,12 +126,12 @@ const Dealership = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Construct WhatsApp message
     const message = `*Dealership Enquiry*%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Company:* ${encodeURIComponent(formData.companyName)}%0A*Location:* ${encodeURIComponent(formData.location)}%0A*Phone:* ${encodeURIComponent(formData.phone)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Business Background:* ${encodeURIComponent(formData.businessBackground)}`;
-    
+
     window.open(`https://wa.me/919825841234?text=${message}`, "_blank");
-    
+
     toast({
       title: "Redirecting to WhatsApp",
       description: "Your dealership enquiry is being sent via WhatsApp.",

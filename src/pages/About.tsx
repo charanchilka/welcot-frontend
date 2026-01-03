@@ -4,10 +4,10 @@ import { Linkedin, Mail, MessageCircle, CheckCircle, Package, Factory, Lightbulb
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutPartners from "@/assets/about-us/partners.png";
 import visionary1 from "@/assets/about-us/visionary-1.png";
-import visionary2 from "@/assets/about-us/visionary-21.png";
+import visionary2 from "@/assets/about-us/visionary-2.png";
 import teamRohan from "@/assets/about-us/about-us-rohan.png";
 import teamNikhil from "@/assets/about-us/about-us-nikhil.png";
-import teamSiddharth from "@/assets/about-us/sidha.png";
+import teamSiddharth from "@/assets/about-us/about-us-sidha.png";
 import aboutVision from "@/assets/about-us/vision.png";
 import aboutMission from "@/assets/about-us/mission.png";
 import valueQuality from "@/assets/about-us/about-us-core-value-1.png";
@@ -18,6 +18,8 @@ import valuePartnership from "@/assets/about-us/about-us-core-value-5.png";
 import valueSustainability from "@/assets/about-us/about-us-core-value-6.png";
 import whyUsManufacturing from "@/assets/why-us-manufacturing.jpg";
 import whyUsQuality from "@/assets/why-us-quality.jpg";
+import WhatsAppButton from "@/assets/others/whatsapp.png";
+import LinkedInButton from "@/assets/others/linkedin.png";
 
 const About = () => {
   const [counts, setCounts] = useState({ countries: 0, years: 0, quality: 0 });
@@ -332,7 +334,11 @@ Final inspection before shipment to ensure compliance with approved standards
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors hover:scale-110"
                     >
-                      <Linkedin className="w-5 h-5" />
+                      <img
+                        src={LinkedInButton}
+                        alt="LinkedIn"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                      />
                     </a>
                     <a
                       href={`mailto:${member.email}`}
@@ -345,7 +351,11 @@ Final inspection before shipment to ensure compliance with approved standards
                       target="_blank"
                       className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] text-white hover:bg-[#20BA5A] transition-colors hover:scale-110"
                     >
-                      <MessageCircle className="w-5 h-5" />
+                      <img
+                        src={WhatsAppButton}
+                        alt="WhatsApp"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                      />
                     </a>
                   </div>
                 </CardContent>
