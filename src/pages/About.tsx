@@ -12,7 +12,7 @@ import aboutVision from "@/assets/about-us/vision.png";
 import aboutMission from "@/assets/about-us/mission.png";
 import valueQuality from "@/assets/about-us/about-us-core-value-1.png";
 import valueCollection from "@/assets/about-us/about-us-core-value-2.png";
-import valueManufacturing from "@/assets/about-us/about-us-core-value-3.png";
+import valueManufacturing from "@/assets/about-us/value-manufacturing.png";
 import valueInnovation from "@/assets/about-us/about-us-core-value-4.png";
 import valuePartnership from "@/assets/about-us/about-us-core-value-5.png";
 import valueSustainability from "@/assets/about-us/about-us-core-value-6.png";
@@ -97,27 +97,27 @@ const About = () => {
   const teamMembers = [
     {
       name: "Rohan Chilka",
-      role: "Marketing & Client Relations [ North America & Europe]",
+      role: "Head of Global Business & Marketing",
       image: teamRohan,
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/rohan-chilka-welcot-towels-bath-towels-hotel-linen-white-towels-beach-towels-kitchen-towels-terry/",
       email: "rohan@welcot.com",
-      whatsapp: "+91-9404947907"
+      whatsapp: "919404947907"
     },
     {
       name: "Nikhil Maheshwar",
-      role: "Marketing & Operations [Asia-Pacific, Africa & Middle East]",
+      role: "Marketing & Operations",
       image: teamNikhil,
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/nikhil-maheshwar-731a38309/",
       email: "nikhil@welcot.com",
-      whatsapp: "+91-7350485599"
+      whatsapp: "917350485599"
     },
     {
       name: "Siddharth Kavaddevi",
-      role: "Finance & Administration",
+      role: "Operations & Administration",
       image: teamSiddharth,
       linkedin: "#",
-      email: "siddharth@welcot.com",
-      whatsapp: "+91-9209915556"
+      email: "export@welcot.com",
+      whatsapp: "919209915556"
     }
   ];
 
@@ -184,17 +184,21 @@ From yarn selection and fabric construction to finishes, embroidery, and packagi
     {
       icon: <Target className="w-10 h-10" />,
       title: "Long-Term Business Vision",
-      content: `At Welcot, we believe great business is built on trust, transparency, and time. 
+      content: `At Welcot, we believe strong businesses are built on trust, transparency, and long-term commitment. Our Partnership Program is designed for clients who seek more than a supplier  it is built for brands looking for a reliable manufacturing partner that supports growth at every stage.
 
-Our long-term vision is centered around creating reliable, lasting partnerships that offer more than just products. We aim to be a dependable manufacturing backbone for your brand, supporting your goals today and scaling with you tomorrow.
-We insure -
+      Through this program, we act as a dependable backbone for your brand, offering stability today and the capacity to scale with you tomorrow. Our focus is on consistency, collaboration, and creating value beyond products.
 
-• Stable, consistent supply chain — No last-minute sourcing stress
-• Reliable pricing and forecast planning — Ideal for long-term import strategies
-• Priority production & sampling support for loyal clients
-• Flexible terms & custom arrangements as our relationship grows
+Our Partnership Program ensures:
 
-We're here to grow with you.`,
+• Stable, consistent supply chain eliminating last-minute sourcing stress
+• Reliable pricing and forecast planning  ideal for long-term import strategies
+• Priority production and sampling support for committed, long-term partners
+• Flexible terms and customized arrangements that evolve as our partnership grows
+
+And much more through our long-term partnership program
+
+We're here to grow with you
+`,
       image: valuePartnership
     },
     {
@@ -253,7 +257,7 @@ Final inspection before shipment to ensure compliance with approved standards
                   Built on years of local expertise and domestic supply experience, Welcot was established with a shared vision — to bring together resources, craftsmanship, and innovation under one brand focused on the global market.
                 </p>
                 <p>
-                  We collaborate closely with our trusted manufacturing partners to oversee production, ensure superior quality, and deliver innovative product solutions. At Welcot, we are committed to serving international clients with quality towels, toweling accessories, and apparel backed by reliable service and professional excellence.
+                  We collaborate closely with our manufacturing partners to oversee production, ensure superior quality, and deliver innovative product solutions. At Welcot, we are committed to serving international clients with quality towels, toweling accessories, and apparel backed by reliable service and professional excellence.
                 </p>
                 <p className="font-semibold text-foreground">
                   With Welcot, you get more than great towels — you get a manufacturing partner focused on your growth.
@@ -284,8 +288,8 @@ Final inspection before shipment to ensure compliance with approved standards
           </div>
           <div className="flex justify-center gap-8 max-w-4xl mx-auto">
             {[
-              { name: "Rajesham Chilka", role: "Founder / Visionary", image: visionary1 },
-              { name: "Anand Maheswar", role: "Founder / Visionary", image: visionary2 }
+              { name: "Rajesham Chilka", role: "Guiding Vision & Growth", image: visionary1 },
+              { name: "Anand Maheswar", role: "Foundation of manufacturing excellence", image: visionary2 }
             ].map((visionary, index) => (
               <Card key={index} className="overflow-hidden group hover:shadow-premium transition-smooth w-full max-w-sm">
                 <div className="aspect-square overflow-hidden">

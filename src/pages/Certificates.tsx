@@ -5,10 +5,10 @@ import { Download, FileText } from "lucide-react";
 import { useState } from "react";
 
 // Import certification logos
-import certDgft from "@/assets/cert-dgft.jpg";
-import certMsme from "@/assets/cert-msme.png";
-import certIcegate from "@/assets/cert-icegate.png";
-import certGst from "@/assets/cert-gst.png";
+import certDgft from "@/assets/about-us/certificates/cert-dgft.jpg";
+import certMsme from "@/assets/about-us/certificates/cert-msme.png";
+import certIcegate from "@/assets/about-us/certificates/cert-icegate.png";
+import certGst from "@/assets/about-us/certificates/cert-gst.png";
 
 const Certificates = () => {
   const [activeTab, setActiveTab] = useState("certifications");
@@ -29,13 +29,19 @@ const Certificates = () => {
       title: "Complete Plain Dyed Towel Test Report",
       description: "Comprehensive test report covering all quality parameters for plain dyed towels including colorfastness, absorbency, tensile strength, and dimensional stability.",
       icon: <FileText className="w-12 h-12" />,
-      downloadUrl: "/reports/plain-dyed-towel-report.pdf",
+      downloadUrl: "https://welcottowels.com/assets/about-us/reports/plain-dyed-towel-report.pdf",
     },
     {
       title: "Complete Yarn Dyed Towel Test Report",
       description: "Detailed test report for yarn dyed towels covering pattern consistency, color retention, fabric strength, and durability metrics.",
       icon: <FileText className="w-12 h-12" />,
-      downloadUrl: "/reports/yarn-dyed-towel-report.pdf",
+      downloadUrl: "https://welcottowels.com/assets/assets/about-us/reports/Yarn-Dyed-Towel-Test-Report.png",
+    },
+    {
+      title: "Lint Test Report of Yarn Dyed Towel",
+      description: "Detailed lint test report for yarn dyed towels covering pattern consistency, color retention, fabric strength, and durability metrics.",
+      icon: <FileText className="w-12 h-12" />,
+      downloadUrl: "https://welcottowels.com/assets/assets/about-us/reports/Lint-Dyed-Towel-Test-Report.pdf",
     },
   ];
 
@@ -95,8 +101,8 @@ const Certificates = () => {
                       <CardContent className="p-6 h-full flex flex-col items-center justify-center">
                         {cert.image ? (
                           <div className="w-full h-full flex items-center justify-center">
-                            <img 
-                              src={cert.image} 
+                            <img
+                              src={cert.image}
                               alt={cert.name}
                               className="max-w-full max-h-full object-contain group-hover:scale-110 transition-smooth"
                             />

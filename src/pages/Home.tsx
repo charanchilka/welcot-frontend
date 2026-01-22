@@ -31,10 +31,10 @@ import whyUsVariety from "@/assets/home-page/why-choose/why-choose-7.png";
 import whyUsManufacturing from "@/assets/home-page/why-choose/why-choose-4.jpg";
 import whyUsPartnership from "@/assets/home-page/why-choose/why-choose-7.png";
 
-import certDgft from "@/assets/cert-dgft.jpg";
-import certMsme from "@/assets/cert-msme.png";
-import certIcegate from "@/assets/cert-icegate.png";
-import certGst from "@/assets/cert-gst.png";
+import certDgft from "@/assets/about-us/certificates/cert-dgft.jpg";
+import certMsme from "@/assets/about-us/certificates/cert-msme.png";
+import certIcegate from "@/assets/about-us/certificates/cert-icegate.png";
+import certGst from "@/assets/about-us/certificates/cert-gst.png";
 
 const Home = () => {
   const heroSlides = [
@@ -197,7 +197,7 @@ const Home = () => {
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-5xl lg:text-6xl font-bold mb-6">How Welcot Towels Are Manufactured</h2>
             <p className="text-xl lg:text-1xl text-muted-foreground max-w-3xl mx-auto font-light">
-              From yarn processing to finished towels, explore the key stages carried out at our approved partner manufacturing unit.
+              From yarn processing to finished towels, explore the key stages carried out at our partner manufacturing unit.
             </p>
           </div>
           <div className="max-w-6xl mx-auto">
