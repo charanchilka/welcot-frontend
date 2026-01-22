@@ -6,7 +6,7 @@ import csrHero from "@/assets/csr/csr-hero-new.jpg";
 import csrCommitment from "@/assets/about-us/csr/our-values.png";
 import communityWelfare from "@/assets/about-us/csr/community-welfare.jpg";
 import environmentalResponsibility from "@/assets/csr/environmental-responsibility.jpg";
-import employeeWellbeing from "@/assets/about-us/csr/emplo-well-beign.png";
+import employeeWellbeing from "@/assets/about-us/csr/emplo-well-beign.webp";
 import sustainableProducts from "@/assets/about-us/csr/antibacterial-towels.png";
 import galleryCommunity from "@/assets/about-us/csr/community-support.jpg";
 import galleryEnvironment from "@/assets/about-us/csr/env-initiatives.jpg";

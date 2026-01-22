@@ -52,6 +52,7 @@ import hotelWhiteTowels1 from "@/assets/products/white-towels/white-towel-1.png"
 import hotelWhiteTowels2 from "@/assets/products/white-towels/white-towel-2.png";
 import teaTowels1 from "@/assets/products/tea-towels/tea-towel-1.png";
 import teaTowels2 from "@/assets/products/tea-towels/tea-towel-2.png";
+import teaTowels3 from "@/assets/products/tea-towels/tea-towel-3.png";
 import gymTowels1 from "@/assets/products/gym-towels/gym-towel-1.png";
 import gymTowels2 from "@/assets/products/gym-towels/gym-towel-2.png";
 import gymTowels3 from "@/assets/products/gym-towels/gym-towel-3.png";
@@ -243,7 +244,7 @@ const ProductDetail = () => {
       categories: ["premium", "standard", "hygiene"],
       description: "Ideal for drying crockery and glassware, tea towels are lightweight and versatile. Used in hotels, cafes, and institutional kitchens. Available in various absorbency and durability levels.",
       sizes: '18x32", 16x24", 14x21"',
-      images: [teaTowels1, teaTowels2],
+      images: [teaTowels1, teaTowels2, teaTowels3],
       customization: ["Size", "GSM", "Color", "Design"],
       moq1: "Minimum order starts from ",
       moq2: "500 kg per colour",
