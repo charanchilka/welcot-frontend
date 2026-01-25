@@ -189,8 +189,8 @@ const Sustainable = () => {
                         <div className="space-y-4">
                           <h4 className="font-semibold text-sm uppercase tracking-wide text-accent mb-4">Environmental Impact:</h4>
 
-                          {/* Table Header */}
-                          <div className="grid grid-cols-12 gap-3 pb-3 border-b border-accent/20">
+                          {/* Table Header - Hidden on mobile */}
+                          <div className="hidden lg:grid grid-cols-12 gap-3 pb-3 border-b border-accent/20">
                             <div className="col-span-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                               Impact Area
                             </div>
@@ -205,17 +205,20 @@ const Sustainable = () => {
                           {/* Table Rows */}
                           <div className="space-y-3">
                             {product.impacts.map((impact, i) => (
-                              <div key={i} className="grid grid-cols-12 gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-smooth">
-                                <div className="col-span-4 flex items-start gap-2">
+                              <div key={i} className="flex flex-col lg:grid lg:grid-cols-12 gap-2 lg:gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-smooth">
+                                {/* Impact Area */}
+                                <div className="lg:col-span-4 flex items-start gap-2">
                                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent">
                                     {impact.icon}
                                   </div>
                                   <span className="font-semibold text-sm leading-tight pt-1">{impact.impactArea}</span>
                                 </div>
-                                <div className="col-span-4 flex items-center">
+                                {/* Benefit */}
+                                <div className="lg:col-span-4 flex items-center pl-10 lg:pl-0">
                                   <span className="text-accent font-bold text-sm">{impact.benefit}</span>
                                 </div>
-                                <div className="col-span-4 flex items-center">
+                                {/* Meaning */}
+                                <div className="lg:col-span-4 flex items-center pl-10 lg:pl-0">
                                   <p className="text-xs text-muted-foreground leading-relaxed">{impact.meaning}</p>
                                 </div>
                               </div>
