@@ -573,7 +573,7 @@ const ProductDetail = () => {
             <Link to="/contact">Contact Us to Know Your MOQ in Pieces</Link>
           </Button>
           <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6">
-            <Link to="/contact">Need Free Samples? Contact Us</Link>
+            <Link to="/contact">Need Samples? Contact Us</Link>
           </Button>
         </div>
 

@@ -29,19 +29,19 @@ const Certificates = () => {
       title: "Complete Plain Dyed Towel Test Report",
       description: "Comprehensive test report covering all quality parameters for plain dyed towels including colorfastness, absorbency, tensile strength, and dimensional stability.",
       icon: <FileText className="w-12 h-12" />,
-      downloadUrl: "https://welcottowels.com/assets/about-us/reports/plain-dyed-towel-report.pdf",
+      downloadUrl: "/public/reports/plain-dyed-towel-report.pdf",
     },
     {
       title: "Complete Yarn Dyed Towel Test Report",
       description: "Detailed test report for yarn dyed towels covering pattern consistency, color retention, fabric strength, and durability metrics.",
       icon: <FileText className="w-12 h-12" />,
-      downloadUrl: "https://welcottowels.com/assets/assets/about-us/reports/Yarn-Dyed-Towel-Test-Report.png",
+      downloadUrl: "/public/reports/Yarn-Dyed-Towel-Test-Report.png",
     },
     {
       title: "Lint Test Report of Yarn Dyed Towel",
       description: "Detailed lint test report for yarn dyed towels covering pattern consistency, color retention, fabric strength, and durability metrics.",
       icon: <FileText className="w-12 h-12" />,
-      downloadUrl: "https://welcottowels.com/assets/assets/about-us/reports/Lint-Dyed-Towel-Test-Report.pdf",
+      downloadUrl: "/public/reports/Lint-Dyed-Towel-Test-Report.pdf",
     },
   ];
 

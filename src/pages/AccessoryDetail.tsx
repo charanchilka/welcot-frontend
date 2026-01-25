@@ -95,7 +95,7 @@ const AccessoryDetail = () => {
       description: "Designed using terry-woven fabric, these bags combine functionality with distinctive woven aesthetics. The toweling construction allows attractive designs and patterns to be woven directly into the fabric, creating a unique textured look while maintaining softness and durability.\nThey are developed for full customization, offering flexibility in weave pattern, design, colors, size, and overall style to match specific brand or collection requirements. \nFor customized woven designs, a defined MOQ applies, which can be comfortably achieved by combining bags with other toweling accessories such as hats, pouches, hair towels, or towels within the same production order. \nAdditionally, a selection of ready-to-use designs and patterns is available, offered with very low MOQ, making them ideal for quick launches or smaller programs.",
       images: bagImages,
       sizes: ["Small (30x20 cm)", "Medium (40x30 cm)", "Large (50x40 cm)"],
-      moq: "300 kg per color/design (approximately 150-200 pieces depending on size)",
+      moq: "MOQ for existing designs: 100 pcs.",
       relatedProducts: ["pouches", "beach-ponchos", 'terry-apparel-solapur-chaddar-apparel', 'hats-caps']
     },
     "pouches": {
@@ -104,7 +104,7 @@ const AccessoryDetail = () => {
       description: "Crafted from terry-woven toweling fabric, these pouches offer a balance of softness, durability, and refined visual appeal. The woven structure allows patterns and textures to be integrated directly into the fabric, resulting in a premium look while remaining highly functional.\n\nThey are designed for complete customization, with flexibility in woven patterns, design layouts, color options, size, and styling to suit specific branding or collection needs.\n\nA curated range of ready-to-use designs is also available with low MOQ, making them suitable for fast-moving retail programs or smaller quantity requirements.",
       images: pouchesImages,
       sizes: ["Small (15x10 cm)", "Medium (20x15 cm)"],
-      moq: "300 kg per color/design (approximately 200-300 pieces depending on size)",
+      moq: "MOQ for existing designs: 100 pcs.",
       relatedProducts: ["bags", "beach-ponchos", "hats-caps", "dish-scrubbers"]
     },
     "hats-caps": {
@@ -113,7 +113,7 @@ const AccessoryDetail = () => {
       description: "Made from terry-woven toweling fabric, these hats are designed to offer comfort, breathability, and a distinctive textured look. The toweling weave allows attractive patterns and designs to be woven directly into the fabric, enhancing both visual appeal and functionality.\n\nThey are suitable for full customization, with flexibility in woven patterns, colors, sizing, and overall style — making them ideal for beachwear, resort collections, and casual lifestyle use.\n\nAlongside customized options, a selection of ready-to-use designs and styles is available with low MOQ, allowing easy entry for seasonal programs or quick product launches.",
       images: hatsImages,
       sizes: ["One Size", "Adjustable"],
-      moq: "300 kg per color/design (approximately 200-250 pieces)",
+      moq: "MOQ for existing designs: 100 pcs.",
       relatedProducts: ["beach-ponchos", "bags", "hair-towels", "pouches"]
     },
     "beach-ponchos": {
@@ -122,7 +122,7 @@ const AccessoryDetail = () => {
       description: "Made from toweling fabric, these beach ponchos are designed for easy drying and relaxed comfort after swimming. The absorbent structure provides warmth and coverage while remaining lightweight and breathable, making them ideal for beach, pool, and resort use.\n\nThey are available in ready-to-use designs for quick programs as well as fully customized options, with flexibility in size, colors, patterns, and styling to meet specific collection or branding requirements.",
       images: beachPonchoImage,
       sizes: ["Adult (One Size)", "Kids (8-12 years)"],
-      moq: "300 kg per color/design (approximately 100-150 pieces)",
+      moq: "MOQ for existing designs: 100 pcs.",
       relatedProducts: ["baby-bibs-burp-cloths", "bags", "hats-caps", "terry-apparel-solapur-chaddar-apparel"]
     },
     "hair-towels": {
@@ -130,8 +130,8 @@ const AccessoryDetail = () => {
       tagline: "Quick-dry protection for your hair",
       description: "Made from terry-woven toweling fabric, these hair towels are designed for efficient moisture absorption while remaining gentle on hair. The toweling structure allows functional and decorative patterns to be woven into the fabric, enhancing both performance and appearance.\n\nThey are suitable for full customization, with flexibility in weave patterns, colors, sizes, and fastening styles to meet specific branding or collection requirements.\n\nIn addition to customized designs, a range of ready-to-use styles is available with low MOQ, making them ideal for salons, spas, retail collections, and quick-launch programs.",
       images: hairTowelImages,
-      sizes: ["One Size"],
-      moq: "300 kg per color/design (approximately 400-500 pieces)",
+      sizes: ["Any Size"],
+      moq: "MOQ for existing designs: 100 pcs.",
       relatedProducts: ["bags", "pouches", "dish-scrubbers", "bags"]
     },
     "dish-scrubbers": {
@@ -139,8 +139,8 @@ const AccessoryDetail = () => {
       tagline: "Effective cleaning with gentle care",
       description: "Developed using toweling fabric, these dish scrubbers are designed to offer effective cleaning while remaining gentle on cookware. The textured toweling surface supports both functionality and design flexibility, allowing shapes and patterns to be tailored as per specific requirements.\n\nCustomization extends beyond product design to include packaging, labeling, and branding, making these scrubbers suitable for private label, retail, and promotional programs.",
       images: dishScrubberImages,
-      sizes: ["Standard"],
-      moq: "300 kg per color/design (approximately 600-800 pieces)",
+      sizes: ["5 inches x 6 inches or any size"],
+      moq: "MOQ for existing designs: 100 pcs.",
       relatedProducts: ["pouches", "bags", "hair-towels", "baby-bibs-burp-cloths"]
     },
     "baby-bibs-burp-cloths": {
@@ -148,8 +148,8 @@ const AccessoryDetail = () => {
       tagline: "Soft protection for little ones",
       description: "Made from soft and absorbent toweling fabric, baby bibs and burp cloths are designed for everyday feeding and care routines. Their gentle texture helps absorb spills, drool, and milk while remaining comfortable against delicate skin.\n\nAvailable in ready-to-use designs as well as customized options, they can be developed in various shapes, sizes, colors, edging styles, and fastening options to suit baby care and private label programs.",
       images: babyBibsImages,
-      sizes: ["Standard"],
-      moq: "300 kg per color/design (approximately 500-700 pieces)",
+      sizes: ["0-36 months"],
+      moq: "MOQ for existing designs: 100 pcs.",
       relatedProducts: ["baby-bath-robes", "pouches", "bags", "dish-scrubbers"]
     },
     "baby-bath-robes": {
@@ -158,7 +158,7 @@ const AccessoryDetail = () => {
       description: "Made from soft toweling fabric, baby bathrobes are designed to provide gentle warmth, comfort, and absorbency for delicate skin. The toweling structure ensures effective drying after bath time while remaining lightweight, breathable, and cozy for infants and toddlers.\n\nAvailable in ready-to-use designs as well as fully customized options, these bathrobes can be tailored in size, colors, patterns, hood styles, and detailing to suit baby care collections or private label programs.",
       images: babyBathRobeImages,
       sizes: ["0-12 months", "1-3 years", "3-5 years"],
-      moq: "300 kg per color/design (approximately 150-200 pieces)",
+      moq: "MOQ for existing designs: 100 pcs.",
       relatedProducts: ["baby-bibs-burp-cloths", "baby-bath-robes", "pouches", "bags"]
     },
     "terry-apparel-solapur-chaddar-apparel": {
@@ -167,7 +167,7 @@ const AccessoryDetail = () => {
       description: "Terry apparel represents an innovative extension of toweling fabric into wearable design. These garments are developed by combining unique woven patterns and existing design elements to create visually distinctive and comfortable apparel. Each piece is thoughtfully constructed to balance absorbency, softness, and wearability.\nAlongside toweling-based apparel, selected styles such as jackets developed from Solapur chaddars are also offered. Solapur chaddars are a GI-tagged (Geographical Indication) textile, recognized for their origin-specific weaving techniques, distinct texture, and long-standing reputation. This GI status, protected under India’s Geographical Indications of Goods (Registration and Protection) Act, 1999, ensures authenticity and preserves the unique characteristics linked to their place of origin.",
       images: terryApparelImages,
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      moq: "300 kg per color/design (approximately 100-200 pieces depending on item)",
+      moq: "MOQ for existing designs: 100 pcs.",
       relatedProducts: ["beach-ponchos", "pouches", "hair-towels", "bags"]
     }
   };
@@ -243,7 +243,7 @@ const AccessoryDetail = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Specifications & Options</h2>
-            <p className="text-xl text-muted-foreground">Customized to your exact requirements</p>
+            <p className="text-xl text-muted-foreground">Tailored to Buyer Specifications</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -254,7 +254,7 @@ const AccessoryDetail = () => {
                 <h3 className="text-lg font-semibold">Quality</h3>
               </div>
               <p className="text-muted-foreground">
-                Premium terry fabric construction with superior craftsmanship
+                Terry fabric construction with superior craftsmanship
               </p>
             </Card>
 
@@ -262,7 +262,7 @@ const AccessoryDetail = () => {
             <Card className="p-6 shadow-soft hover:shadow-premium transition-smooth">
               <div className="flex items-center gap-3 mb-4">
                 <Ruler className="text-accent" size={24} />
-                <h3 className="text-lg font-semibold">Material</h3>
+                <h3 className="text-lg font-semibold">Sizes</h3>
               </div>
               <p className="text-muted-foreground">
                 {accessory.sizes.join(", ")}
@@ -312,7 +312,7 @@ const AccessoryDetail = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-lg mb-2">Colour</h4>
-                <p className="text-muted-foreground">Any color from Pantone chart</p>
+                <p className="text-muted-foreground">Any colour or colour combination</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -321,7 +321,16 @@ const AccessoryDetail = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-lg mb-2">Logo Branding</h4>
-                <p className="text-muted-foreground">Embroidery, printing, or jacquard logos</p>
+
+                {accessory.name === "Baby Bath Robes" ? (
+                  <p className="text-muted-foreground">
+                    Embroidery, patch work, printing, or jacquard logos
+                  </p>
+                ) : (
+                  <p className="text-muted-foreground">
+                    Embroidery, printing, or jacquard logos
+                  </p>
+                )}
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -357,7 +366,7 @@ const AccessoryDetail = () => {
                 {accessory.moq}
               </p>
               <p className="text-sm text-muted-foreground">
-                <strong>Note:</strong> Final quantity in pieces depends on the specific size and weight. We work with you to determine the exact piece count based on your requirements.
+                <strong>Note:</strong> MOQ for custom designs varies based on colors and design complexity. Please contact our team for confirmation.
               </p>
             </div>
           </div>
@@ -369,7 +378,7 @@ const AccessoryDetail = () => {
             <Link to="/contact">Contact Us to Know Your MOQ in Pieces</Link>
           </Button>
           <Button size="lg" variant="outline" className="text-lg px-8" asChild>
-            <Link to="/contact">Need Free Samples? Contact Us</Link>
+            <Link to="/contact">Need Samples? Contact Us</Link>
           </Button>
         </div>
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -6,8 +6,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwRVdvmHdFk51IYVbchNRpMjknEiVagtbNSEcEjTV9oJ5l_mgMicgASzVQj0I6fimdQTQ/exec"; // <-- paste your Apps Script Web App URL
+
 const Contact = () => {
   const { toast } = useToast();
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,10 +20,9 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Missing Information",
@@ -29,27 +32,51 @@ const Contact = () => {
       return;
     }
 
-    // In a real application, this would send data to a backend
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-    });
+    try {
+      const payload = {
+        ...formData,
+        page: window.location.href,
+        timestamp: new Date().toISOString(),
+      };
+
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+
+      toast({
+        title: "Message Sent Successfully ✅",
+        description: "Thank you for contacting us. We'll respond within 24 hours.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly at export@welcottowels.com.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   return (
@@ -64,7 +91,6 @@ const Contact = () => {
         </div>
 
         {/* Location Map Section */}
-        {/* Location Map Section */}
         <div className="mb-12">
           <Card className="shadow-soft">
             <CardContent style={{ marginTop: "2%" }}>
@@ -76,6 +102,7 @@ const Contact = () => {
                       <MapPin className="text-primary" size={24} />
                       Our Location
                     </h3>
+
                     <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
                       <Mail className="text-primary" size={20} />
                       Email
@@ -93,10 +120,19 @@ const Contact = () => {
                       <Phone className="text-primary" size={20} />
                       Phone
                     </h3>
-                    <a href="tel:+919404947907" className="text-muted-foreground hover:text-secondary transition-smooth block">
+                    <a
+                      href="tel:+919404947907"
+                      className="text-muted-foreground hover:text-secondary transition-smooth block"
+                    >
                       +91 9404947907
                     </a>
-                    <p className="text-sm text-muted-foreground mt-1">Mon-Sun, 9 AM - 9 PM IST</p>
+                    <a
+                      href="tel:+917350485599"
+                      className="text-muted-foreground hover:text-secondary transition-smooth block"
+                    >
+                      +91 7350485599
+                    </a>
+                    <p className="text-sm text-muted-foreground mt-1">Mon-Sat, 10 AM - 6 PM IST</p>
                   </div>
 
                   <div>
@@ -105,9 +141,11 @@ const Contact = () => {
                       Address
                     </h3>
                     <p className="text-muted-foreground">
-                      Export Office<br />
-                      Solapur, Maharashtra<br />
-                      India
+                      155/4, Akkalkot Rd,
+                      <br />
+                      Gandhi Nagar, Rangraj Nagar,
+                      <br />
+                      Solapur, Maharashtra 413006
                     </p>
                   </div>
                 </div>
@@ -120,6 +158,7 @@ const Contact = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
+                    title="Welcot Towels Location"
                   />
                 </div>
               </div>
@@ -132,10 +171,9 @@ const Contact = () => {
           <Card className="shadow-medium">
             <CardHeader>
               <CardTitle className="text-2xl">Send Us a Message</CardTitle>
-              <p className="text-muted-foreground">
-                Fill out the form below and we'll respond within 24 hours
-              </p>
+              <p className="text-muted-foreground">Fill out the form below and we'll respond within 24 hours</p>
             </CardHeader>
+
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -150,8 +188,10 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="John Doe"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
                       Email Address *
@@ -164,6 +204,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="john@example.com"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -180,8 +221,10 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+1 234 567 8900"
+                      disabled={isSubmitting}
                     />
                   </div>
+
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium mb-2">
                       Company Name
@@ -192,6 +235,7 @@ const Contact = () => {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="Your Company"
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -208,12 +252,22 @@ const Contact = () => {
                     placeholder="Tell us about your requirements, quantities, and any specific needs..."
                     rows={6}
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full">
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Message
+                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <span className="animate-spin mr-2">⏳</span>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>
@@ -227,9 +281,13 @@ const Contact = () => {
               <CardContent className="pt-6">
                 <h3 className="text-2xl font-bold mb-3">Request a Company Profile</h3>
                 <p className="text-muted-foreground mb-4">
-                  Get our comprehensive product catalog with specifications and pricing
+                  Learn more about our manufacturing capabilities, quality standards, and global export presence.
                 </p>
-                <Button variant="default">Download Catalog</Button>
+
+                {/* Put welcot-profile.pdf inside /public (NOT /src). Link should NOT include /public */}
+                <a href="/welcot-profile.pdf" download="Welcot-Company-Profile.pdf">
+                  <Button variant="default">Download Profile</Button>
+                </a>
               </CardContent>
             </Card>
 
@@ -239,7 +297,11 @@ const Contact = () => {
                 <p className="text-muted-foreground mb-4">
                   Get our comprehensive product catalog with specifications and pricing
                 </p>
-                <Button variant="default">Download Catalog</Button>
+
+                {/* Put welcot-catalog.pdf inside /public (NOT /src). Link should NOT include /public */}
+                <a href="/welcot-catalog.pdf" download="Welcot-Catalog.pdf">
+                  <Button variant="default">Download Catalog</Button>
+                </a>
               </CardContent>
             </Card>
           </div>

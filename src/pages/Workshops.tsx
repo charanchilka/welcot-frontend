@@ -111,7 +111,7 @@ const Workshops = () => {
                   <div className="relative aspect-video">
                     <iframe
                       className="w-full h-full"
-                      src="https://www.youtube.com/embed/YOUR_WORKSHOP_VIDEO_ID"
+                      src="https://www.youtube.com/embed/nMd7omfDDCg"
                       title="Welcot Workshop Tour"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
@@ -133,7 +133,7 @@ const Workshops = () => {
                 <div className="relative aspect-video bg-muted">
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/YOUR_WEAVING_VIDEO_ID"
+                    src="https://www.youtube.com/embed/RAsWarzlcws"
                     title="Weaving Process"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -153,7 +153,7 @@ const Workshops = () => {
                 <div className="relative aspect-video bg-muted">
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/YOUR_DYEING_VIDEO_ID"
+                    src="https://www.youtube.com/embed/PUhHOtGJ8Nc"
                     title="Dyeing Process"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -173,7 +173,7 @@ const Workshops = () => {
                 <div className="relative aspect-video bg-muted">
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/YOUR_QUALITY_VIDEO_ID"
+                    src="https://www.youtube.com/embed/KrcRGVSQ3VU"
                     title="Quality Control"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -193,7 +193,67 @@ const Workshops = () => {
                 <div className="relative aspect-video bg-muted">
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/YOUR_PACKAGING_VIDEO_ID"
+                    src="https://www.youtube.com/embed/FcQAPX-JW1I"
+                    title="Packaging Process"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Packaging & Export</h3>
+                  <p className="text-sm text-muted-foreground">
+                    From factory to global destinations
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden border-none shadow-medium hover:shadow-premium transition-smooth">
+              <CardContent className="p-0">
+                <div className="relative aspect-video bg-muted">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/7nLCRTwKqtg"
+                    title="Packaging Process"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Packaging & Export</h3>
+                  <p className="text-sm text-muted-foreground">
+                    From factory to global destinations
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden border-none shadow-medium hover:shadow-premium transition-smooth">
+              <CardContent className="p-0">
+                <div className="relative aspect-video bg-muted">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/q-CfcRLYdqE"
+                    title="Packaging Process"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Packaging & Export</h3>
+                  <p className="text-sm text-muted-foreground">
+                    From factory to global destinations
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden border-none shadow-medium hover:shadow-premium transition-smooth">
+              <CardContent className="p-0">
+                <div className="relative aspect-video bg-muted">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/vyZ8zolbQ4A"
                     title="Packaging Process"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

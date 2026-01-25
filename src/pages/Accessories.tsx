@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import bagImage from "@/assets/accessories/bags/bag-2.png";
 import pouchesImage from "@/assets/accessories/pouches/pouche-1.png";
-import hatsImage from "@/assets/accessories/hats/hat-1.png";
+import hatsImage from "@/assets/accessories/hats/hat-1.jpg";
 import beachPonchoImage from "@/assets/accessories/beach-ponchos/beach-ponchos-1.png";
 import hairTowelImage from "@/assets/accessories/hair-towels/hair-towel-1.png";
 import dishScrubberImage from "@/assets/accessories/dish-scrubbers/dish-scrubber-1.png";

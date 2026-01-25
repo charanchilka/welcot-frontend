@@ -134,7 +134,7 @@ const Navigation = () => {
               asChild
               className="ml-2 font-semibold"
             >
-              <a href="/company-profile.pdf" download>Company Profile</a>
+              <a href="/public/welcot-profile.pdf" download>Company Profile</a>
             </Button>
           </div>
         </div>

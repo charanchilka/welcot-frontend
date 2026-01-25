@@ -20,24 +20,28 @@ import Certificates from "./pages/Certificates";
 import CSRActivities from "./pages/CSRActivities";
 import Dealership from "./pages/Dealership";
 import NotFound from "./pages/NotFound";
+import MetaPixelTracker from "./components/MetaPixelTracker";
 
 const queryClient = new QueryClient();
 
 const App = () => (
+
+
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <MetaPixelTracker />
         <div className="flex flex-col min-h-screen">
           <Navigation />
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:slug" element={<ProductDetail />} />
-          <Route path="/accessories" element={<Accessories />} />
-          <Route path="/accessories/:slug" element={<AccessoryDetail />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:slug" element={<ProductDetail />} />
+              <Route path="/accessories" element={<Accessories />} />
+              <Route path="/accessories/:slug" element={<AccessoryDetail />} />
               <Route path="/sustainable" element={<Sustainable />} />
               <Route path="/about" element={<About />} />
               <Route path="/workshops" element={<Workshops />} />

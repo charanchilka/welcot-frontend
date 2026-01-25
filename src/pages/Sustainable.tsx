@@ -73,7 +73,7 @@ const Sustainable = () => {
         { icon: <Heart className="w-5 h-5" />, impactArea: "Hygiene Confidence", benefit: "Safer for skin contact in public/shared use", meaning: "Great for hospitality, hospitals, airlines" },
         { icon: <Shield className="w-5 h-5" />, impactArea: "Reduces Cross Contamination", benefit: "Especially in high-touch areas", meaning: "Adds a layer of health protection for staff/guests" },
         { icon: <Heart className="w-5 h-5" />, impactArea: "Ideal for Sensitive Skin", benefit: "Free from bacterial buildup = less irritation", meaning: "Suitable for baby care, spa, dermatology centers" },
-        { icon: <Leaf className="w-5 h-5" />, impactArea: "Non-toxic Treatments", benefit: "OEKO-TEX certified antimicrobial agents", meaning: "Safe, skin-friendly formulations used" },
+        { icon: <Leaf className="w-5 h-5" />, impactArea: "Non-toxic Treatments", benefit: "Certified agents", meaning: "Safe, skin-friendly formulations used" },
       ],
     },
     {
