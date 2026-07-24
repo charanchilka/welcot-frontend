@@ -111,7 +111,7 @@ const Workshops = () => {
                   <div className="relative aspect-video">
                     <iframe
                       className="w-full h-full"
-                      src="https://www.youtube.com/embed/nMd7omfDDCg"
+                      src="https://www.youtube.com/embed/6bHcWq3VWEM?si=Zlu4VzFkCg7MX_8l"
                       title="Welcot Workshop Tour"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen

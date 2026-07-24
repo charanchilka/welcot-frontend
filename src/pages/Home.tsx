@@ -204,7 +204,7 @@ const Home = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-premium aspect-video bg-muted/20 animate-fade-in hover:scale-[1.02] transition-slow" style={{ animationDelay: "0.2s" }}>
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/nMd7omfDDCg"
+                src="https://www.youtube.com/embed/6bHcWq3VWEM?si=Zlu4VzFkCg7MX_8l"
                 title="Welcot Company Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
