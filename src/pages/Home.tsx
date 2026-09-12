@@ -10,22 +10,22 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import HeroCarousel from "@/components/HeroCarousel";
-import hero_image_1 from "@/assets/home-page/hero-banner/hero-image-1.png";
-import hero_image_2 from "@/assets/home-page/hero-banner/hero-image-2.png";
-import hero_image_3 from "@/assets/home-page/hero-banner/hero-image-3.jpg";
-import aboutUsHome from "@/assets/home-page/about-us/home-page-about-us.jpg";
-import luxuryImage from "@/assets/home-page/our-collection/WELCOT-LUXURY.png";
-import premiumImage from "@/assets/home-page/our-collection/WELCOT-PREMIUM.png";
-import standardImage from "@/assets/home-page/our-collection/WELCOT-STANDARD.png";
-import hygieneImage from "@/assets/home-page/our-collection/WELCOT-HYGINE.png";
-import sustainableHero from "@/assets/home-page/sustainable/sustainable-1.png";
-import whyChoose1 from "@/assets/home-page/why-choose/why-choose-1.jpg";
-import whyChoose2 from "@/assets/home-page/why-choose/why-choose-2.jpg";
-import whyChoose3 from "@/assets/home-page/why-choose/why-choose-3.png";
-import whyChoose4 from "@/assets/home-page/why-choose/why-choose-4.jpg";
-import whyChoose5 from "@/assets/home-page/why-choose/why-choose-5.jpg";
-import whyChoose6 from "@/assets/home-page/why-choose/why-choose-6.png";
-import whyChoose7 from "@/assets/home-page/why-choose/why-choose-7.png";
+import hero_image_1 from "@/assets/home-page/hero-banner/hero-image-1.avif";
+import hero_image_2 from "@/assets/home-page/hero-banner/hero-image-2.avif";
+import hero_image_3 from "@/assets/home-page/hero-banner/hero-image-3.avif";
+import aboutUsHome from "@/assets/home-page/about-us/home-page-about-us.avif";
+import luxuryImage from "@/assets/home-page/our-collection/WELCOT-LUXURY.avif";
+import premiumImage from "@/assets/home-page/our-collection/WELCOT-PREMIUM.avif";
+import standardImage from "@/assets/home-page/our-collection/WELCOT-STANDARD.avif";
+import hygieneImage from "@/assets/home-page/our-collection/WELCOT-HYGINE.avif";
+import sustainableHero from "@/assets/home-page/sustainable/sustainable-1.avif";
+import whyChoose1 from "@/assets/home-page/why-choose/why-choose-1.avif";
+import whyChoose2 from "@/assets/home-page/why-choose/why-choose-2.avif";
+import whyChoose3 from "@/assets/home-page/why-choose/why-choose-3.avif";
+import whyChoose4 from "@/assets/home-page/why-choose/why-choose-4.avif";
+import whyChoose5 from "@/assets/home-page/why-choose/why-choose-5.avif";
+import whyChoose6 from "@/assets/home-page/why-choose/why-choose-6.avif";
+import whyChoose7 from "@/assets/home-page/why-choose/why-choose-7.avif";
 import whyUsQuality from "@/assets/home-page/why-choose/why-choose-6.png";
 import whyUsVariety from "@/assets/home-page/why-choose/why-choose-7.png";
 import whyUsManufacturing from "@/assets/home-page/why-choose/why-choose-4.jpg";
@@ -146,7 +146,7 @@ const Home = () => {
   ];
 
   const workshopImages = Object.values(
-    import.meta.glob("@/assets/home-page/workshop/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/home-page/workshop/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })
