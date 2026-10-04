@@ -6,7 +6,7 @@ import { Factory, Users, Cog, Award, ArrowRight } from "lucide-react";
 const Workshops = () => {
 
   const workshopImages = Object.values(
-    import.meta.glob("@/assets/about-us/workshop/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/about-us/workshop/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })

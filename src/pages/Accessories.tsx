@@ -3,15 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 
-import bagImage from "@/assets/accessories/bags/bag-2.png";
-import pouchesImage from "@/assets/accessories/pouches/pouche-1.png";
-import hatsImage from "@/assets/accessories/hats/hat-1.jpg";
-import beachPonchoImage from "@/assets/accessories/beach-ponchos/beach-ponchos-1.png";
-import hairTowelImage from "@/assets/accessories/hair-towels/hair-towel-1.png";
-import dishScrubberImage from "@/assets/accessories/dish-scrubbers/dish-scrubber-1.png";
-import babyBibsImage from "@/assets/accessories/baby-bibs/baby-bib-1.png";
-import babyBathRobeImage from "@/assets/accessories/baby-bath-robes/baby-bath-robes-1.png";
-import terryApparelImage from "@/assets/accessories/terry-apparels/terry-apparel-1.png";
+import bagImage from "@/assets/accessories/bags/bag-2.avif";
+import pouchesImage from "@/assets/accessories/pouches/pouche-1.avif";
+import hatsImage from "@/assets/accessories/hats/hat-1.avif";
+import beachPonchoImage from "@/assets/accessories/beach-ponchos/beach-ponchos-1.avif";
+import hairTowelImage from "@/assets/accessories/hair-towels/hair-towel-1.avif";
+import dishScrubberImage from "@/assets/accessories/dish-scrubbers/dish-scrubber-1.avif";
+import babyBibsImage from "@/assets/accessories/baby-bibs/baby-bib-1.avif";
+import babyBathRobeImage from "@/assets/accessories/baby-bath-robes/baby-bath-robes-1.avif";
+import terryApparelImage from "@/assets/accessories/terry-apparels/terry-apparel-1.avif";
 
 const Accessories = () => {
   const accessories = [

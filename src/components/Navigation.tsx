@@ -126,7 +126,7 @@ const Navigation = () => {
               asChild
               className="ml-2 bg-secondary text-secondary-foreground hover:bg-secondary/90 hover-glow font-semibold"
             >
-              <Link to="/contact">Get Catalog</Link>
+              <a href="/public/welcot-product-catalog.pdf" download>Get Catalog</a>
             </Button>
             <Button
               variant="outline"

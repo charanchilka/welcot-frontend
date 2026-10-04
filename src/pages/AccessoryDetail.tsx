@@ -18,70 +18,70 @@ const AccessoryDetail = () => {
   const { slug } = useParams();
 
   const bagImages = Object.values(
-    import.meta.glob("@/assets/accessories/bags/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/accessories/bags/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })
   ) as string[];
 
   const pouchesImages = Object.values(
-    import.meta.glob("@/assets/accessories/pouches/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/accessories/pouches/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })
   ) as string[];
 
   const hatsImages = Object.values(
-    import.meta.glob("@/assets/accessories/hats/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/accessories/hats/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })
   ) as string[];
 
   const beachPonchoImage = Object.values(
-    import.meta.glob("@/assets/accessories/beach-ponchos/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/accessories/beach-ponchos/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })
   ) as string[];
 
   const babyTowelImages = Object.values(
-    import.meta.glob("@/assets/accessories/baby-towels/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/accessories/baby-towels/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })
   ) as string[];
 
   const hairTowelImages = Object.values(
-    import.meta.glob("@/assets/accessories/hair-towels/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/accessories/hair-towels/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })
   ) as string[];
 
   const dishScrubberImages = Object.values(
-    import.meta.glob("@/assets/accessories/dish-scrubbers/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/accessories/dish-scrubbers/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })
   ) as string[];
 
   const babyBibsImages = Object.values(
-    import.meta.glob("@/assets/accessories/baby-bibs/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/accessories/baby-bibs/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })
   ) as string[];
 
   const babyBathRobeImages = Object.values(
-    import.meta.glob("@/assets/accessories/baby-bath-robes/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/accessories/baby-bath-robes/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })
   ) as string[];
 
   const terryApparelImages = Object.values(
-    import.meta.glob("@/assets/accessories/terry-apparels/*.{jpg,jpeg,png,webp}", {
+    import.meta.glob("@/assets/accessories/terry-apparels/*.{jpg,jpeg,png,webp,avif}", {
       eager: true,
       import: "default",
     })

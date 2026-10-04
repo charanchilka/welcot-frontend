@@ -3,9 +3,15 @@ import WhatsAppButtonImage from "@/assets/others/whatsapp.png";
 
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "919404947907"; // Replace with actual number
-    const message = encodeURIComponent("Hello! I'm interested in WELCOT Towels products.");
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+    const phoneNumber = "919404947907";
+    const message = encodeURIComponent(
+      "Hello! I'm interested in WELCOT Towels products."
+    );
+
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${message}`,
+      "_blank"
+    );
   };
 
   return (
@@ -13,16 +19,17 @@ const WhatsAppButton = () => {
       <Button
         onClick={handleWhatsAppClick}
         size="icon"
-        className="rounded-full h-12 w-12 shadow-premium bg-[#25D366] hover:bg-[#20BA5A] text-white transition-smooth hover:scale-110"
+        className="rounded-full h-12 w-12 shadow-premium bg-[#25D366] hover:bg-[#20BA5A] text-white transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1 hover:rotate-3 hover:shadow-[0_8px_25px_rgba(37,211,102,0.45)]"
         aria-label="Chat on WhatsApp"
       >
         <img
           src={WhatsAppButtonImage}
           alt="WhatsApp"
-          className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+          className="w-full h-full object-cover transition-all duration-300 ease-out group-hover:scale-110 group-hover:rotate-[-8deg]"
         />
       </Button>
-      <div className="absolute bottom-full right-0 mb-2 px-3 py-1.5 bg-primary text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-smooth whitespace-nowrap pointer-events-none">
+
+      <div className="absolute bottom-full right-0 mb-2 px-3 py-1.5 bg-primary text-white text-xs rounded-lg opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-200 ease-out whitespace-nowrap pointer-events-none">
         Chat with us
       </div>
     </div>

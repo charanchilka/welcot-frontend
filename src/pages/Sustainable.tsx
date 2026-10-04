@@ -4,10 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Leaf, Recycle, Shield, Droplets, Zap, Wind, Heart, Sprout, Palette, TreePine } from "lucide-react";
 import sustainableHero from "@/assets/sustainable/hero-banner.png";
 import recycledCottonImg from "@/assets/sustainable/recycled-cotton.png";
-import bambooImg from "@/assets/sustainable/bamboo-towels.png";
-import antibacterialImg from "@/assets/sustainable/antibacterial-towels.png";
-import vatDyedImg from "@/assets/sustainable/vat-dyed-towels.png";
-import organicImg from "@/assets/sustainable/organic-towels.png";
+import bambooImg from "@/assets/sustainable/bamboo-towels.avif";
+import antibacterialImg from "@/assets/sustainable/antibacterial-towels.avif";
+import vatDyedImg from "@/assets/sustainable/vat-dyed-towels.avif";
+import organicImg from "@/assets/sustainable/organic-towels.avif";
 
 const Sustainable = () => {
   const ecoFeatures = [

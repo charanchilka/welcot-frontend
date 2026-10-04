@@ -298,8 +298,8 @@ const Contact = () => {
                   Get our comprehensive product catalog with specifications and pricing
                 </p>
 
-                {/* Put welcot-catalog.pdf inside /public (NOT /src). Link should NOT include /public */}
-                <a href="/welcot-catalog.pdf" download="Welcot-Catalog.pdf">
+                {/* Put welcot-product-catalog.pdf inside /public (NOT /src). Link should NOT include /public */}
+                <a href="/welcot-product-catalog.pdf" download="Welcot-Catalog.pdf">
                   <Button variant="default">Download Catalog</Button>
                 </a>
               </CardContent>

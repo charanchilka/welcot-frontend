@@ -1,21 +1,21 @@
 import { useEffect, useState, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Linkedin, Mail, MessageCircle, CheckCircle, Package, Factory, Lightbulb, Target, Award } from "lucide-react";
-import aboutHero from "@/assets/about-hero.jpg";
-import aboutPartners from "@/assets/about-us/partners.png";
-import visionary1 from "@/assets/about-us/visionary-1.png";
-import visionary2 from "@/assets/about-us/visionary-2.png";
-import teamRohan from "@/assets/about-us/about-us-rohan.png";
-import teamNikhil from "@/assets/about-us/about-us-nikhil.png";
-import teamSiddharth from "@/assets/about-us/about-us-sidha.png";
-import aboutVision from "@/assets/about-us/vision.png";
-import aboutMission from "@/assets/about-us/mission.png";
-import valueQuality from "@/assets/about-us/about-us-core-value-1.png";
-import valueCollection from "@/assets/about-us/about-us-core-value-2.png";
-import valueManufacturing from "@/assets/about-us/value-manufacturing.png";
-import valueInnovation from "@/assets/about-us/about-us-core-value-4.png";
-import valuePartnership from "@/assets/about-us/about-us-core-value-5.png";
-import valueSustainability from "@/assets/about-us/about-us-core-value-6.png";
+import { Mail, CheckCircle, Package, Factory, Lightbulb, Target, Award } from "lucide-react";
+import aboutHero from "@/assets/about-hero.avif";
+import aboutPartners from "@/assets/about-us/partners.avif";
+import visionary1 from "@/assets/about-us/visionary-1.avif";
+import visionary2 from "@/assets/about-us/visionary-2.avif";
+import teamRohan from "@/assets/about-us/about-us-rohan.avif";
+import teamNikhil from "@/assets/about-us/about-us-nikhil.avif";
+import teamSiddharth from "@/assets/about-us/about-us-sidha.avif";
+import aboutVision from "@/assets/about-us/vision.avif";
+import aboutMission from "@/assets/about-us/mission.avif";
+import valueQuality from "@/assets/about-us/about-us-core-value-1.avif";
+import valueCollection from "@/assets/about-us/about-us-core-value-2.avif";
+import valueManufacturing from "@/assets/about-us/value-manufacturing.avif";
+import valueInnovation from "@/assets/about-us/about-us-core-value-4.avif";
+import valuePartnership from "@/assets/about-us/about-us-core-value-5.avif";
+import valueSustainability from "@/assets/about-us/about-us-core-value-6.avif";
 import whyUsManufacturing from "@/assets/why-us-manufacturing.jpg";
 import whyUsQuality from "@/assets/why-us-quality.jpg";
 import WhatsAppButton from "@/assets/others/whatsapp.png";
@@ -141,7 +141,7 @@ const About = () => {
     {
       icon: <Package className="w-10 h-10" />,
       title: "Widest Product Collection, Tailored for Every Need",
-      content: `At Welcot, we understand that different markets require different towel solutions — in material, price point, design, and purpose. That's why we've built one of the most versatile and scalable towel collections in the industry..
+      content: `At Welcot, we understand that different markets require different towel solutions in material, price point, design, and purpose. That's why we've built one of the most versatile and scalable towel collections in the industry..
 
 From ultra-luxury zero-twist bath towels to value-based recycled yarn products, our range is designed to meet the unique needs of:
 
@@ -254,13 +254,13 @@ Final inspection before shipment to ensure compliance with approved standards
                   Welcot Towels is a manufacturer and exporter of terry towels, Turkish towels, and terry toweling accessories and apparel, founded by three second-generation entrepreneurs with a strong family legacy of over two decades in the towel manufacturing industry.
                 </p>
                 <p>
-                  Built on years of local expertise and domestic supply experience, Welcot was established with a shared vision — to bring together resources, craftsmanship, and innovation under one brand focused on the global market.
+                  Built on years of local expertise and domestic supply experience, Welcot was established with a shared vision to bring together resources, craftsmanship, and innovation under one brand focused on the global market.
                 </p>
                 <p>
                   We collaborate closely with our manufacturing partners to oversee production, ensure superior quality, and deliver innovative product solutions. At Welcot, we are committed to serving international clients with quality towels, toweling accessories, and apparel backed by reliable service and professional excellence.
                 </p>
                 <p className="font-semibold text-foreground">
-                  With Welcot, you get more than great towels — you get a manufacturing partner focused on your growth.
+                  With Welcot, you get more than great towels you get a manufacturing partner focused on your growth.
                 </p>
               </div>
             </div>

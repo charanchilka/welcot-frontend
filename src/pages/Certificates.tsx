@@ -18,10 +18,10 @@ const Certificates = () => {
     { name: "MSME Registered", image: certMsme },
     { name: "ICEGATE", image: certIcegate },
     { name: "GST Registered", image: certGst },
-    { name: "Placeholder 1", image: null },
-    { name: "Placeholder 2", image: null },
-    { name: "Placeholder 3", image: null },
-    { name: "Placeholder 4", image: null },
+    // { name: "Placeholder 1", image: null },
+    // { name: "Placeholder 2", image: null },
+    // { name: "Placeholder 3", image: null },
+    // { name: "Placeholder 4", image: null },
   ];
 
   const testReports = [
@@ -99,22 +99,22 @@ const Certificates = () => {
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <CardContent className="p-6 h-full flex flex-col items-center justify-center">
-                        {cert.image ? (
-                          <div className="w-full h-full flex items-center justify-center">
-                            <img
-                              src={cert.image}
-                              alt={cert.name}
-                              className="max-w-full max-h-full object-contain group-hover:scale-110 transition-smooth"
-                            />
-                          </div>
-                        ) : (
+                        {/* {cert.image ? ( */}
+                        <div className="w-full h-full flex items-center justify-center">
+                          <img
+                            src={cert.image}
+                            alt={cert.name}
+                            className="max-w-full max-h-full object-contain group-hover:scale-110 transition-smooth"
+                          />
+                        </div>
+                        {/* ) : (
                           <div className="w-full h-full flex flex-col items-center justify-center bg-muted/30 rounded-lg">
                             <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mb-3">
                               <span className="text-2xl text-muted-foreground">?</span>
                             </div>
                             <p className="text-sm text-muted-foreground text-center">Logo Coming Soon</p>
                           </div>
-                        )}
+                        )} */}
                       </CardContent>
                     </Card>
                   ))}
