@@ -29,24 +29,24 @@ const Certificates = () => {
       title: "Complete Plain Dyed Towel Test Report",
       description: "Comprehensive test report covering all quality parameters for plain dyed towels including colorfastness, absorbency, tensile strength, and dimensional stability.",
       icon: <FileText className="w-12 h-12" />,
-      downloadUrl: "/public/reports/plain-dyed-towel-report.pdf",
+      downloadUrl: "/reports/plain-dyed-towel-report.pdf",
     },
     {
       title: "Complete Yarn Dyed Towel Test Report",
       description: "Detailed test report for yarn dyed towels covering pattern consistency, color retention, fabric strength, and durability metrics.",
       icon: <FileText className="w-12 h-12" />,
-      downloadUrl: "/public/reports/Yarn-Dyed-Towel-Test-Report.png",
+      downloadUrl: "/reports/Yarn-Dyed-Towel-Test-Report.png",
     },
     {
       title: "Lint Test Report of Yarn Dyed Towel",
       description: "Detailed lint test report for yarn dyed towels covering pattern consistency, color retention, fabric strength, and durability metrics.",
       icon: <FileText className="w-12 h-12" />,
-      downloadUrl: "/public/reports/Lint-Dyed-Towel-Test-Report.pdf",
+      downloadUrl: "/reports/Lint-Dyed-Towel-Test-Report.pdf",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-background" style={{ marginTop: "9%" }}>
+    <div className="min-h-screen bg-background" style={{ marginTop: "7%" }}>
       {/* Hero Section */}
       <section className="relative py-20 lg:py-26 bg-gradient-to-b from-primary/5 to-background">
         <div className="container mx-auto px-4 lg:px-8">

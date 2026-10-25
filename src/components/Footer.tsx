@@ -10,9 +10,9 @@ const Footer = () => {
 
       <div className="relative container mx-auto px-4 lg:px-8 py-20">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12 text-center md:text-left">
           {/* Brand Section - Larger */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 flex flex-col items-center md:items-start">
             <img
               src={welcotLogo}
               alt="WELCOT Towels"
@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-4">
+            <div className="flex justify-center md:justify-start gap-4">
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary flex items-center justify-center transition-smooth hover:scale-110"
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-semibold text-secondary mb-6 text-lg">Quick Links</h4>
             <ul className="space-y-3">
               <li>
@@ -138,7 +138,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-secondary mb-6 text-lg">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 group">
+              <li className="flex flex-col items-center md:flex-row md:items-start gap-3 group">
                 <Mail size={18} className="mt-1 flex-shrink-0 text-secondary" />
                 <a
                   href="mailto:export@welcottowels.com"
@@ -147,17 +147,17 @@ const Footer = () => {
                   export@welcottowels.com
                 </a>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex flex-col items-center md:flex-row md:items-start gap-3">
                 <Phone size={18} className="mt-1 flex-shrink-0 text-secondary" />
-                <div className="flex flex-col opacity-80 text-sm space-y-1">
+                <div className="flex flex-col opacity-80 text-sm space-y-1 text-center md:text-left">
                   <a href="tel:+919404947907" className="hover:text-secondary transition-smooth">+91 9404947907</a>
                   <a href="tel:+919209915556" className="hover:text-secondary transition-smooth">+91 9209915556</a>
                   <a href="tel:+917350485599" className="hover:text-secondary transition-smooth">+91 7350485599</a>
                 </div>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex flex-col items-center md:flex-row md:items-start gap-3">
                 <MapPin size={18} className="mt-1 flex-shrink-0 text-secondary" />
-                <span className="opacity-80 text-sm leading-relaxed">
+                <span className="opacity-80 text-sm leading-relaxed text-center md:text-left">
                   Solapur, Maharashtra,<br />India
                 </span>
               </li>
@@ -169,7 +169,7 @@ const Footer = () => {
         <div className="h-px bg-gradient-to-r from-transparent via-secondary to-transparent mb-8" />
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-75">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-75 text-center">
           <p>&copy; {new Date().getFullYear()} WELCOT Towels. All rights reserved.</p>
           <div className="flex gap-6">
             <Link to="/contact" className="hover:text-secondary transition-smooth">Privacy Policy</Link>
