@@ -132,7 +132,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ marginTop: "9%" }}>
+    <div className="min-h-screen" style={{ marginTop: "7%" }}>
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-b from-muted/50 to-background overflow-hidden">
         <div className="absolute inset-0 opacity-5">

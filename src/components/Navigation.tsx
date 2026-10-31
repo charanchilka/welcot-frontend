@@ -36,7 +36,7 @@ const Navigation = () => {
   ];
 
   const aboutSubLinks = [
-    // { name: "About Us", path: "/about" },
+    { name: "About Us", path: "/about" },
     { name: "Workshops", path: "/workshops" },
     { name: "Certifications", path: "/certificates" },
     { name: "CSR", path: "/csr" },

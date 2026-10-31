@@ -139,7 +139,7 @@ const Dealership = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 lg:pt-32">
+    <div className="min-h-screen pt-24 lg:pt-31">
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         <div className="absolute inset-0">
